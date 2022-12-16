@@ -9,10 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "eslint": "8.29.0",
-    "eslint-config-next": "13.0.6",
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.0.0",
+    "html-react-parser": "^3.0.4",
+    "moment": "^2.29.4",
     "next": "13.0.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-multi-carousel": "^2.8.2",
+    "sass": "^1.56.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.19",
+    "postcss-import": "^15.0.1",
+    "postcss-nesting": "^10.2.0",
+    "tailwindcss": "^3.2.4"
   }
 }
