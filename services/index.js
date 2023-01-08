@@ -240,11 +240,8 @@ export const getComments = async (slug) => {
 
 export const getRecentPosts = async () => {
   const query = gql`
-    query GetPostDetails() {
-      posts(
-        orderBy: createdAt_ASC
-        last: 3
-      ) {
+    query GetRecentPost {
+      posts(orderBy: createdAt_DESC, last: 3) {
         title
         featuredImage {
           url
