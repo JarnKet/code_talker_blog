@@ -41,7 +41,7 @@ export const getPosts = async () => {
 
 export const getCategories = async () => {
   const query = gql`
-    query GetGategories {
+    query GetCategories {
       categories {
         name
         slug
@@ -150,7 +150,7 @@ export const getAdjacentPosts = async (createdAt, slug) => {
 
 export const getCategoryPost = async (slug) => {
   const query = gql`
-    query GetCategoryPost($slug: String!, orderBy: createdAt_DESC) {
+    query GetCategoryPost($slug: String!) {
       postsConnection(where: { categories_some: { slug: $slug } }) {
         edges {
           cursor
