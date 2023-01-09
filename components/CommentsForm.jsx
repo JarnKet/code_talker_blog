@@ -86,7 +86,7 @@ const CommentsForm = ({ slug }) => {
             value={true}
           />
           <label
-            className="text-cyan-500 cursor-pointer ml-2"
+            className="text-black cursor-pointer ml-2 font-bold"
             htmlFor="storeData"
           >
             ຈົດຈຳຂໍ້ມູນຂອງຂ້ອຍ
@@ -100,7 +100,7 @@ const CommentsForm = ({ slug }) => {
         <button
           type="button"
           onClick={handleCommentSubmission}
-          className="transition duration-500 ease hover:bg-cyan-900 inline-block bg-cyan-400 text-lg rounded-full px-8 py-3 cursor-pointer text-white"
+          className="button-86"
         >
           ສົ່ງຄວາມຄິດເຫັນ
         </button>

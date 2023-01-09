@@ -18,7 +18,7 @@ const PostWidget = ({ categories, slug }) => {
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 mb-8">
-      <h3 className="text-xl mb-8 font-semibold border-b pb-4">
+      <h3 className="text-xl mb-8 font-semibold border-b-2 border-black pb-4">
         {slug ? 'ບົດຄວາມທີ່ກ່ຽວຂ້ອງ' : 'ບົດຄວາມລ່າສຸດ'}
       </h3>
       {relatedPosts.map((post) => (
