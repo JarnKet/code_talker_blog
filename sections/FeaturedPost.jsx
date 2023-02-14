@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-
+import Typewriter from 'typewriter-effect';
 import { FeaturedPostCard } from '../components';
+import Link from 'next/link';
 import { getFeaturedPosts } from '../services';
 
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 1024 },
-    items: 4,
+    items: 1,
   },
   desktop: {
     breakpoint: { max: 1024, min: 768 },
-    items: 3,
+    items: 1,
   },
   tablet: {
     breakpoint: { max: 768, min: 640 },
-    items: 2,
+    items: 1,
   },
   mobile: {
     breakpoint: { max: 640, min: 0 },
@@ -36,10 +37,10 @@ const FeaturedPosts = () => {
   }, []);
 
   const customLeftArrow = (
-    <div className="absolute arrow-btn left-0 text-center py-3 cursor-pointer bg-pink-600 rounded-full">
+    <div className="absolute arrow-btn left-0 text-center py-3 cursor-pointer bg-black text-white dark:text-black dark:bg-white ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-6  text-white w-full"
+        className="h-6 w-full"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -55,10 +56,10 @@ const FeaturedPosts = () => {
   );
 
   const customRightArrow = (
-    <div className="absolute arrow-btn right-0 text-center py-3 cursor-pointer bg-pink-600 rounded-full">
+    <div className="absolute arrow-btn right-0 text-center py-3 cursor-pointer bg-black text-white dark:text-black dark:bg-white ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-6  text-white w-full"
+        className="h-6 w-full"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -74,19 +75,56 @@ const FeaturedPosts = () => {
   );
 
   return (
-    <div className="mb-8">
-      <Carousel
-        infinite
-        customLeftArrow={customLeftArrow}
-        customRightArrow={customRightArrow}
-        responsive={responsive}
-        itemClass="px-4"
-      >
-        {dataLoaded &&
-          featuredPosts.map((post, index) => (
-            <FeaturedPostCard key={index} post={post} />
-          ))}
-      </Carousel>
+    <div className=" w-full h-full flex flex-col items-center mb-16 bg-cover bg-no-repeat">
+      <div className="flex sm:flex-row flex-col w-full sm:justify-between text-center sm:text-left">
+        <div className="flex flex-col w-[100%] sm:w-[50%]">
+          <h1 className="font-semibold text-4xl sm:text-8xl sm:mb-[30px]">
+            <Typewriter
+              options={{
+                strings: ['ບົດຄວາມ', 'Blog', 'Article'],
+                autoStart: true,
+                loop: true,
+              }}
+            />
+          </h1>
+
+          <h1 className=" text-4xl sm:text-8xl font-bold sm:mb-[30px]">
+            <Typewriter
+              options={{
+                strings: ['ວິຊາການ', 'ທັດສະນະຄະຕິ', 'ນິດໄສ'],
+                autoStart: true,
+                loop: true,
+              }}
+            />
+          </h1>
+
+          <h3 className="mb-12 sm:mb-0 sm:text-2xl">
+            ຈາກ Programmer ສູ່ ຄົນທີ່ຕ້ອງການພັດທະນາຕົນເອງ
+          </h3>
+        </div>
+
+        <Carousel
+          infinite
+          customLeftArrow={customLeftArrow}
+          customRightArrow={customRightArrow}
+          responsive={responsive}
+          className="text-white w-[100%] sm:w-[50%]  mb-16 sm:mb-0 "
+        >
+          {dataLoaded &&
+            featuredPosts.map((post, index) => (
+              <FeaturedPostCard key={index} post={post} />
+            ))}
+        </Carousel>
+      </div>
+
+      <div className="flex justify-center sm:justify-start items-center w-full ">
+        <button
+          type="button"
+          className="p-4 text-white font-semibold bg-black  dark:text-black dark:bg-white hover:translate-y-4 transition-all duration-500"
+        >
+          <Link href={'#postcard'}>ບົດຄວາມທັງໝົດ</Link>
+        </button>
+      </div>
     </div>
   );
 };

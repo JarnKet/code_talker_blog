@@ -13,18 +13,15 @@ export default function Home({ posts }) {
 
       <FeaturedPost />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        <div className="lg:col-span-8 col-span-1">
+      <div
+        id="postcard"
+        className="w-full  flex flex-col items-center justify-center mt-32 "
+      >
+        <h1 className=" font-bold text-4xl mb-8">ບົດຄວາມລ່າສຸດ</h1>
+        <div className="grid grid-cols-1 gap-12 ">
           {posts.map((post) => (
             <PostCard post={post.node} key={post.title} />
           ))}
-        </div>
-
-        <div className="lg:col-span-4 col-span-1">
-          <div className="lg:sticky relative top-8">
-            <PostWidget />
-            <Categories />
-          </div>
         </div>
       </div>
     </div>

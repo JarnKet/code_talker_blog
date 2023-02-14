@@ -1,6 +1,8 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { getPosts, getPostDetails } from '../../services';
+import Link from 'next/link';
+import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import {
   PostDetail,
   Categories,
@@ -18,9 +20,13 @@ const PostDetails = ({ post }) => {
     return <Loader />;
   }
   return (
-    <div className="container mx-auto px-10 mb-8">
+    <div className="container mx-auto px-10 mb-8 ">
+      <Link href={`/`} className="flex mb-4 font-bold p-2  w-24 ">
+        <ArrowLeftIcon className="w-6 h-6 mr-2" />
+        <p>ກັບຄືນ</p>
+      </Link>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        <div className="col-span-1 lg:col-span-8">
+        <div className="col-span-1 lg:col-span-8 ">
           <PostDetail post={post} />
           <Author author={post.author} />
           <CommentsForm slug={post.slug} />

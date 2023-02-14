@@ -11,7 +11,7 @@ const Categories = () => {
   }, []);
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 mb-8 pb-12">
+    <div className="   p-8 mb-8 pb-12">
       <h3 className="text-xl mb-8 font-semibold border-b-2 border-black pb-4">
         ໝວດໝູ່
       </h3>

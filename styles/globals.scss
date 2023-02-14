@@ -1,38 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
-*::-webkit-scrollbar {
-  width: 15px;
-}
-
-*::-webkit-scrollbar-track {
-  background: #000;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #fff;
-}
 
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: 'Noto Sans Lao', sans-serif;
-  &:before {
-    content: '';
-    content: '';
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: -1;
-  }
 }
 
 .text-shadow {
@@ -65,31 +43,20 @@ a {
   color: inherit;
   text-decoration: none;
 }
-h1:hover {
-  background: #77a1d3; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #e684ae,
-    #79cbca,
-    #77a1d3
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #e684ae,
-    #79cbca,
-    #77a1d3
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  background-clip: text;
+.text-gradient {
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #def9fa 0.89%,
+    #bef3f5 17.23%,
+    #9dedf0 42.04%,
+    #7de7eb 55.12%,
+    #5ce1e6 71.54%,
+    #33bbcf 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-* {
-  box-sizing: border-box;
-}
-.banner_font {
-  font-family: 'Share Tech Mono', monospace !important;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 /* CSS */

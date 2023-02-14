@@ -9,15 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.15",
     "graphql": "^16.6.0",
     "graphql-request": "^5.0.0",
     "html-react-parser": "^3.0.4",
     "moment": "^2.29.4",
     "next": "13.0.6",
+    "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-multi-carousel": "^2.8.2",
-    "sass": "^1.56.1"
+    "sass": "^1.56.1",
+    "tailwind-scrollbar": "^2.1.0",
+    "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
