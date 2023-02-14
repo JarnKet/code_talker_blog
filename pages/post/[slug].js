@@ -20,7 +20,7 @@ const PostDetails = ({ post }) => {
     return <Loader />;
   }
   return (
-    <div className="container mx-auto px-10 mb-8 ">
+    <div className="container mx-auto px-10 mb-8 mt-24">
       <Link href={`/`} className="flex mb-4 font-bold p-2  w-24 ">
         <ArrowLeftIcon className="w-6 h-6 mr-2" />
         <p>ກັບຄືນ</p>

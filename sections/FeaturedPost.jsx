@@ -75,10 +75,10 @@ const FeaturedPosts = () => {
   );
 
   return (
-    <div className=" w-full h-full flex flex-col items-center mb-16 bg-cover bg-no-repeat">
-      <div className="flex sm:flex-row flex-col w-full sm:justify-between text-center sm:text-left">
-        <div className="flex flex-col w-[100%] sm:w-[50%]">
-          <h1 className="font-semibold text-4xl sm:text-8xl sm:mb-[30px]">
+    <div className=" w-full h-full flex flex-col items-center justify-center pt-16">
+      <div className="flex lg:flex-row flex-col w-full lg:justify-between text-center lg:text-left">
+        <div className="flex flex-col w-[100%] lg:w-[50%]">
+          <h1 className="font-semibold text-4xl lg:text-8xl lg:mb-[30px]">
             <Typewriter
               options={{
                 strings: ['ບົດຄວາມ', 'Blog', 'Article'],
@@ -88,7 +88,7 @@ const FeaturedPosts = () => {
             />
           </h1>
 
-          <h1 className=" text-4xl sm:text-8xl font-bold sm:mb-[30px]">
+          <h1 className=" text-4xl lg:text-8xl font-bold lg:mb-[30px]">
             <Typewriter
               options={{
                 strings: ['ວິຊາການ', 'ທັດສະນະຄະຕິ', 'ນິດໄສ'],
@@ -98,7 +98,7 @@ const FeaturedPosts = () => {
             />
           </h1>
 
-          <h3 className="mb-12 sm:mb-0 sm:text-2xl">
+          <h3 className="mb-12 lg:mb-0 lg:text-2xl">
             ຈາກ Programmer ສູ່ ຄົນທີ່ຕ້ອງການພັດທະນາຕົນເອງ
           </h3>
         </div>
@@ -108,7 +108,7 @@ const FeaturedPosts = () => {
           customLeftArrow={customLeftArrow}
           customRightArrow={customRightArrow}
           responsive={responsive}
-          className="text-white w-[100%] sm:w-[50%]  mb-16 sm:mb-0 "
+          className="text-white w-[100%] lg:w-[50%]  mb-16 lg:mb-0 "
         >
           {dataLoaded &&
             featuredPosts.map((post, index) => (
@@ -117,7 +117,7 @@ const FeaturedPosts = () => {
         </Carousel>
       </div>
 
-      <div className="flex justify-center sm:justify-start items-center w-full ">
+      <div className="flex justify-center lg:justify-start items-center w-full ">
         <button
           type="button"
           className="p-4 text-white font-semibold bg-black  dark:text-black dark:bg-white hover:translate-y-4 transition-all duration-500"

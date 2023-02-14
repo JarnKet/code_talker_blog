@@ -60,7 +60,7 @@ const PostDetail = ({ post }) => {
   };
 
   return (
-    <div className="   lg:p-8 pb-12 mb-8">
+    <div className="dark:bg-neutral-900   lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md mb-6">
         <img
           className="object-top h-full w-full grayscale"
@@ -69,8 +69,8 @@ const PostDetail = ({ post }) => {
         />
       </div>
       <div className="px-4 lg:px-0">
-        <div className="flex items-center mb-8 w-full">
-          <div className="flex items-center  mb-4 lg:mb-0 w-full lg:w-auto mr-8">
+        <div className="flex flex-col lg:flex-row justify-center sm:justify-between items-center mb-8 w-full">
+          <div className="flex justify-center lg:justify-start items-center   w-full lg:w-auto ">
             <img
               alt={post.author.name}
               height="30px"
@@ -78,11 +78,11 @@ const PostDetail = ({ post }) => {
               className="align-middle rounded-full"
               src={post.author.photo.url}
             />
-            <p className="inline align-middle  ml-2 text-lg">
+            <p className="inline align-middle  ml-2 text-base lg:text-lg">
               {post.author.name}
             </p>
           </div>
-          <div className="font-medium ">
+          <div className="font-medium flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 inline mr-2 "

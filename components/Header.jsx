@@ -39,7 +39,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="py-8 px-12 flex justify-between items-center mb-3 w-full z-10 ">
+    <nav className="py-4 px-12 flex justify-between items-center w-full  fixed top-0 z-10 shadow-lg bg-white dark:bg-neutral-900">
       <div>
         <Link href="/">
           <span className="font-sourceCode  cursor-pointer font-bold text-2xl sm:text-4xl transition-all ease-linear duration-200">

@@ -11,8 +11,8 @@ const Categories = () => {
   }, []);
 
   return (
-    <div className="   p-8 mb-8 pb-12">
-      <h3 className="text-xl mb-8 font-semibold border-b-2 border-black pb-4">
+    <div className="dark:bg-neutral-900 shadow-lg   p-8 mb-8 pb-12">
+      <h3 className="text-xl mb-8 font-semibold border-b-2 border-neutral-900 dark:border-white  pb-4">
         ໝວດໝູ່
       </h3>
       {categories.map((category) => (

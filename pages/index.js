@@ -11,14 +11,16 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <FeaturedPost />
+      <div className="flex w-full h-screen justify-center items-center ">
+        <FeaturedPost />
+      </div>
 
       <div
         id="postcard"
-        className="w-full  flex flex-col items-center justify-center mt-32 "
+        className="w-full h-full flex flex-col items-center justify-center pt-28 "
       >
         <h1 className=" font-bold text-4xl mb-8">ບົດຄວາມລ່າສຸດ</h1>
-        <div className="grid grid-cols-1 gap-12 ">
+        <div className="grid grid-cols-1 gap-12 justify-items-center">
           {posts.map((post) => (
             <PostCard post={post.node} key={post.title} />
           ))}

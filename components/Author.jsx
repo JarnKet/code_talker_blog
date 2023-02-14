@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 const Author = ({ author }) => {
   return (
-    <div className="text-center mt-20 mb-8 p-12 relative rounded-lg ">
-      <div className="absolute left-0 right-0 -top-14">
+    <div className="text-center flex flex-col w-full items-center justify-center mt-20 mb-8 p-12 relative rounded-lg shadow-lg dark:bg-neutral-900">
+      <div className="absolute -top-14">
         <Image
           unoptimized
           alt={author.name}
