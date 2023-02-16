@@ -78,7 +78,7 @@ const FeaturedPosts = () => {
     <div className=" w-full h-full flex flex-col items-center justify-center pt-16">
       <div className="flex lg:flex-row flex-col w-full lg:justify-between text-center lg:text-left">
         <div className="flex flex-col w-[100%] lg:w-[50%]">
-          <h1 className="font-semibold text-4xl lg:text-8xl lg:mb-[30px]">
+          <h1 className="font-bold text-4xl lg:text-8xl lg:mb-[30px]">
             <Typewriter
               options={{
                 strings: ['ບົດຄວາມ', 'Blog', 'Article'],
@@ -98,8 +98,8 @@ const FeaturedPosts = () => {
             />
           </h1>
 
-          <h3 className="mb-12 lg:mb-0 lg:text-2xl">
-            ຈາກ Programmer ສູ່ ຄົນທີ່ຕ້ອງການພັດທະນາຕົນເອງ
+          <h3 className="mb-12 lg:mb-0 lg:text-2xl mt-2 ">
+            ຈາກ Programmer ສູ່ Programmer ແລະ ຄົນທີ່ຕ້ອງການພັດທະນາຕົນເອງ
           </h3>
         </div>
 
@@ -117,7 +117,7 @@ const FeaturedPosts = () => {
         </Carousel>
       </div>
 
-      <div className="flex justify-center lg:justify-start items-center w-full ">
+      <div className="flex justify-center lg:justify-start items-center w-full lg:mt-6">
         <button
           type="button"
           className="p-4 text-white font-semibold bg-black  dark:text-black dark:bg-white hover:translate-y-4 transition-all duration-500"

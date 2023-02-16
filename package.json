@@ -20,7 +20,6 @@
     "react-dom": "18.2.0",
     "react-multi-carousel": "^2.8.2",
     "sass": "^1.56.1",
-    "tailwind-scrollbar": "^2.1.0",
     "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {

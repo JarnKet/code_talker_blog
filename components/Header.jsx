@@ -39,16 +39,18 @@ const Header = () => {
   };
 
   return (
-    <nav className="py-4 px-12 flex justify-between items-center w-full  fixed top-0 z-10 shadow-lg bg-white dark:bg-neutral-900">
-      <div>
-        <Link href="/">
-          <span className="font-sourceCode  cursor-pointer font-bold text-2xl sm:text-4xl transition-all ease-linear duration-200">
-            CODE TALKER
-          </span>
-        </Link>
-      </div>
+    <nav className="py-4 px-12   fixed top-0 z-10 shadow-lg bg-white dark:bg-neutral-900 w-full">
+      <div className="container mx-auto flex justify-between items-center w-full">
+        <div>
+          <Link href="/">
+            <span className="font-sourceCode  cursor-pointer font-bold text-2xl sm:text-4xl transition-all ease-linear duration-200">
+              CODE TALKER
+            </span>
+          </Link>
+        </div>
 
-      {renderThemeChanger()}
+        {renderThemeChanger()}
+      </div>
     </nav>
   );
 };
