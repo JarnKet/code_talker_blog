@@ -7,7 +7,8 @@ export default function Home({ posts }) {
   return (
     <div className="container mx-auto px-10 mb-8 scrollBarTheme">
       <Head>
-        <title>Code Talker</title>
+        <title>Code Talker | ບົດຄວາມເພື່ອໂປຣແກຣມເມີ້</title>
+        <meta name="keyword" content="Code Talker Blog, Blog, ບົດຄວາມ" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
