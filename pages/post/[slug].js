@@ -23,7 +23,7 @@ const PostDetails = ({ post }) => {
     <>
       <Head>
         <title>{post.title}</title>
-        <meta name="keyword" content={`${post.title}`} />
+        <meta name="keywords" content={`${post.title}`} />
       </Head>
       <div className="container mx-auto px-10 mb-8 mt-24">
         <Link href={`/`} className="flex mb-4 font-bold p-2  w-24 ">
