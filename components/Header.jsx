@@ -13,7 +13,7 @@ const Header = () => {
       return (
         <button
           type="button"
-          className=" p-2 cursor-pointer flex  justify-end items-center hover:bg-white hover:text-black transition-all duration-500"
+          className="rounded-full p-2 cursor-pointer flex  justify-end items-center bg-black dark:bg-white text-white dark:text-black transition-all duration-500"
         >
           <SunIcon
             className="w-6 h-6 "
@@ -26,7 +26,7 @@ const Header = () => {
     } else {
       return (
         <button
-          className=" p-2 cursor-pointer flex  justify-end items-center hover:bg-black hover:text-white transition-all duration-500"
+          className="rounded-full p-2 cursor-pointer flex  justify-end items-center bg-black dark:bg-white text-white dark:text-black transition-all duration-500"
           type="button"
           onClick={() => {
             setTheme('dark');
@@ -39,8 +39,8 @@ const Header = () => {
   };
 
   return (
-    <nav className="py-4 px-12   fixed top-0 z-10 shadow-lg bg-white dark:bg-neutral-900 w-full">
-      <div className="container mx-auto flex justify-between items-center w-full">
+    <nav className=" mt-6 rounded-xl container mx-auto px-8  w-full  ">
+      <div className=" card dark:cardDark  py-4 px-2  rounded-xl   flex justify-between items-center w-full">
         <div>
           <Link href="/">
             <span className="font-sourceCode  cursor-pointer font-bold text-2xl sm:text-4xl transition-all ease-linear duration-200">

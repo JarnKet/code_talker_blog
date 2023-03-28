@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { getCategories } from '../services';
 
-const Categories = () => {
+const Categories = ({ styles }) => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -11,9 +11,9 @@ const Categories = () => {
   }, []);
 
   return (
-    <div className="dark:bg-neutral-900 shadow-lg   p-8 mb-8 pb-12">
+    <div className={`${styles} rounded-xl shadow-lg p-8 mb-8 pb-12`}>
       <h3 className="text-xl mb-8 font-semibold border-b-2 border-neutral-900 dark:border-white  pb-4">
-        ໝວດໝູ່
+        📖 ໝວດໝູ່
       </h3>
       {categories.map((category) => (
         <Link key={category.slug} href={`/category/${category.slug}`}>

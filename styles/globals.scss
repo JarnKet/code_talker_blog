@@ -5,8 +5,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .themeComponent {
+    @apply bg-black text-white dark:bg-white dark:text-black;
+  }
+}
+
+@layer utilities {
+  .card {
+    background: transparentize(whitesmoke, 0.5);
+    backdrop-filter: blur(20px);
+    border: 1px solid transparentize(whitesmoke, 0.8);
+  }
+  .cardDark {
+    background: transparentize(#222, 0.5);
+    backdrop-filter: blur(20px);
+    border: 1px solid transparentize(whitesmoke, 0.9);
+  }
+
+  .postCard.card:hover {
+    border: 1px solid transparentize(#222, 0.8);
+  }
+
+  .postCard.cardDark:hover {
+    border: 1px solid transparentize(whitesmoke, 0.8);
+  }
+}
+
 * {
   scroll-behavior: smooth;
+  transition: all ease-in-out 100ms;
 }
 
 html,
@@ -49,7 +77,7 @@ a {
 .text-gradient {
   background: radial-gradient(
     64.18% 64.18% at 71.16% 35.69%,
-    #def9fa 0.89%,
+    #def9fa 1.89%,
     #bef3f5 17.23%,
     #9dedf0 42.04%,
     #7de7eb 55.12%,

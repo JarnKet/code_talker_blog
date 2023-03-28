@@ -49,14 +49,14 @@ const CommentsForm = ({ slug }) => {
   };
 
   return (
-    <div className="dark:bg-neutral-900 shadow-lg  p-8 pb-12 mb-8">
+    <div className="card rounded-xl dark:cardDark shadow-lg  p-8 pb-12 mb-8">
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">
-        ສະແດງຄວາມຄິດເຫັນ
+        ✍️ ສະແດງຄວາມຄິດເຫັນ
       </h3>
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea
           ref={commentEl}
-          className="p-4 outline-none w-full  focus:ring-2 focus:ring-black "
+          className="p-4 outline-none w-full rounded-xl  focus:ring-2 focus:ring-black "
           placeholder="ຄວາມຄິດເຫັນ"
           name="comment"
         />
@@ -67,14 +67,14 @@ const CommentsForm = ({ slug }) => {
           placeholder="ຊື່ ແລະ ນາມສະກຸນ"
           name="name"
           ref={nameEl}
-          className="p-4 outline-none w-full  focus:ring-2 focus:ring-black  "
+          className="p-4 outline-none w-full rounded-xl focus:ring-2 focus:ring-black  "
         />
         <input
           type="email"
           placeholder="ອີເມວ"
           name="email"
           ref={emailEl}
-          className="p-4 outline-none w-full  focus:ring-2 focus:ring-black  "
+          className="p-4 outline-none w-full rounded-xl focus:ring-2 focus:ring-black  "
         />
       </div>
       <div className="grid grid-cols-1 gap-4 mb-4">
@@ -97,7 +97,7 @@ const CommentsForm = ({ slug }) => {
         <button
           type="button"
           onClick={handleCommentSubmission}
-          className="dark:bg-white dark:text-black p-2 text-white bg-black"
+          className="rounded-xl dark:bg-white dark:text-black p-4 text-white bg-black"
         >
           ສົ່ງຄວາມຄິດເຫັນ
         </button>

@@ -37,7 +37,7 @@ const FeaturedPosts = () => {
   }, []);
 
   const customLeftArrow = (
-    <div className="absolute arrow-btn left-0 text-center py-3 cursor-pointer bg-black text-white dark:text-black dark:bg-white ">
+    <div className="absolute rounded-full arrow-btn left-0 text-center py-3 cursor-pointer bg-black text-white dark:text-black dark:bg-white ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-full"
@@ -56,7 +56,7 @@ const FeaturedPosts = () => {
   );
 
   const customRightArrow = (
-    <div className="absolute arrow-btn right-0 text-center py-3 cursor-pointer bg-black text-white dark:text-black dark:bg-white ">
+    <div className="absolute rounded-full arrow-btn right-0 text-center py-3 cursor-pointer bg-black text-white dark:text-black dark:bg-white ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-full"
@@ -75,10 +75,10 @@ const FeaturedPosts = () => {
   );
 
   return (
-    <div className=" w-full h-full flex flex-col items-center justify-center pt-16">
-      <div className="flex lg:flex-row flex-col w-full lg:justify-between text-center lg:text-left">
-        <div className="flex flex-col w-[100%] lg:w-[50%]">
-          <h1 className="font-bold text-4xl lg:text-8xl lg:mb-[30px]">
+    <div className=" w-full h-full flex flex-col items-center justify-center  pb-16">
+      <div className="flex gap-4 lg:flex-row flex-col w-full lg:justify-between text-center lg:text-left">
+        <div className="flex rounded-xl p-2  flex-col w-[100%] lg:w-[50%] ">
+          <h1 className="font-bold text-4xl sm:text-6xl lg:text-8xl lg:mb-[30px]">
             <Typewriter
               options={{
                 strings: ['ບົດຄວາມ', 'Blog', 'Article'],
@@ -88,7 +88,7 @@ const FeaturedPosts = () => {
             />
           </h1>
 
-          <h1 className=" text-4xl lg:text-8xl font-bold lg:mb-[30px]">
+          <h1 className=" text-4xl sm:text-6xl lg:text-8xl font-bold lg:mb-[30px]">
             <Typewriter
               options={{
                 strings: ['ວິຊາການ', 'ທັດສະນະຄະຕິ', 'ນິດໄສ'],
@@ -98,7 +98,7 @@ const FeaturedPosts = () => {
             />
           </h1>
 
-          <h3 className="mb-12 lg:mb-0 lg:text-2xl mt-2 ">
+          <h3 className="mb-12 lg:mb-0 sm:text-4xl lg:text-2xl mt-2 ">
             ຈາກ Programmer ສູ່ Programmer ແລະ ຄົນທີ່ຕ້ອງການພັດທະນາຕົນເອງ
           </h3>
         </div>
@@ -108,7 +108,7 @@ const FeaturedPosts = () => {
           customLeftArrow={customLeftArrow}
           customRightArrow={customRightArrow}
           responsive={responsive}
-          className="text-white w-[100%] lg:w-[50%]  mb-16 lg:mb-0 "
+          className="text-white w-[100%] lg:w-[50%] rounded-xl overflow-hidden mb-16 lg:mb-0 "
         >
           {dataLoaded &&
             featuredPosts.map((post, index) => (
@@ -120,7 +120,7 @@ const FeaturedPosts = () => {
       <div className="flex justify-center lg:justify-start items-center w-full lg:mt-6">
         <button
           type="button"
-          className="p-4 text-white font-semibold bg-black  dark:text-black dark:bg-white hover:translate-y-4 transition-all duration-500"
+          className="p-4 rounded-xl text-white lg:text-xl font-semibold bg-black  dark:text-black dark:bg-white"
         >
           <Link href={'#postcard'}>ບົດຄວາມທັງໝົດ</Link>
         </button>
