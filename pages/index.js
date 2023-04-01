@@ -5,25 +5,24 @@ import { FeaturedPost } from '../sections';
 
 export default function Home({ posts }) {
   return (
-    <div className="container mx-auto px-8 mb-8">
+    <div className="  container mx-auto px-8 lg:px-10 mb-8">
       <Head>
         <title>Code Talker | ບົດຄວາມເພື່ອໂປຣແກຣມເມີ້</title>
         <meta name="keywords" content="Code Talker Blog, Blog, ບົດຄວາມ" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex w-full h-screen  justify-center items-center ">
+      <div className="flex w-full h-[85vh] justify-center items-center py-8 mb-4 ">
         <FeaturedPost />
       </div>
 
       <div
         id="postcard"
-        className="w-full h-full flex flex-col items-center justify-center pt-28 "
+        className="w-full h-full flex flex-col items-center justify-center  "
       >
-        <div className="mb-8 dark:border-white p-4">
-          <h1 className=" font-bold text-4xl ">ບົດຄວາມລ່າສຸດ</h1>
-        </div>
-
+        <h1 className="text-4xl font-bold py-12 text-gradient">
+          ບົດຄວາມທັງໝົດ
+        </h1>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 justify-items-center ">
           <div className="lg:col-span-8 col-span-1">
             {posts.map((post) => (
@@ -32,8 +31,16 @@ export default function Home({ posts }) {
           </div>
           <div className="hidden lg:block lg:col-span-4">
             <div className="lg:sticky relative top-8">
-              <PostWidget styles={'themeComponent'} />
-              <Categories styles={'card dark:cardDark'} />
+              <PostWidget
+                styles={
+                  'themeComponent hover:scale-105 transition-all ease-in-out duration-500'
+                }
+              />
+              <Categories
+                styles={
+                  'card dark:cardDark hover:scale-105 transition-all ease-in-out duration-500'
+                }
+              />
             </div>
           </div>
         </div>

@@ -17,12 +17,15 @@ const PostWidget = ({ categories, slug, styles }) => {
   }, [slug]);
 
   return (
-    <div className={`${styles} rounded-xl shadow-lg   p-8 mb-8`}>
+    <div className={`${styles} rounded-xl shadow-lg   p-8 mb-12`}>
       <h3 className="text-xl mb-8 font-semibold border-b-2 border-neutral-900 dark:border-white  pb-4">
         {slug ? '📚 ບົດຄວາມທີ່ກ່ຽວຂ້ອງ' : '✨ ບົດຄວາມລ່າສຸດ'}
       </h3>
       {relatedPosts.map((post) => (
-        <div key={post.title} className="flex items-center w-full mb-4">
+        <div
+          key={post.title}
+          className="flex items-center w-full mb-4 hover:bg-gradient p-2 rounded-xl"
+        >
           <div className="w-16  flex-none">
             <img
               src={post.featuredImage.url}

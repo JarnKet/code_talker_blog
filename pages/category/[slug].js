@@ -1,10 +1,8 @@
-import React from 'react';
 import { useRouter } from 'next/router';
-
 import { getCategories, getCategoryPost } from '../../services';
 import { PostCard, Categories, Loader } from '../../components';
 
-const CategoryPost = ({ posts }) => {
+const CategoryPost = ({ posts, categories }) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -12,7 +10,14 @@ const CategoryPost = ({ posts }) => {
   }
 
   return (
-    <div className="container mx-auto px-10 mb-8">
+    <div className="container mx-auto px-8 lg:px-10 mb-8 mt-12">
+      {categories
+        .filter((category) => category.slug === router.asPath.slice(10))
+        .map((category) => (
+          <h1 className="text-center font-bold text-3xl sm:text-5xl  mb-12">
+            {category.name}
+          </h1>
+        ))}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="col-span-1 lg:col-span-8">
           {posts.map((post, index) => (
@@ -21,7 +26,7 @@ const CategoryPost = ({ posts }) => {
         </div>
         <div className="col-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-8">
-            <Categories />
+            <Categories styles={'themeComponent'} />
           </div>
         </div>
       </div>
@@ -33,9 +38,10 @@ export default CategoryPost;
 // Fetch data at build time
 export async function getStaticProps({ params }) {
   const posts = await getCategoryPost(params.slug);
+  const categories = await getCategories();
 
   return {
-    props: { posts },
+    props: { posts, categories },
   };
 }
 

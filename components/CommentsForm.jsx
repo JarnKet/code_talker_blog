@@ -49,7 +49,7 @@ const CommentsForm = ({ slug }) => {
   };
 
   return (
-    <div className="card rounded-xl dark:cardDark shadow-lg  p-8 pb-12 mb-8">
+    <div className="hover:scale-105 transition-all ease-in-out duration-500 card rounded-xl dark:cardDark shadow-lg  p-8 pb-12 mb-8">
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">
         ✍️ ສະແດງຄວາມຄິດເຫັນ
       </h3>

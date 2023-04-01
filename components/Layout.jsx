@@ -1,11 +1,13 @@
 import React from 'react';
-import { Header } from './';
+import { Header, SurveyForm, Footer } from './';
 
 const Layout = ({ children }) => {
   return (
     <>
+      <SurveyForm />
       <Header />
       {children}
+      <Footer />
     </>
   );
 };

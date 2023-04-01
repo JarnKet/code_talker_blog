@@ -9,7 +9,7 @@ const FeaturedPostCard = ({ post }) => (
       className="absolute rounded-xl  bg-center bg-no-repeat bg-cover shadow-md  w-full h-80 grayscale"
       style={{ backgroundImage: `url('${post.featuredImage.url}')` }}
     />
-    <div className="absolute rounded-xl bg-center bg-gradient-to-b opacity-80  from-gray-900 to-black w-full h-80" />
+    <div className="absolute rounded-xl bg-center bg-gradient-to-b opacity-80 dark:opacity-70  from-gray-900 to-black w-full h-80" />
     <div className="flex flex-col  p-24 items-center justify-center absolute w-full h-full">
       <p className=" mb-4 text-shadow font-semibold text-xs">
         {moment(post.createdAt).format('MMM DD, YYYY')}

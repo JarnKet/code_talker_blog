@@ -5,6 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-[whitesmoke] dark:bg-neutral-900;
+  }
+}
+
 @layer components {
   .themeComponent {
     @apply bg-black text-white dark:bg-white dark:text-black;
@@ -13,7 +19,7 @@
 
 @layer utilities {
   .card {
-    background: transparentize(whitesmoke, 0.5);
+    background: transparentize(#fff, 0.5);
     backdrop-filter: blur(20px);
     border: 1px solid transparentize(whitesmoke, 0.8);
   }
@@ -28,7 +34,41 @@
   }
 
   .postCard.cardDark:hover {
-    border: 1px solid transparentize(whitesmoke, 0.8);
+    border: 1px solid transparentize(#f5f5f5, 0.8);
+  }
+  .text-gradient {
+    background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  .bg-gradient {
+    background: linear-gradient(120deg, #fc466b 0%, #3f5efb 100%);
+  }
+  button.bg-gradient {
+    position: relative;
+  }
+
+  button.bg-gradient:hover::before {
+    content: '';
+    position: absolute;
+    inset: -2px; /* control the spread */
+    transform: translate(5px, 4px); /* control the offsets */
+    z-index: -1; /* place the element behind */
+    background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
+    filter: blur(10px); /* control the blur */
+  }
+
+  #FeaturedPost::before {
+    content: '';
+    position: absolute;
+    inset: -1px; /* control the spread */
+    transform: translate(18px, 18px); /* control the offsets */
+    z-index: -1; /* place the element behind */
+    background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
+    filter: blur(10px); /* control the blur */
   }
 }
 
@@ -73,19 +113,4 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-.text-gradient {
-  background: radial-gradient(
-    64.18% 64.18% at 71.16% 35.69%,
-    #def9fa 1.89%,
-    #bef3f5 17.23%,
-    #9dedf0 42.04%,
-    #7de7eb 55.12%,
-    #5ce1e6 71.54%,
-    #33bbcf 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
 }

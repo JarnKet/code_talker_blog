@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Author = ({ author }) => {
   return (
-    <div className="text-center themeComponent flex flex-col w-full items-center justify-center mt-14 mb-8 p-8 relative rounded-lg shadow-lg ">
+    <div className="hover:scale-105 transition-all ease-in-out duration-500 text-center themeComponent flex flex-col w-full items-center justify-center mt-14 mb-8 p-8 relative rounded-lg shadow-lg ">
       <div className="absolute -top-14">
         <Image
           unoptimized

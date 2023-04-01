@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Typewriter from 'typewriter-effect';
@@ -75,20 +75,14 @@ const FeaturedPosts = () => {
   );
 
   return (
-    <div className=" w-full h-full flex flex-col items-center justify-center  pb-16">
-      <div className="flex gap-4 lg:flex-row flex-col w-full lg:justify-between text-center lg:text-left">
+    <div className="w-full h-full flex flex-col items-center justify-center ">
+      <div className="flex items-center gap-4 lg:flex-row flex-col w-full lg:justify-between text-center lg:text-left">
         <div className="flex rounded-xl p-2  flex-col w-[100%] lg:w-[50%] ">
-          <h1 className="font-bold text-4xl sm:text-6xl lg:text-8xl lg:mb-[30px]">
-            <Typewriter
-              options={{
-                strings: ['ບົດຄວາມ', 'Blog', 'Article'],
-                autoStart: true,
-                loop: true,
-              }}
-            />
+          <h1 className="font-bold text-3xl lg:text-4xl lg:mb-8 ">
+            ຖ້າຢາກພັດທະນາຕົນເອງ, ເວັບໄຊທ໌ນີ້ເໝາະສຳລັບທ່ານ
           </h1>
 
-          <h1 className=" text-4xl sm:text-6xl lg:text-8xl font-bold lg:mb-[30px]">
+          <h1 className="  text-gradient text-5xl sm:text-6xl lg:text-7xl font-bold lg:mb-[30px] mt-3 mb-3">
             <Typewriter
               options={{
                 strings: ['ວິຊາການ', 'ທັດສະນະຄະຕິ', 'ນິດໄສ'],
@@ -98,29 +92,35 @@ const FeaturedPosts = () => {
             />
           </h1>
 
-          <h3 className="mb-12 lg:mb-0 sm:text-4xl lg:text-2xl mt-2 ">
-            ຈາກ Programmer ສູ່ Programmer ແລະ ຄົນທີ່ຕ້ອງການພັດທະນາຕົນເອງ
+          <h3 className="mb-12 lg:mb-0 text-neutral-500 sm:text-2xl  mt-2 ">
+            ບົດຄວາມດີໆຈາກ Programmer ເພື່ອ Programmer ແລະ
+            ຄົນທີ່ຕ້ອງການພັດທະນາຕົນເອງ
           </h3>
         </div>
 
-        <Carousel
-          infinite
-          customLeftArrow={customLeftArrow}
-          customRightArrow={customRightArrow}
-          responsive={responsive}
-          className="text-white w-[100%] lg:w-[50%] rounded-xl overflow-hidden mb-16 lg:mb-0 "
+        <div
+          className="relative   text-white w-[100%] lg:w-[50%]  rounded-xl hover:scale-105 transition-all ease-in-out duration-500 mb-16 lg:mb-0 "
+          id="FeaturedPost"
         >
-          {dataLoaded &&
-            featuredPosts.map((post, index) => (
-              <FeaturedPostCard key={index} post={post} />
-            ))}
-        </Carousel>
+          <Carousel
+            infinite
+            customLeftArrow={customLeftArrow}
+            customRightArrow={customRightArrow}
+            responsive={responsive}
+            className=""
+          >
+            {dataLoaded &&
+              featuredPosts.map((post, index) => (
+                <FeaturedPostCard key={index} post={post} />
+              ))}
+          </Carousel>
+        </div>
       </div>
 
       <div className="flex justify-center lg:justify-start items-center w-full lg:mt-6">
         <button
           type="button"
-          className="p-4 rounded-xl text-white lg:text-xl font-semibold bg-black  dark:text-black dark:bg-white"
+          className="p-4 rounded-xl  lg:text-xl font-semibold bg-gradient text-white hover:scale-110 transition-all duration-500"
         >
           <Link href={'#postcard'}>ບົດຄວາມທັງໝົດ</Link>
         </button>

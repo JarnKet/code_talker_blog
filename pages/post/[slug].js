@@ -25,10 +25,10 @@ const PostDetails = ({ post }) => {
         <title>{post.title}</title>
         <meta name="keywords" content={`${post.title}`} />
       </Head>
-      <div className="container mx-auto px-8 mb-8 mt-10">
+      <div className="container mx-auto px-8 lg:px-10 mb-8 mt-10">
         <Link
           href={`/`}
-          className="flex mb-4 font-bold p-2 rounded-xl themeComponent  w-24 "
+          className="flex mb-4 font-bold p-2 rounded-xl bg-gradient hover:scale-110 transition-all ease-in-out duration-500 text-white  w-24 "
         >
           <ArrowLeftIcon className="w-6 h-6 mr-2" />
           <p>ກັບຄືນ</p>
@@ -45,9 +45,13 @@ const PostDetails = ({ post }) => {
               <PostWidget
                 slug={post.slug}
                 categories={post.categories.map((category) => category.slug)}
-                styles={`card dark:cardDark`}
+                styles={`card dark:cardDark hover:scale-105 transition-all ease-in-out duration-500`}
               />
-              <Categories styles={'card dark:cardDark'} />
+              <Categories
+                styles={
+                  'card dark:cardDark hover:scale-105 transition-all ease-in-out duration-500'
+                }
+              />
             </div>
           </div>
         </div>
