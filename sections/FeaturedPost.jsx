@@ -75,7 +75,7 @@ const FeaturedPosts = () => {
   );
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center ">
+    <div className="w-full h-full flex flex-col items-center justify-center mt-4 lg:mt-0">
       <div className="flex items-center gap-4 lg:flex-row flex-col w-full lg:justify-between text-center lg:text-left">
         <div className="flex rounded-xl p-2  flex-col w-[100%] lg:w-[50%] ">
           <h1 className="font-bold text-3xl lg:text-4xl lg:mb-8 ">
