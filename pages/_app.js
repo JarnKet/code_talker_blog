@@ -1,30 +1,42 @@
-import { useEffect } from 'react';
 import { Layout } from '../components';
 import { ThemeProvider } from 'next-themes';
+import Script from 'next/script';
 import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    const threeScript = document.createElement('script');
-    threeScript.setAttribute('id', 'threeScript');
-    threeScript.setAttribute(
-      'src',
-      'https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js'
-    );
-    document.getElementsByTagName('head')[0].appendChild(threeScript);
-    return () => {
-      if (threeScript) {
-        threeScript.remove();
-      }
-    };
-  }, []);
+  {
+    /*
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8Z4RPW0HGB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8Z4RPW0HGB');
+</script>
+*/
+  }
 
   return (
-    <ThemeProvider enableSystem={true} attribute="class">
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
+    <>
+      <ThemeProvider enableSystem={true} attribute="class">
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+
+      <Script
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      />
+      <Script strategy="lazyOnload">
+        {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});`}
+      </Script>
+    </>
   );
 }
 
