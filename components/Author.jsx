@@ -3,14 +3,14 @@ import Image from 'next/image';
 
 const Author = ({ author }) => {
   return (
-    <div className="hover:scale-105 transition-all ease-in-out duration-500 text-center themeComponent flex flex-col w-full items-center justify-center mt-14 mb-8 p-8 relative rounded-lg shadow-lg ">
+    <div className="  text-center themeComponent flex flex-col w-full items-center justify-center  mb-12 p-8 relative">
       <div className="absolute -top-14">
         <Image
           unoptimized
           alt={author.name}
           height={100}
           width={100}
-          className="align-middle rounded-full shadow-lg"
+          className="align-middle rounded-full"
           src={author.photo.url}
         />
       </div>

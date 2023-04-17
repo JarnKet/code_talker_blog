@@ -60,8 +60,8 @@ const PostDetail = ({ post }) => {
   };
 
   return (
-    <div className="card dark:cardDark rounded-xl  shadow-lg  lg:p-8 pb-12 mb-8">
-      <div className="relative rounded-xl overflow-hidden shadow-md mb-6">
+    <div className="lg:pt-8 lg:pr-8 pb-12 mb-8">
+      <div className="relative   overflow-hidden shadow-md mb-6">
         <img
           className="object-top  h-full w-full "
           src={post.featuredImage.url}
@@ -69,8 +69,8 @@ const PostDetail = ({ post }) => {
         />
       </div>
       <div className="px-4 lg:px-0">
-        <div className="flex flex-col lg:flex-row justify-center sm:justify-between items-center mb-8 w-full">
-          <div className="flex justify-center lg:justify-start items-center   w-full lg:w-auto ">
+        <div className="flex flex-col lg:flex-row justify-center sm:justify-between items-center pb-2 mb-8 w-full border-b dark:border-b-neutral-700">
+          <div className="flex justify-center lg:justify-start items-center mb-4  w-full lg:w-auto ">
             <img
               alt={post.author.name}
               height="30px"

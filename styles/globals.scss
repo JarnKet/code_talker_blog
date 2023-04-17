@@ -15,6 +15,9 @@
   .themeComponent {
     @apply bg-black text-white dark:bg-white dark:text-black;
   }
+  .themeComponentRevert {
+    @apply bg-white text-black dark:bg-black dark:text-white;
+  }
 }
 
 @layer utilities {
@@ -60,21 +63,10 @@
     background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
     filter: blur(10px); /* control the blur */
   }
-
-  #FeaturedPost::before {
-    content: '';
-    position: absolute;
-    inset: -1px; /* control the spread */
-    transform: translate(18px, 18px); /* control the offsets */
-    z-index: -1; /* place the element behind */
-    background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
-    filter: blur(10px); /* control the blur */
-  }
 }
 
 * {
   scroll-behavior: smooth;
-  transition: all ease-in-out 100ms;
 }
 
 html,

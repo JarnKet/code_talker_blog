@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { submitComment } from '../services';
+import { PencilSquareIcon } from '@heroicons/react/24/outline';
 
 const CommentsForm = ({ slug }) => {
   const [error, setError] = useState(false);
@@ -49,14 +50,16 @@ const CommentsForm = ({ slug }) => {
   };
 
   return (
-    <div className="hover:scale-105 transition-all ease-in-out duration-500 card rounded-xl dark:cardDark shadow-lg  p-8 pb-12 mb-8">
-      <h3 className="text-xl mb-8 font-semibold border-b pb-4">
-        ✍️ ສະແດງຄວາມຄິດເຫັນ
-      </h3>
+    <div className="lg:pt-8 lg:pr-8 pb-12 mb-8">
+      <div className="flex justify-center border-b pb-4 mb-8">
+        <PencilSquareIcon className="w-6 h-6 mr-2" />
+        <h3 className="text-xl  font-semibold ">ສະແດງຄວາມຄິດເຫັນ</h3>
+      </div>
+
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea
           ref={commentEl}
-          className="p-4 outline-none w-full rounded-xl  focus:ring-2 focus:ring-black "
+          className="p-4 outline-none w-full    focus:ring-2 focus:ring-black "
           placeholder="ຄວາມຄິດເຫັນ"
           name="comment"
         />
@@ -67,14 +70,14 @@ const CommentsForm = ({ slug }) => {
           placeholder="ຊື່ ແລະ ນາມສະກຸນ"
           name="name"
           ref={nameEl}
-          className="p-4 outline-none w-full rounded-xl focus:ring-2 focus:ring-black  "
+          className="p-4 outline-none w-full   focus:ring-2 focus:ring-black  "
         />
         <input
           type="email"
           placeholder="ອີເມວ"
           name="email"
           ref={emailEl}
-          className="p-4 outline-none w-full rounded-xl focus:ring-2 focus:ring-black  "
+          className="p-4 outline-none w-full   focus:ring-2 focus:ring-black  "
         />
       </div>
       <div className="grid grid-cols-1 gap-4 mb-4">
@@ -97,7 +100,7 @@ const CommentsForm = ({ slug }) => {
         <button
           type="button"
           onClick={handleCommentSubmission}
-          className="rounded-xl dark:bg-white dark:text-black p-4 text-white bg-black"
+          className="  dark:bg-white dark:text-black p-4 text-white bg-black"
         >
           ສົ່ງຄວາມຄິດເຫັນ
         </button>

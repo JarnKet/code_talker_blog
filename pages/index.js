@@ -1,50 +1,51 @@
 import Head from 'next/head';
-import { PostCard, PostWidget, Categories } from '../components';
+import { PostCard, Categories } from '../components';
 import { getPosts } from '../services';
-import { FeaturedPost } from '../sections';
+import { FeaturedPost, Hero } from '../sections';
+import { ChartBarIcon } from '@heroicons/react/24/outline';
 
 export default function Home({ posts }) {
   return (
-    <div className="  container mx-auto px-8 lg:px-10 mb-8">
+    <div>
       <Head>
         <title>Code Talker | ບົດຄວາມເພື່ອໂປຣແກຣມເມີ້</title>
         <meta name="keywords" content="Code Talker Blog, Blog, ບົດຄວາມ" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex w-full h-[85vh] justify-center items-center py-8 mb-4 ">
-        <FeaturedPost />
-      </div>
+      <section className="   border-b">
+        <div className="container mx-auto px-8 lg:px-10 flex w-full h-screen justify-center items-center">
+          <Hero />
+        </div>
+      </section>
 
-      <div
+      <section className="lg:h-screen h-full w-full py-6 lg:py-12 container mx-auto px-8 lg:px-10">
+        <div className="card dark:cardDark flex flex-col w-full h-full  justify-center items-center shadow-lg">
+          <div className="flex justify-start items-center w-full lg:pl-8 pl-4 py-4 border-b dark:border-b-neutral-700">
+            <ChartBarIcon className="w-8 h-8 mr-2" />
+            <h1 className="font-bold text-xl">ບົດຄວາມທີ່ແນະນຳ</h1>
+          </div>
+          <FeaturedPost />
+        </div>
+      </section>
+
+      <section
         id="postcard"
-        className="w-full h-full flex flex-col items-center justify-center  "
+        className="w-full h-full flex flex-col items-center justify-center  border-t dark:border-t-neutral-700 "
       >
-        <h1 className="text-4xl font-bold py-12 text-gradient">
-          ບົດຄວາມທັງໝົດ
-        </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 justify-items-center ">
-          <div className="lg:col-span-8 col-span-1">
+        <div className="h-full grid grid-cols-1 lg:grid-cols-12 justify-items-center container mx-auto px-8 lg:px-10">
+          <div className="lg:col-span-8 col-span-1 lg:border-r dark:border-r-neutral-700 py-8">
             {posts.map((post) => (
               <PostCard post={post.node} key={post.title} />
             ))}
           </div>
-          <div className="hidden lg:block lg:col-span-4">
+          <div className="hidden lg:block lg:col-span-4 px-10 lg:px-12 ">
             <div className="lg:sticky relative top-8">
-              <PostWidget
-                styles={
-                  'themeComponent hover:scale-105 transition-all ease-in-out duration-500'
-                }
-              />
-              <Categories
-                styles={
-                  'card dark:cardDark hover:scale-105 transition-all ease-in-out duration-500'
-                }
-              />
+              <Categories styles={''} />
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
