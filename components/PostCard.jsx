@@ -4,24 +4,24 @@ import Link from 'next/link';
 
 const PostCard = ({ post }) => {
   return (
-    <div className="mb-12 flex justify-between items-center ">
+    <div className="flex items-center justify-between mb-12 ">
       <div className="w-[70%]">
         <div className="flex items-center mb-2 ">
           <img
             alt={post.author.name}
             height="30px"
             width="30px"
-            className="align-middle rounded-full mr-2"
+            className="mr-2 align-middle rounded-full"
             src={post.author.photo.url}
           />
-          <h3 className="text-neutral-600 dark:text-neutral-400 text-sm">
+          <h1 className="text-sm text-neutral-600 dark:text-neutral-400">
             {post.author.name}
-          </h3>
+          </h1>
         </div>
         <Link href={`/post/${post.slug}`}>
-          <h1 className="cursor-pointer font-bold lg:text-xl">{post.title}</h1>
+          <h1 className="font-bold cursor-pointer lg:text-xl">{post.title}</h1>
         </Link>
-        <p className=" text-neutral-600 dark:text-neutral-400 hidden lg:block">
+        <p className="hidden  text-neutral-600 dark:text-neutral-400 lg:block">
           {post.excerpt}
         </p>
         <small className="text-neutral-700 dark:text-neutral-500 ">
