@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Author = ({ author }) => {
   return (
-    <div className="  text-center themeComponent flex flex-col w-full items-center justify-center  mb-12 p-8 relative">
+    <div className="relative flex flex-col items-center justify-center w-full p-8 mb-12 text-center  themeComponent">
       <div className="absolute -top-14">
         <Image
           unoptimized
@@ -14,8 +14,8 @@ const Author = ({ author }) => {
           src={author.photo.url}
         />
       </div>
-      <h3 className=" my-4 text-lg font-bold">{author.name}</h3>
-      <p className=" text-base text-neutral-500">{author.bio}</p>
+      <h3 className="my-4 text-lg font-bold ">{author.name}</h3>
+      <p className="">{author.bio}</p>
     </div>
   );
 };

@@ -14,43 +14,46 @@ const Header = () => {
 
     if (currentTheme === 'dark') {
       return (
-        <SunIcon
-          className="w-6 h-6 "
+        <button
+          className="flex items-center justify-end p-2 text-white transition-all duration-500 bg-black rounded-full cursor-pointer dark:bg-white dark:text-black hover:scale-110"
+          type="button"
           onClick={() => {
             setTheme('light');
           }}
-        />
+          aria-label="theme-toggle"
+        >
+          <SunIcon className="w-6 h-6 " />
+        </button>
       );
     } else {
       return (
-        <MoonIcon
-          className="w-6 h-6 "
+        <button
+          className="flex items-center justify-end p-2 text-white transition-all duration-500 bg-black rounded-full cursor-pointer dark:bg-white dark:text-black hover:scale-110"
+          type="button"
           onClick={() => {
             setTheme('dark');
           }}
-        />
+          aria-label="theme-toggle"
+        >
+          <MoonIcon className="w-6 h-6 " />
+        </button>
       );
     }
   };
 
   return (
     <nav className="border-b dark:border-b-neutral-700 card dark:cardDark">
-      <div className="container mx-auto py-2 lg:py-4 px-8 lg:px-10 flex justify-between items-center w-full">
+      <div className="container flex items-center justify-between w-full px-8 py-2 mx-auto lg:py-4 lg:px-10">
         <div>
           <Link href="/">
-            <span className="font-sourceCode flex justify-center items-center   cursor-pointer font-bold text-2xl sm:text-4xl transition-all ease-linear duration-200">
+            <span className="flex items-center justify-center text-2xl font-bold transition-all duration-200 ease-linear cursor-pointer font-sourceCode sm:text-4xl">
               <CodeBracketIcon className="w-12 h-12 mr-2" />
               <h1 className="hidden lg:block">CODE TALKER</h1>
             </span>
           </Link>
         </div>
 
-        <button
-          className=" p-2 cursor-pointer flex rounded-full justify-end items-center bg-black dark:bg-white text-white dark:text-black transition-all duration-500 hover:scale-110"
-          type="button"
-        >
-          {renderThemeChanger()}
-        </button>
+        {renderThemeChanger()}
       </div>
     </nav>
   );

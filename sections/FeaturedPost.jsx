@@ -19,14 +19,14 @@ const FeaturedPosts = () => {
         {dataLoaded &&
           featuredPosts.map((post, index) => (
             <div className="flex item-center w-full lg:w-[300px]">
-              <h1 className="font-bold text-neutral-400 text-4xl mr-2">
+              <h1 className="font-bold text-neutral-600 text-4xl mr-2">
                 {index + 1}
               </h1>
               <FeaturedPostCard key={index} post={post} />
             </div>
           ))}
         {/* <div className="flex justify-center ">
-          <h1 className="font-bold text-neutral-400 text-4xl mr-2">01</h1>
+          <h1 className="font-bold text-neutral-600 text-4xl mr-2">01</h1>
           <div>
             <div className="flex  items-center">
               <div className="w-5 h-5 bg-black rounded-full mr-2" />
@@ -36,7 +36,7 @@ const FeaturedPosts = () => {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni,
               iure?
             </h1>
-            <small className="text-neutral-400">10 Apr 2023</small>
+            <small className="text-neutral-600">10 Apr 2023</small>
           </div>
         </div>
         <div>2</div>

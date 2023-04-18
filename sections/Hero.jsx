@@ -1,15 +1,14 @@
 import Typewriter from 'typewriter-effect';
 import Link from 'next/link';
-
 import { programmingImg } from '../public';
 import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center">
-      <div className="flex items-center gap-4 lg:flex-row flex-col w-full lg:justify-between text-center lg:text-left">
+    <div className="flex flex-col items-center justify-center w-full h-full">
+      <div className="flex flex-col items-center w-full gap-4 text-center lg:flex-row lg:justify-between lg:text-left">
         <div className="flex   p-2  flex-col w-[100%] lg:w-[50%] ">
-          <h1 className="font-bold text-3xl lg:text-4xl lg:mb-8 ">
+          <h1 className="text-3xl font-bold lg:text-4xl lg:mb-8 ">
             ຖ້າຢາກພັດທະນາຕົນເອງ, ເວັບໄຊທ໌ນີ້ເໝາະສຳລັບທ່ານ
           </h1>
 
@@ -23,10 +22,10 @@ const Hero = () => {
             />
           </h1>
 
-          <h3 className="mb-12 lg:mb-0 text-neutral-500 sm:text-2xl  mt-2 ">
+          <h2 className="mt-2 mb-12 lg:mb-0 text-neutral-700 sm:text-2xl ">
             ບົດຄວາມດີໆຈາກ Programmer ເພື່ອ Programmer ແລະ
             ຄົນທີ່ຕ້ອງການພັດທະນາຕົນເອງ
-          </h3>
+          </h2>
         </div>
 
         <div
@@ -43,10 +42,10 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="flex justify-center lg:justify-start items-center w-full lg:mt-6">
+      <div className="flex items-center justify-center w-full lg:justify-start lg:mt-6">
         <button
           type="button"
-          className="p-4 rounded-full themeComponent lg:text-xl font-semibold   text-white hover:scale-110 transition-all duration-500"
+          className="p-4 font-semibold text-white transition-all duration-500 rounded-full themeComponent lg:text-xl hover:scale-110"
         >
           <Link href={'#postcard'}>ເລີ່ມຕົ້ນການອ່ານ</Link>
         </button>

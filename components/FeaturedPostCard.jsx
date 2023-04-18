@@ -46,12 +46,12 @@ const FeaturedPostCard = ({ post }) => (
         className="align-middle drop- rounded-full mr-2"
         src={post.author.photo.url}
       />
-      <h3 className="text-neutral-400">{post.author.name}</h3>
+      <h3 className="text-neutral-600">{post.author.name}</h3>
     </div>
     <Link href={`/post/${post.slug}`}>
       <h1 className="cursor-pointer font-bold lg:text-xl">{post.title}</h1>
     </Link>
-    <small className="text-neutral-400">
+    <small className="text-neutral-600">
       {moment(post.createdAt).format('MMM DD, YYYY')}
     </small>
   </div>

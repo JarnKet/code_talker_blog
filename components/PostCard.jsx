@@ -14,13 +14,13 @@ const PostCard = ({ post }) => {
             className="align-middle rounded-full mr-2"
             src={post.author.photo.url}
           />
-          <h3 className="text-neutral-400 text-sm">{post.author.name}</h3>
+          <h3 className="text-neutral-600 text-sm">{post.author.name}</h3>
         </div>
         <Link href={`/post/${post.slug}`}>
           <h1 className="cursor-pointer font-bold lg:text-xl">{post.title}</h1>
         </Link>
-        <p className=" text-neutral-400 hidden lg:block">{post.excerpt}</p>
-        <small className="text-neutral-500 ">
+        <p className=" text-neutral-600 hidden lg:block">{post.excerpt}</p>
+        <small className="text-neutral-700 ">
           {moment(post.createdAt).format('DD MMM, YYYY')}
         </small>
       </div>
