@@ -13,7 +13,7 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="   border-b">
+      <section className="border-b dark:border-b-neutral-700">
         <div className="container mx-auto px-8 lg:px-10 flex w-full h-screen justify-center items-center">
           <Hero />
         </div>
