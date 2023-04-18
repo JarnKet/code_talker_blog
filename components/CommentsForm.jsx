@@ -50,34 +50,34 @@ const CommentsForm = ({ slug }) => {
   };
 
   return (
-    <div className="lg:pt-8 lg:pr-8 pb-12 mb-8">
-      <div className="flex justify-center border-b pb-4 mb-8">
+    <div className="pb-12 mb-8 lg:pt-8 lg:pr-8">
+      <div className="flex justify-center pb-4 mb-8 border-b">
         <PencilSquareIcon className="w-6 h-6 mr-2" />
-        <h3 className="text-xl  font-semibold ">ສະແດງຄວາມຄິດເຫັນ</h3>
+        <h1 className="text-xl font-semibold ">ສະແດງຄວາມຄິດເຫັນ</h1>
       </div>
 
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea
           ref={commentEl}
-          className="p-4 outline-none w-full    focus:ring-2 focus:ring-black "
+          className="w-full p-4 outline-none focus:ring-2 focus:ring-black "
           placeholder="ຄວາມຄິດເຫັນ"
           name="comment"
         />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+      <div className="grid grid-cols-1 gap-4 mb-4 lg:grid-cols-2">
         <input
           type="text"
           placeholder="ຊື່ ແລະ ນາມສະກຸນ"
           name="name"
           ref={nameEl}
-          className="p-4 outline-none w-full   focus:ring-2 focus:ring-black  "
+          className="w-full p-4 outline-none focus:ring-2 focus:ring-black "
         />
         <input
           type="email"
           placeholder="ອີເມວ"
           name="email"
           ref={emailEl}
-          className="p-4 outline-none w-full   focus:ring-2 focus:ring-black  "
+          className="w-full p-4 outline-none focus:ring-2 focus:ring-black "
         />
       </div>
       <div className="grid grid-cols-1 gap-4 mb-4">
@@ -88,7 +88,7 @@ const CommentsForm = ({ slug }) => {
             id="storeData"
             value={true}
           />
-          <label className=" cursor-pointer ml-2 font-bold" htmlFor="storeData">
+          <label className="ml-2 font-bold cursor-pointer " htmlFor="storeData">
             ຈົດຈຳຂໍ້ມູນຂອງຂ້ອຍ
           </label>
         </div>
@@ -100,12 +100,12 @@ const CommentsForm = ({ slug }) => {
         <button
           type="button"
           onClick={handleCommentSubmission}
-          className="  dark:bg-white dark:text-black p-4 text-white bg-black"
+          className="p-4 text-white bg-black  dark:bg-white dark:text-black"
         >
           ສົ່ງຄວາມຄິດເຫັນ
         </button>
         {showSuccessMessage && (
-          <span className="text-xl float-right font-semibold mt-3 text-cyan-300">
+          <span className="float-right mt-3 text-xl font-semibold text-cyan-300">
             ສະແດງຄວາມຄິດເຫັນເປັນທີ່ຮຽບຮ້ອຍ
           </span>
         )}

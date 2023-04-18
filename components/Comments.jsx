@@ -16,17 +16,17 @@ const Comments = ({ slug }) => {
   return (
     <>
       {comments.length > 0 && (
-        <div className="lg:pt-8 lg:pr-8 p-8 pb-12 mb-8">
-          <h3 className="text-xl mb-8 font-semibold border-b pb-4">
+        <div className="p-8 pb-12 mb-8 lg:pt-8 lg:pr-8">
+          <h1 className="pb-4 mb-8 text-xl font-semibold border-b">
             {comments.length} ຄວາມຄິດເຫັນ
-          </h3>
+          </h1>
           {comments.map((comment, index) => (
-            <div key={index} className="border-b mb-4 pb-4">
+            <div key={index} className="pb-4 mb-4 border-b">
               <p className="mb-4">
                 <span className="font-semibold">{comment.name}</span> ຄັ້ງວັນທີ{' '}
                 {moment(comment.createdAt).format('DD MMM, YYYY')}
               </p>
-              <p className="whitespace-pre-line  w-full">
+              <p className="w-full whitespace-pre-line">
                 {parse(comment.comment)}
               </p>
             </div>

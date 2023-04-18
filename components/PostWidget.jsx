@@ -24,9 +24,9 @@ const PostWidget = ({ categories, slug, styles }) => {
         ) : (
           <SparklesIcon className="w-6 h-6 mr-2" />
         )}
-        <h3 className="text-xl mb-4 font-semibold ">
+        <h1 className="mb-4 text-xl font-semibold ">
           {slug ? 'ບົດຄວາມທີ່ກ່ຽວຂ້ອງ' : 'ບົດຄວາມລ່າສຸດ'}
-        </h3>
+        </h1>
       </div>
 
       {relatedPosts.map((post) => (
@@ -36,9 +36,9 @@ const PostWidget = ({ categories, slug, styles }) => {
         >
           <div
             key={post.title}
-            className="flex items-center w-full mb-4 hover:  p-2  "
+            className="flex items-center w-full p-2 mb-4 hover: "
           >
-            <div className="w-16  flex-none">
+            <div className="flex-none w-16">
               <img
                 src={post.featuredImage.url}
                 alt="{post.title}"

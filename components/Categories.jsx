@@ -16,7 +16,7 @@ const Categories = ({ styles }) => {
     <div className={`${styles} p-8 mb-12 h-full`}>
       <div className="flex justify-start">
         <ClipboardDocumentIcon className="w-6 h-6 mr-2" />
-        <h3 className="text-xl  mb-6 font-semibold   ">ໝວດໝູ່</h3>
+        <h1 className="mb-6 text-xl font-semibold ">ໝວດໝູ່</h1>
       </div>
 
       <div className="flex flex-wrap w-full gap-y-8 ">

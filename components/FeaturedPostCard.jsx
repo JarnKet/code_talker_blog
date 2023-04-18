@@ -4,54 +4,54 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const FeaturedPostCard = ({ post }) => (
-  // <div className="relative h-full w-full">
+  // <div className="relative w-full h-full">
   //   <div
-  //     className="absolute    bg-center bg-no-repeat bg-cover shadow-md  w-full full "
+  //     className="absolute w-full bg-center bg-no-repeat bg-cover shadow-md full "
   //     style={{ backgroundImage: `url('${post.featuredImage.url}')` }}
   //   />
-  //   {/* <div className="absolute   bg-center  bg-gradient-to-b opacity-80 dark:opacity-70  from-gray-900 to-black w-full h-80" /> */}
-  //   <div className="flex flex-col  p-24 items-center justify-center absolute w-full h-full">
-  //     <p className=" mb-4 text-shadow font-semibold text-xs">
+  //   {/* <div className="absolute w-full bg-center bg-gradient-to-b opacity-80 dark:opacity-70 from-gray-900 to-black h-80" /> */}
+  //   <div className="absolute flex flex-col items-center justify-center w-full h-full p-24">
+  //     <p className="mb-4 text-xs font-semibold  text-shadow">
   //       {moment(post.createdAt).format('MMM DD, YYYY')}
   //     </p>
-  //     <p className=" mb-4 text-shadow font-semibold text-xl text-center">
+  //     <p className="mb-4 text-xl font-semibold text-center  text-shadow">
   //       {post.title}
   //     </p>
-  //     <div className="flex items-center absolute  bottom-5 w-full justify-center">
+  //     <div className="absolute flex items-center justify-center w-full bottom-5">
   //       <Image
   //         unoptimized
   //         alt={post.author.name}
   //         height={30}
   //         width={30}
-  //         className="align-middle drop- rounded-full"
+  //         className="align-middle rounded-full drop-"
   //         src={post.author.photo.url}
   //       />
-  //       <p className="inline align-middle  text-shadow ml-2 text-n">
+  //       <p className="inline ml-2 align-middle text-shadow text-n">
   //         {post.author.name}
   //       </p>
   //     </div>
   //   </div>
   //   <Link href={`/post/${post.slug}`}>
-  //     <span className="cursor-pointer absolute w-full h-full" />
+  //     <span className="absolute w-full h-full cursor-pointer" />
   //   </Link>
   // </div>
 
-  <div className=" py-1">
+  <div className="py-1 ">
     <div className="flex items-center mb-2 ">
       <Image
         unoptimized
         alt={post.author.name}
         height={30}
         width={30}
-        className="align-middle drop- rounded-full mr-2"
+        className="mr-2 align-middle rounded-full drop-"
         src={post.author.photo.url}
       />
-      <h3 className="text-neutral-600 dark:text-neutral-400">
+      <h1 className="text-neutral-600 dark:text-neutral-400">
         {post.author.name}
-      </h3>
+      </h1>
     </div>
     <Link href={`/post/${post.slug}`}>
-      <h1 className="cursor-pointer font-bold lg:text-xl">{post.title}</h1>
+      <h1 className="font-bold cursor-pointer lg:text-xl">{post.title}</h1>
     </Link>
     <small className="text-neutral-600 dark:text-neutral-400">
       {moment(post.createdAt).format('MMM DD, YYYY')}
