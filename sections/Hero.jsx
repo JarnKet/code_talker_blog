@@ -22,7 +22,7 @@ const Hero = () => {
             />
           </h1>
 
-          <h2 className="mt-2 mb-12 lg:mb-0 text-neutral-700 sm:text-2xl ">
+          <h2 className="mt-2 mb-12 lg:mb-0 text-neutral-700 dark:text-neutral-500 sm:text-2xl ">
             ບົດຄວາມດີໆຈາກ Programmer ເພື່ອ Programmer ແລະ
             ຄົນທີ່ຕ້ອງການພັດທະນາຕົນເອງ
           </h2>

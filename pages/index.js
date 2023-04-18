@@ -10,20 +10,24 @@ export default function Home({ posts }) {
       <Head>
         <title>Code Talker | ບົດຄວາມເພື່ອໂປຣແກຣມເມີ້</title>
         <meta name="keywords" content="Code Talker Blog, Blog, ບົດຄວາມ" />
+        <meta
+          name="description"
+          content="ບົດຄວາມ ແລະ ເລື່ອງສັ້ນ ທີ່ກ່ຽວກັບພຶດຕິກຳນິດໄສ, ທັດສະນະຄະຕິ ແລະ ວິຊາການ ເພື່ອພັດທະນາຕົນເອງໃຫ້ກາຍເປັນ Programmer ທີ່ລ້ຳຄ່າ"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <section className="border-b dark:border-b-neutral-700">
-        <div className="container mx-auto px-8 lg:px-10 flex w-full h-screen justify-center items-center">
+        <div className="container flex items-center justify-center w-full h-screen px-8 mx-auto lg:px-10">
           <Hero />
         </div>
       </section>
 
-      <section className="lg:h-screen h-full w-full py-6 lg:py-12 container mx-auto px-8 lg:px-10">
-        <div className="card dark:cardDark flex flex-col w-full h-full  justify-center items-center shadow-lg">
-          <div className="flex justify-start items-center w-full lg:pl-8 pl-4 py-4 border-b dark:border-b-neutral-700">
+      <section className="container w-full h-full px-8 py-6 mx-auto lg:h-screen lg:py-12 lg:px-10">
+        <div className="flex flex-col items-center justify-center w-full h-full shadow-lg card dark:cardDark">
+          <div className="flex items-center justify-start w-full py-4 pl-4 border-b lg:pl-8 dark:border-b-neutral-700">
             <ChartBarIcon className="w-8 h-8 mr-2" />
-            <h1 className="font-bold text-xl">ບົດຄວາມທີ່ແນະນຳ</h1>
+            <h1 className="text-xl font-bold">ບົດຄວາມທີ່ແນະນຳ</h1>
           </div>
           <FeaturedPost />
         </div>
@@ -31,16 +35,16 @@ export default function Home({ posts }) {
 
       <section
         id="postcard"
-        className="w-full h-full flex flex-col items-center justify-center  border-t dark:border-t-neutral-700 "
+        className="flex flex-col items-center justify-center w-full h-full border-t dark:border-t-neutral-700 "
       >
-        <div className="h-full grid grid-cols-1 lg:grid-cols-12 justify-items-center container mx-auto px-8 lg:px-10">
-          <div className="lg:col-span-8 col-span-1 lg:border-r dark:border-r-neutral-700 py-8">
+        <div className="container grid h-full grid-cols-1 px-8 mx-auto lg:grid-cols-12 justify-items-center lg:px-10">
+          <div className="col-span-1 py-8 lg:col-span-8 lg:border-r dark:border-r-neutral-700">
             {posts.map((post) => (
               <PostCard post={post.node} key={post.title} />
             ))}
           </div>
-          <div className="hidden lg:block lg:col-span-4 px-10 lg:px-12 ">
-            <div className="lg:sticky relative top-8">
+          <div className="hidden px-10 lg:block lg:col-span-4 lg:px-12 ">
+            <div className="relative lg:sticky top-8">
               <Categories styles={''} />
             </div>
           </div>

@@ -22,7 +22,7 @@ const CategoryPost = ({ posts, categories }) => {
                 <h1 className="font-bold text-3xl sm:text-5xl">
                   {category.name}
                 </h1>
-                <p className="text-neutral-600 w-[50%] mt-4 hidden lg:block">
+                <p className="text-neutral-600 dark:text-neutral-400 w-[50%] mt-4 hidden lg:block">
                   {category.quote}
                 </p>
               </div>
