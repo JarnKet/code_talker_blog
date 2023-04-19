@@ -16,6 +16,7 @@ export const getPosts = async () => {
               photo {
                 url
               }
+              slug
             }
             createdAt
             slug
@@ -70,6 +71,7 @@ export const getPostDetails = async (slug) => {
           photo {
             url
           }
+          slug
         }
         createdAt
         slug
@@ -114,41 +116,6 @@ export const getSimilarPosts = async (categories, slug) => {
   return result.posts;
 };
 
-export const getAdjacentPosts = async (createdAt, slug) => {
-  const query = gql`
-    query GetAdjacentPosts($createdAt: DateTime!, $slug: String!) {
-      next: posts(
-        first: 1
-        orderBy: createdAt_ASC
-        where: { slug_not: $slug, AND: { createdAt_gte: $createdAt } }
-      ) {
-        title
-        featuredImage {
-          url
-        }
-        createdAt
-        slug
-      }
-      previous: posts(
-        first: 1
-        orderBy: createdAt_DESC
-        where: { slug_not: $slug, AND: { createdAt_lte: $createdAt } }
-      ) {
-        title
-        featuredImage {
-          url
-        }
-        createdAt
-        slug
-      }
-    }
-  `;
-
-  const result = await request(graphqlAPI, query, { slug, createdAt });
-
-  return { next: result.next[0], previous: result.previous[0] };
-};
-
 export const getCategoryPost = async (slug) => {
   const query = gql`
     query GetCategoryPost($slug: String!) {
@@ -163,6 +130,7 @@ export const getCategoryPost = async (slug) => {
               photo {
                 url
               }
+              slug
             }
             createdAt
             slug
@@ -195,6 +163,7 @@ export const getFeaturedPosts = async () => {
           photo {
             url
           }
+          slug
         }
         featuredImage {
           url
@@ -254,6 +223,50 @@ export const getRecentPosts = async () => {
     }
   `;
   const result = await request(graphqlAPI, query);
+
+  return result.posts;
+};
+
+export const getAuthors = async () => {
+  const query = gql`
+    query GetAuthors {
+      authors {
+        bio
+        name
+        photo {
+          url
+        }
+        slug
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+
+  return result.authors;
+};
+
+export const getAuthorPosts = async (slug) => {
+  const query = gql`
+    query GetAuthorPost($slug: String!) {
+      posts(where: { author: { slug: $slug } }) {
+        title
+        slug
+        featuredImage {
+          url
+        }
+        excerpt
+        createdAt
+        author {
+          name
+          photo {
+            url
+          }
+          slug
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query, { slug });
 
   return result.posts;
 };

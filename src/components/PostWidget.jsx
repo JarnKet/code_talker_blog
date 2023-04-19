@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import moment from 'moment';
 import Link from 'next/link';
 import { getRecentPosts, getSimilarPosts } from '../services';
-import { BookOpenIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import { BookOpenIcon, SparklesIcon } from '@heroicons/react/24/solid';
 const PostWidget = ({ categories, slug, styles }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
 

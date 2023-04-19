@@ -1,15 +1,15 @@
 import Typewriter from 'typewriter-effect';
 import Link from 'next/link';
-import { programmingImg } from '../public';
+import { programmingImg } from '/public';
 import Image from 'next/image';
-
+import { sectionDescription } from '../constants';
 const Hero = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full h-full">
       <div className="flex flex-col items-center w-full gap-4 text-center lg:flex-row lg:justify-between lg:text-left">
         <div className="flex   p-2  flex-col w-[100%] lg:w-[50%] ">
           <h1 className="text-3xl font-bold lg:text-4xl lg:mb-8 ">
-            ຖ້າຢາກພັດທະນາຕົນເອງ, ເວັບໄຊທ໌ນີ້ເໝາະສຳລັບທ່ານ
+            {sectionDescription.heroTitle}
           </h1>
 
           <h1 className="    text-5xl sm:text-6xl lg:text-7xl font-bold lg:mb-[30px] mt-3 mb-3">
@@ -23,8 +23,7 @@ const Hero = () => {
           </h1>
 
           <h2 className="mt-2 mb-12 lg:mb-0 text-neutral-700 dark:text-neutral-500 sm:text-2xl ">
-            ບົດຄວາມດີໆຈາກ Programmer ເພື່ອ Programmer ແລະ
-            ຄົນທີ່ຕ້ອງການພັດທະນາຕົນເອງ
+            {sectionDescription.hero}
           </h2>
         </div>
 
@@ -38,6 +37,7 @@ const Hero = () => {
             width={800}
             height={800}
             className="rounded-full shadow-xl"
+            loading="lazy"
           />
         </div>
       </div>

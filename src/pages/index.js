@@ -2,21 +2,11 @@ import Head from 'next/head';
 import { PostCard, Categories } from '../components';
 import { getPosts } from '../services';
 import { FeaturedPost, Hero } from '../sections';
-import { ChartBarIcon } from '@heroicons/react/24/outline';
+import { ChartBarIcon } from '@heroicons/react/24/solid';
 
 export default function Home({ posts }) {
   return (
     <div>
-      <Head>
-        <title>Code Talker | ບົດຄວາມເພື່ອໂປຣແກຣມເມີ້</title>
-        <meta name="keywords" content="Code Talker Blog, Blog, ບົດຄວາມ" />
-        <meta
-          name="description"
-          content="ບົດຄວາມ ແລະ ເລື່ອງສັ້ນ ທີ່ກ່ຽວກັບພຶດຕິກຳນິດໄສ, ທັດສະນະຄະຕິ ແລະ ວິຊາການ ເພື່ອພັດທະນາຕົນເອງໃຫ້ກາຍເປັນ Programmer ທີ່ລ້ຳຄ່າ"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <section className="border-b dark:border-b-neutral-700">
         <div className="container flex items-center justify-center w-full h-screen px-8 mx-auto lg:px-10">
           <Hero />

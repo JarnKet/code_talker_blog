@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { submitComment } from '../services';
-import { PencilSquareIcon } from '@heroicons/react/24/outline';
+import { PencilSquareIcon } from '@heroicons/react/24/solid';
 
 const CommentsForm = ({ slug }) => {
   const [error, setError] = useState(false);
@@ -59,7 +59,7 @@ const CommentsForm = ({ slug }) => {
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea
           ref={commentEl}
-          className="w-full p-4 outline-none focus:ring-2 focus:ring-black "
+          className="w-full p-4 solid-none focus:ring-2 focus:ring-black "
           placeholder="ຄວາມຄິດເຫັນ"
           name="comment"
         />
@@ -70,14 +70,14 @@ const CommentsForm = ({ slug }) => {
           placeholder="ຊື່ ແລະ ນາມສະກຸນ"
           name="name"
           ref={nameEl}
-          className="w-full p-4 outline-none focus:ring-2 focus:ring-black "
+          className="w-full p-4 solid-none focus:ring-2 focus:ring-black "
         />
         <input
           type="email"
           placeholder="ອີເມວ"
           name="email"
           ref={emailEl}
-          className="w-full p-4 outline-none focus:ring-2 focus:ring-black "
+          className="w-full p-4 solid-none focus:ring-2 focus:ring-black "
         />
       </div>
       <div className="grid grid-cols-1 gap-4 mb-4">

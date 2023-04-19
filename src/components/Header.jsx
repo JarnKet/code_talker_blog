@@ -1,11 +1,7 @@
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
-import {
-  SunIcon,
-  MoonIcon,
-  CodeBracketIcon,
-} from '@heroicons/react/24/outline';
-
+import { SunIcon, MoonIcon, CodeBracketIcon } from '@heroicons/react/24/solid';
+import { staticNavLinks } from '../constants';
 const Header = () => {
   const { systemTheme, theme, setTheme } = useTheme();
 
@@ -53,7 +49,20 @@ const Header = () => {
           </Link>
         </div>
 
-        {renderThemeChanger()}
+        <div className="flex items-center justify-center">
+          <ul className="mr-8">
+            {staticNavLinks.map((link, index) => (
+              <Link
+                href={link.href}
+                className="hover:font-semibold"
+                key={index}
+              >
+                {link.title}
+              </Link>
+            ))}
+          </ul>
+          {renderThemeChanger()}
+        </div>
       </div>
     </nav>
   );
