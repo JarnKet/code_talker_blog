@@ -1,6 +1,6 @@
 const staticNavLinks = [
   { title: 'ນັກຂຽນ', href: '/author' },
-  { title: 'ກ່ຽວກັບເຮົາ', href: '/about' },
+  // { title: 'ກ່ຽວກັບເຮົາ', href: '/about' },
 ];
 const metaContent = {
   keyword: ['Code Talker Blog', 'Blog', 'ບົດຄວາມ'],
