@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import moment from 'moment';
+import Image from 'next/image';
 import Link from 'next/link';
 import { getRecentPosts, getSimilarPosts } from '../services';
 import { BookOpenIcon, SparklesIcon } from '@heroicons/react/24/solid';
@@ -39,12 +40,13 @@ const PostWidget = ({ categories, slug, styles }) => {
             className="flex items-center w-full p-2 mb-4 hover: "
           >
             <div className="flex-none w-16">
-              <img
+              <Image
                 src={post.featuredImage.url}
-                alt="{post.title}"
-                height="60px"
-                width="60px"
+                alt={post.title}
+                height={60}
+                width={60}
                 className="align-middle "
+                loading="lazy"
               />
             </div>
             <div className="flex-grow ml-4">

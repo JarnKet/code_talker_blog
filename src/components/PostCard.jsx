@@ -6,7 +6,7 @@ import Image from 'next/image';
 const PostCard = ({ post }) => {
   return (
     <div className="flex items-center justify-between mb-12">
-      <div className="w-[70%]">
+      <div className="w-[70%] ">
         <div className="flex items-center mb-2 ">
           <Image
             alt={post.author.name}

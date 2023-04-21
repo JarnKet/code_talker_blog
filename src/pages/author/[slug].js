@@ -1,15 +1,25 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { getAuthorPosts, getAuthors } from '../../services';
 import { PostCard, Author, Loader } from '../../components';
 import Head from 'next/head';
 
-const AuthorDetail = ({ authors, posts }) => {
+const AuthorDetail = ({ params, authors }) => {
   const router = useRouter();
 
   if (router.isFallback) {
     return <Loader />;
   }
+
+  const [posts, setPosts] = useState([]);
+  const [dataLoaded, setDataLoaded] = useState(false);
+
+  useEffect(() => {
+    getAuthorPosts(params.slug).then((result) => {
+      setPosts(result);
+      setDataLoaded(true);
+    });
+  }, []);
 
   return (
     <>
@@ -35,9 +45,8 @@ const AuthorDetail = ({ authors, posts }) => {
                 </h1>
               ))}
             <div className="pt-4">
-              {posts.map((post) => (
-                <PostCard post={post} key={post.title} />
-              ))}
+              {dataLoaded &&
+                posts.map((post) => <PostCard post={post} key={post.title} />)}
             </div>
           </div>
           <div className="order-first col-span-1 lg:col-span-4 lg:py-20 lg:order-last">
@@ -58,11 +67,11 @@ const AuthorDetail = ({ authors, posts }) => {
 export default AuthorDetail;
 
 export async function getStaticProps({ params }) {
-  const posts = await getAuthorPosts(params.slug);
+  // const posts = await getAuthorPosts(params.slug);
   const authors = await getAuthors();
 
   return {
-    props: { posts, authors },
+    props: { authors, params },
   };
 }
 

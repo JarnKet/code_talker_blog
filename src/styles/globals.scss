@@ -18,6 +18,34 @@
   .themeComponentRevert {
     @apply bg-white text-black dark:bg-black dark:text-white;
   }
+  .post-detail h3 {
+    @apply font-bold text-xl;
+  }
+  .post-detail h4 {
+    @apply font-semibold text-lg;
+  }
+  .post-detail p {
+    @apply mb-8;
+  }
+  .post-detail a {
+    @apply underline;
+  }
+  .post-detail ul,
+  .post-detail ol {
+    @apply block mb-8 px-5;
+  }
+  .post-detail ul li {
+    @apply list-disc;
+  }
+  .post-detail ol li {
+    @apply list-decimal;
+  }
+  .post-detail img {
+    @apply w-full h-full mb-8;
+  }
+  .post-detail code {
+    @apply bg-neutral-950 text-white dark:cardDark p-4 w-full;
+  }
 }
 
 @layer utilities {
@@ -30,38 +58,6 @@
     background: transparentize(#222, 0.5);
     backdrop-filter: blur(20px);
     border: 1px solid transparentize(whitesmoke, 0.9);
-  }
-
-  .postCard.card:hover {
-    border: 1px solid transparentize(#222, 0.8);
-  }
-
-  .postCard.cardDark:hover {
-    border: 1px solid transparentize(#f5f5f5, 0.8);
-  }
-  .text-gradient {
-    background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-  }
-
-  .bg-gradient {
-    background: linear-gradient(120deg, #fc466b 0%, #3f5efb 100%);
-  }
-  button.bg-gradient {
-    position: relative;
-  }
-
-  button.bg-gradient:hover::before {
-    content: '';
-    position: absolute;
-    inset: -2px; /* control the spread */
-    transform: translate(5px, 4px); /* control the offsets */
-    z-index: -1; /* place the element behind */
-    background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
-    filter: blur(10px); /* control the blur */
   }
 }
 

@@ -2,8 +2,10 @@ import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { SunIcon, MoonIcon, CodeBracketIcon } from '@heroicons/react/24/solid';
 import { staticNavLinks } from '../constants';
+import { useRouter } from 'next/router';
 const Header = () => {
   const { systemTheme, theme, setTheme } = useTheme();
+  const router = useRouter();
 
   const renderThemeChanger = () => {
     const currentTheme = theme === 'system' ? systemTheme : theme;
@@ -37,8 +39,10 @@ const Header = () => {
     }
   };
 
+  console.log(router.asPath);
+
   return (
-    <nav className="border-b dark:border-b-neutral-700 card dark:cardDark">
+    <nav className="border-b  dark:border-b-neutral-700 card dark:cardDark">
       <div className="container flex items-center justify-between w-full px-8 py-2 mx-auto lg:py-4 lg:px-10">
         <div>
           <Link href="/">
@@ -50,11 +54,15 @@ const Header = () => {
         </div>
 
         <div className="flex items-center justify-center">
-          <ul className="mr-8">
+          <ul className="mr-4 ">
             {staticNavLinks.map((link, index) => (
               <Link
                 href={link.href}
-                className="hover:font-semibold"
+                className={`${
+                  index === staticNavLinks.length - 1 ? '' : 'mr-2'
+                } hover:font-semibold ${
+                  router.asPath === `${link.href}` ? 'font-bold' : ''
+                }`}
                 key={index}
               >
                 {link.title}

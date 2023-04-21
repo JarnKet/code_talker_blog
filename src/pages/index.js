@@ -1,12 +1,22 @@
-import Head from 'next/head';
 import { PostCard, Categories } from '../components';
 import { getPosts } from '../services';
 import { FeaturedPost, Hero } from '../sections';
 import { ChartBarIcon } from '@heroicons/react/24/solid';
+import { useState, useEffect } from 'react';
 
-export default function Home({ posts }) {
+export default function Home() {
+  const [posts, setPosts] = useState([]);
+  const [dataLoaded, setDataLoaded] = useState(false);
+
+  useEffect(() => {
+    getPosts().then((result) => {
+      setPosts(result);
+      setDataLoaded(true);
+    });
+  }, []);
+
   return (
-    <div>
+    <>
       <section className="border-b dark:border-b-neutral-700">
         <div className="container flex items-center justify-center w-full h-screen px-8 mx-auto lg:px-10">
           <Hero />
@@ -29,9 +39,10 @@ export default function Home({ posts }) {
       >
         <div className="container grid h-full grid-cols-1 px-8 mx-auto lg:grid-cols-12 justify-items-center lg:px-10">
           <div className="col-span-1 py-8 lg:col-span-8 lg:border-r dark:border-r-neutral-700">
-            {posts.map((post) => (
-              <PostCard post={post.node} key={post.title} />
-            ))}
+            {dataLoaded &&
+              posts.map((post) => (
+                <PostCard post={post.node} key={post.title} />
+              ))}
           </div>
           <div className="hidden px-10 lg:block lg:col-span-4 lg:px-12 ">
             <div className="relative lg:sticky top-8">
@@ -40,14 +51,14 @@ export default function Home({ posts }) {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }
 
-export async function getStaticProps() {
-  const posts = (await getPosts()) || [];
+// export async function getStaticProps() {
+//   const posts = (await getPosts()) || [];
 
-  return {
-    props: { posts },
-  };
-}
+//   return {
+//     props: { posts },
+//   };
+// }
