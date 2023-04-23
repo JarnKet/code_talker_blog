@@ -72,6 +72,7 @@ export const getPostDetails = async (slug) => {
             url
           }
           slug
+          contactLink
         }
         createdAt
         slug
@@ -119,7 +120,10 @@ export const getSimilarPosts = async (categories, slug) => {
 export const getCategoryPost = async (slug) => {
   const query = gql`
     query GetCategoryPost($slug: String!) {
-      postsConnection(where: { categories_some: { slug: $slug } }) {
+      postsConnection(
+        where: { categories_some: { slug: $slug } }
+        orderBy: createdAt_DESC
+      ) {
         edges {
           cursor
           node {
@@ -237,6 +241,7 @@ export const getAuthors = async () => {
           url
         }
         slug
+        contactLink
       }
     }
   `;
@@ -248,7 +253,7 @@ export const getAuthors = async () => {
 export const getAuthorPosts = async (slug) => {
   const query = gql`
     query GetAuthorPost($slug: String!) {
-      posts(where: { author: { slug: $slug } }) {
+      posts(where: { author: { slug: $slug } }, orderBy: createdAt_DESC) {
         title
         slug
         featuredImage {

@@ -24,17 +24,18 @@ const PostDetails = ({ post }) => {
       <Head>
         <title>{post.title}</title>
         <meta name="keywords" content={`${post.title}`} />
+        <meta name="description" content={post.excerpt} />
       </Head>
-      <div className="container mx-auto px-8 lg:px-10 mb-8 lg:mb-0 mt-10 lg:mt-0">
+      <div className="container px-8 mx-auto mt-10 mb-8 lg:px-10 lg:mb-0 lg:mt-0">
         <Link
           href={`/`}
-          className="flex mb-4 font-bold p-2 lg:hidden themeComponent hover:scale-110 transition-all ease-in-out duration-500 text-white rounded-full w-24 "
+          className="flex w-24 p-2 mb-4 font-bold text-white transition-all duration-500 ease-in-out rounded-full lg:hidden themeComponent hover:scale-110 "
         >
           <ArrowLeftIcon className="w-6 h-6 mr-2" />
           <p>ກັບຄືນ</p>
         </Link>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <div className="col-span-1 lg:col-span-8  lg:border-r dark:border-r-neutral-700">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+          <div className="col-span-1 lg:col-span-8 lg:border-r dark:border-r-neutral-700">
             <PostDetail post={post} />
             <CommentsForm slug={post.slug} />
             <Comments slug={post.slug} />

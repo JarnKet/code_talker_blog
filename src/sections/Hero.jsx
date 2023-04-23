@@ -36,7 +36,6 @@ const Hero = () => {
             alt="programming"
             width={800}
             height={800}
-            className="rounded-full shadow-xl"
             loading="lazy"
           />
         </div>

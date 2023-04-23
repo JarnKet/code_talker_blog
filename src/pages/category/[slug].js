@@ -21,22 +21,40 @@ const CategoryPost = ({ posts, categories }) => {
             .map((category) => category.name)}
         </title>
       </Head>
-      <div className="mt-12">
+
+      <section className="mt-12">
         <div className="container flex flex-col items-center px-8 py-4 mx-auto mb-12 lg:items-start lg:px-10">
-          <div className="flex items-center justify-center mb-4 lg:justify-normal lg:items-baseline">
-            <TagIcon className="w-8 h-8 mr-2" />
-            {categories
-              .filter((category) => category.slug === router.asPath.slice(10))
-              .map((category) => (
-                <div>
-                  <h1 className="text-3xl font-bold sm:text-5xl">
-                    {category.name}
-                  </h1>
-                  <p className="hidden mt-4 text-neutral-600 dark:text-neutral-400 lg:block">
-                    {category.quote}
-                  </p>
-                </div>
-              ))}
+          <div className="flex items-start justify-center mb-4 lg:items-baseline ">
+            <div className="items-center justify-center hidden mr-2 lg:flex">
+              <TagIcon className="w-8 h-8" />
+            </div>
+
+            <div>
+              <div className="flex items-center justify-center lg:justify-normal">
+                <TagIcon className="w-8 h-8 mr-2 lg:hidden " />
+                {categories
+                  .filter(
+                    (category) => category.slug === router.asPath.slice(10)
+                  )
+                  .map((category) => (
+                    <h1 className="text-3xl font-bold sm:text-5xl">
+                      {category.name}
+                    </h1>
+                  ))}
+              </div>
+
+              <div className="mt-4 ">
+                {categories
+                  .filter(
+                    (category) => category.slug === router.asPath.slice(10)
+                  )
+                  .map((category) => (
+                    <p className="mt-4 text-neutral-600 dark:text-neutral-400 lg:block">
+                      {category.quote}
+                    </p>
+                  ))}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -54,7 +72,7 @@ const CategoryPost = ({ posts, categories }) => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

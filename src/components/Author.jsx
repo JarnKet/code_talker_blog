@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { LinkIcon } from '@heroicons/react/24/solid';
 
 const Author = ({ author }) => {
   return (
@@ -20,7 +21,16 @@ const Author = ({ author }) => {
       >
         {author.name}
       </Link>
-      <p className="">{author.bio}</p>
+      <p className="mb-4">{author.bio}</p>
+      <button
+        className="flex items-center justify-end p-2 transition-all duration-500 rounded-full cursor-pointer hover:scale-110 themeComponentRevert"
+        type="button"
+        aria-label="link-contact"
+      >
+        <Link href={author.contactLink} target="_blank">
+          <LinkIcon className="w-6 h-6 " />
+        </Link>
+      </button>
     </div>
   );
 };

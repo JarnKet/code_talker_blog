@@ -25,17 +25,40 @@ const Author = () => {
 
       <section className="mt-12">
         <div className="container flex flex-col items-center px-8 py-4 mx-auto mb-12 lg:items-start lg:px-10">
-          <div className="flex items-center justify-center mb-4 lg:justify-normal lg:items-baseline">
-            <UsersIcon className="w-8 h-8 mr-2 " />
+          <div className="flex items-start justify-center mb-4 lg:items-baseline ">
+            <div className="items-center justify-center hidden mr-2 lg:flex">
+              <UsersIcon className="w-8 h-8" />
+            </div>
+
             <div>
-              <h1 className="text-3xl font-bold sm:text-5xl">{`ນັກຂຽນ`}</h1>
-              <p className="hidden mt-4 text-neutral-600 dark:text-neutral-400 lg:block">
-                {sectionDescription.author}
-              </p>
+              <div className="flex items-center justify-center lg:justify-normal">
+                <UsersIcon className="w-8 h-8 mr-2 lg:hidden " />
+                <h1 className="text-3xl font-bold sm:text-5xl">{`ນັກຂຽນ`}</h1>
+              </div>
+
+              <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-12">
+                <div className="col-span-1 mt-4 lg:col-span-6">
+                  <p className=" text-neutral-600 dark:text-neutral-400">
+                    {sectionDescription.author}
+                  </p>
+                  <button
+                    type="button"
+                    className="hidden p-4 mt-4 font-semibold text-white transition-all duration-500 rounded-full lg:block themeComponent lg:text-xl hover:scale-110"
+                  >
+                    <Link href={'#postcard'}>ມາເປັນສ່ວນໜຶ່ງກັບພວກເຮົາ</Link>
+                  </button>
+                </div>
+
+                <button
+                  type="button"
+                  className="col-span-1 p-4 mt-4 font-semibold text-white transition-all duration-500 rounded-full lg:hidden themeComponent lg:text-xl hover:scale-110"
+                >
+                  <Link href={'/'}>ມາເປັນສ່ວນໜຶ່ງກັບພວກເຮົາ</Link>
+                </button>
+              </div>
             </div>
           </div>
         </div>
-
         <div className="py-6 border-t dark:border-t-neutral-700">
           <div className="container grid grid-cols-1 gap-8 px-8 mx-auto lg:px-10 lg:grid-cols-3">
             {dataLoaded &&
