@@ -106,10 +106,9 @@ const Header = () => {
               </ul>
             </div>
           </div>
-          <ul className="mr-4 ">
+          <ul className="flex mr-4">
             {staticNavLinks.map((link, index) => (
-              <Link
-                href={link.href}
+              <li
                 className={`${
                   index === staticNavLinks.length - 1 ? '' : 'mr-4'
                 } hover:font-semibold ${
@@ -117,13 +116,13 @@ const Header = () => {
                 }`}
                 key={index}
               >
-                {link.title}
-              </Link>
+                <Link href={link.href}>{link.title}</Link>
+              </li>
             ))}
           </ul>
           {renderThemeChanger()}
         </div>
-        <div className="flex items-center justify-center  lg:hidden">
+        <div className="flex items-center justify-center lg:hidden">
           {renderThemeChanger()}
           {menuToggle ? (
             <XMarkIcon
@@ -148,10 +147,9 @@ const Header = () => {
             >
               ໝວດໝູ່
             </Link>
-            <ul className="flex flex-col items-start justify-end flex-1 list-none">
+            <ul className="flex flex-col items-start justify-end list-none">
               {staticNavLinks.map((link, index) => (
-                <Link
-                  href={link.href}
+                <li
                   className={`${
                     index === staticNavLinks.length - 1 ? '' : 'mb-8'
                   } hover:font-semibold ${
@@ -160,8 +158,8 @@ const Header = () => {
                   key={index}
                   onClick={() => setMenuToggle(!menuToggle)}
                 >
-                  {link.title}
-                </Link>
+                  <Link href={link.href}>{link.title}</Link>
+                </li>
               ))}
             </ul>
           </div>
