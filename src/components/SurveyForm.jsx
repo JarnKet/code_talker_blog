@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const SurveyForm = () => {
   return (
-    <div className="flex items-center justify-center w-full h-10 lg:h-16 themeComponent">
+    <div className="flex items-center justify-center w-full h-10 mt-20 lg:h-16 themeComponent">
       <span className="hidden mr-4 text-lg lg:block">
         ກະລຸນາຕອບແບບສອບຖາມ ເພື່ອການພັດທະນາ ແລະ ປັບປຸງເວັບໄຊທ໌
       </span>

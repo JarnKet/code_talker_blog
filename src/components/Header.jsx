@@ -58,7 +58,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="border-b dark:border-b-neutral-700 card dark:cardDark">
+    <nav className="fixed top-0 z-10 w-full border-b dark:border-b-neutral-700 card dark:cardDark">
       <div className="container flex items-center justify-between w-full px-8 py-2 mx-auto lg:py-4 lg:px-10">
         <div>
           <Link href="/">

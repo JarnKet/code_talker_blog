@@ -4,7 +4,7 @@ import moment from 'moment';
 const PostDetail = ({ post }) => {
   return (
     <div className="pb-12 mb-8 lg:pt-8 lg:pr-8">
-      <div className="relative mb-6 overflow-hidden shadow-md">
+      <div className="mb-6 shadow-md">
         <img
           className="object-top w-full h-full "
           src={post.featuredImage.url}
