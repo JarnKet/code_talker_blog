@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="border-b dark:border-b-neutral-700">
+      <section className="border-b  dark:border-b-neutral-700">
         <div className="container flex items-center justify-center w-full h-screen px-8 mx-auto lg:px-10">
           <Hero />
         </div>

@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
       <Header />
       <SurveyForm />
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

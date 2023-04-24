@@ -4,6 +4,7 @@ import Script from 'next/script';
 import '../styles/globals.scss';
 import Head from 'next/head';
 import { metaContent } from '../constants';
+import { previewImg } from '../../public';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps }) {
         <title>Code Talker | ບົດຄວາມເພື່ອໂປຣແກຣມເມີ້</title>
         <meta name="keywords" content={metaContent.keyword.join(', ')} />
         <meta name="description" content={metaContent.description} />
+        <meta property="og:image" content={previewImg} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ThemeProvider enableSystem={true} attribute="class">

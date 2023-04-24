@@ -12,8 +12,8 @@ const PostDetail = ({ post }) => {
         />
       </div>
       <div className="px-4 lg:px-0">
-        <div className="flex flex-col items-center justify-center w-full pb-2 mb-8 border-b lg:flex-row sm:justify-between dark:border-b-neutral-700">
-          <div className="flex items-center justify-center w-full mb-4 lg:justify-start lg:w-auto ">
+        <div className="flex items-center justify-between w-full pb-2 mb-8 border-b dark:border-b-neutral-700">
+          <div className="flex items-center justify-center ">
             <img
               alt={post.author.name}
               height="30px"
@@ -25,7 +25,7 @@ const PostDetail = ({ post }) => {
               {post.author.name}
             </p>
           </div>
-          <div className="flex items-center justify-center font-medium">
+          <div className="flex items-center justify-center text-sm lg:text-base text-neutral-400">
             <span>{moment(post.createdAt).format('DD MMM, YYYY')}</span>
           </div>
         </div>
