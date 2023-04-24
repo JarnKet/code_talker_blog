@@ -17,7 +17,7 @@ class MyDocument extends Document {
           <link rel="icon" href="/favicon.ico" />
           <meta property="og:title" content="Code Talker" />
           <meta property="og:type" content="website" />
-          <meta property="og:image" content={previewImg.src} />
+          <meta property="og:image" content={previewImg} />
           <meta
             property="og:url"
             content="https://code-talker-blog.vercel.app/"
