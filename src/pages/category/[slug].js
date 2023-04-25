@@ -49,7 +49,7 @@ const CategoryPost = ({ posts, categories }) => {
                     (category) => category.slug === router.asPath.slice(10)
                   )
                   .map((category) => (
-                    <p className="mt-4 text-neutral-600 dark:text-neutral-400 lg:block">
+                    <p className="mt-4 text-neutral-600 dark:text-neutral-400 sm:text-lg lg:block">
                       {category.quote}
                     </p>
                   ))}

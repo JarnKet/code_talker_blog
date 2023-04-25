@@ -38,7 +38,7 @@ const Author = () => {
 
               <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-12">
                 <div className="col-span-1 mt-4 lg:col-span-6">
-                  <p className=" text-neutral-600 dark:text-neutral-400">
+                  <p className=" text-neutral-600 sm:text-xl dark:text-neutral-400">
                     {sectionDescription.author}
                   </p>
                   <button

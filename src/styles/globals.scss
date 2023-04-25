@@ -20,13 +20,13 @@
     @apply bg-white text-black dark:bg-black dark:text-white;
   }
   .post-detail h3 {
-    @apply font-bold text-xl;
+    @apply font-bold text-xl sm:text-2xl mb-2;
   }
   .post-detail h4 {
-    @apply font-semibold text-lg;
+    @apply font-semibold text-lg sm:text-xl;
   }
   .post-detail p {
-    @apply mb-8;
+    @apply mb-8 sm:text-lg;
   }
   .post-detail a {
     @apply underline;
