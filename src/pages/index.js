@@ -23,7 +23,6 @@ export default function Home() {
         <title>Code Talker | ບົດຄວາມເພື່ອໂປຣແກຣມເມີ້</title>
         <meta name="keywords" content={metaContent.keyword.join(', ')} />
         <meta name="description" content={metaContent.description} />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="border-b dark:border-b-neutral-700">
         <div className="container flex items-center justify-center w-full h-screen px-8 mx-auto lg:px-10">

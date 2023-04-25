@@ -12,8 +12,6 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta name="keywords" content={metaContent.keyword.join(', ')} />
-          <meta name="description" content={metaContent.description} />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
