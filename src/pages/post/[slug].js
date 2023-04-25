@@ -23,7 +23,7 @@ const PostDetails = ({ post }) => {
     <>
       <Head>
         <title>{post.title}</title>
-        <meta name="keywords" content={`${post.title}`} />
+        <meta name="keywords" content={post.title} />
         <meta name="description" content={post.excerpt} />
         <meta property="og:title" content={post.title} />
         <meta property="og:image" content={post.featuredImage.url} />

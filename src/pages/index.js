@@ -5,7 +5,7 @@ import { FeaturedPost, Hero } from '../sections';
 import { ChartBarIcon } from '@heroicons/react/24/solid';
 import { useState, useEffect } from 'react';
 import { metaContent } from '../constants';
-import { previewImg } from '/public';
+import previewImg from '/public/images/previewImg.png';
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -31,10 +31,7 @@ export default function Home() {
         />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={previewImg} />
-        <meta
-          property="og:url"
-          content="https://code-talker-blog.vercel.app/"
-        />
+        <meta property="og:description" content={metaContent.description} />
       </Head>
       <section className="border-b dark:border-b-neutral-700">
         <div className="container flex items-center justify-center w-full h-screen px-8 mx-auto lg:px-10">
