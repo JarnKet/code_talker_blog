@@ -2,13 +2,10 @@ import { Layout } from '../components';
 import { ThemeProvider } from 'next-themes';
 import Script from 'next/script';
 import '../styles/globals.scss';
-import Head from 'next/head';
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Head>
-        <title>Code Talker | ບົດຄວາມເພື່ອໂປຣແກຣມເມີ້</title>
-      </Head>
       <ThemeProvider enableSystem={true} attribute="class">
         <Layout>
           <Component {...pageProps} />
