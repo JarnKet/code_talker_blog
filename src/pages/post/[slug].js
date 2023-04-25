@@ -25,6 +25,10 @@ const PostDetails = ({ post }) => {
         <title>{post.title}</title>
         <meta name="keywords" content={post.title} />
         <meta name="description" content={post.excerpt} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.featuredImage.url} />
       </Head>
       <div className="container px-8 mx-auto mt-10 mb-8 lg:px-10 lg:mb-0 lg:mt-0">
         <Link
