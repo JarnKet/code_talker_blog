@@ -1,8 +1,11 @@
+import Head from 'next/head';
 import { PostCard, Categories } from '../components';
 import { getPosts } from '../services';
 import { FeaturedPost, Hero } from '../sections';
 import { ChartBarIcon } from '@heroicons/react/24/solid';
 import { useState, useEffect } from 'react';
+import { metaContent } from '../constants';
+import { previewImg } from '/public';
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -17,7 +20,23 @@ export default function Home() {
 
   return (
     <>
-      <section className="border-b  dark:border-b-neutral-700">
+      <Head>
+        <title>Code Talker | ບົດຄວາມເພື່ອໂປຣແກຣມເມີ້</title>
+        <meta name="keywords" content={metaContent.keyword.join(', ')} />
+        <meta name="description" content={metaContent.description} />
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:title"
+          content="Code Talker | ບົດຄວາມເພື່ອໂປຣແກຣມເມີ້"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={previewImg} />
+        <meta
+          property="og:url"
+          content="https://code-talker-blog.vercel.app/"
+        />
+      </Head>
+      <section className="border-b dark:border-b-neutral-700">
         <div className="container flex items-center justify-center w-full h-screen px-8 mx-auto lg:px-10">
           <Hero />
         </div>

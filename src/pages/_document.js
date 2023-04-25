@@ -15,7 +15,10 @@ class MyDocument extends Document {
           <meta name="keywords" content={metaContent.keyword.join(', ')} />
           <meta name="description" content={metaContent.description} />
           <link rel="icon" href="/favicon.ico" />
-          <meta property="og:title" content="Code Talker" />
+          <meta
+            property="og:title"
+            content="Code Talker | ບົດຄວາມເພື່ອໂປຣແກຣມເມີ້"
+          />
           <meta property="og:type" content="website" />
           <meta property="og:image" content={previewImg} />
           <meta
