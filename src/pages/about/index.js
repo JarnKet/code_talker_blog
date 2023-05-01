@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { sectionDescription } from '../../constants';
 import { QuestionMarkCircleIcon } from '@heroicons/react/24/solid';
 import { joinImg } from '/public';
+import { formLinks } from '../../constants';
 import Image from 'next/image';
 import Link from 'next/link';
 const About = () => {
@@ -32,7 +33,9 @@ const About = () => {
                     type="button"
                     className="hidden p-4 mt-4 font-semibold text-white transition-all duration-500 rounded-full lg:block themeComponent lg:text-xl hover:scale-110"
                   >
-                    <Link href={'/'}>ມາເປັນສ່ວນໜຶ່ງກັບພວກເຮົາ</Link>
+                    <Link href={formLinks.registerOrSubmit} target="_blank">
+                      ມາເປັນສ່ວນໜຶ່ງກັບພວກເຮົາ
+                    </Link>
                   </button>
                 </div>
 

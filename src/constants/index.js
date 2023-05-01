@@ -2,10 +2,16 @@ const staticNavLinks = [
   { title: 'ນັກຂຽນ', href: '/author' },
   { title: 'ກ່ຽວກັບເຮົາ', href: '/about' },
 ];
+
 const metaContent = {
   keyword: ['Code Talker Blog', 'Blog', 'ບົດຄວາມ'],
   description:
     'ບົດຄວາມ ແລະ ເລື່ອງສັ້ນ ທີ່ກ່ຽວກັບພຶດຕິກຳນິດໄສ, ທັດສະນະຄະຕິ ແລະ ວິຊາການ ເພື່ອພັດທະນາຕົນເອງໃຫ້ກາຍເປັນ Programmer ທີ່ລ້ຳຄ່າ',
+};
+
+const formLinks = {
+  interview: 'https://forms.gle/nR1DmuaktgAkuopo7',
+  registerOrSubmit: 'https://forms.gle/2CjWtgAwkbSohCzj7',
 };
 
 const sectionDescription = {
@@ -18,4 +24,4 @@ const sectionDescription = {
   category: 'ເສີມສ້າງທັກສະ ແລະ ຄວາມຮູ້ ຜ່ານບົດຄວາມໃນແຕ່ລະໝວດ ',
 };
 
-export { staticNavLinks, metaContent, sectionDescription };
+export { staticNavLinks, metaContent, sectionDescription, formLinks };

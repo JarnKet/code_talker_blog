@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getAuthors } from '../../services';
 import { UsersIcon } from '@heroicons/react/24/solid';
 import { sectionDescription } from '../../constants';
+import { formLinks } from '../../constants';
 import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
@@ -45,7 +46,9 @@ const Author = () => {
                     type="button"
                     className="hidden p-4 mt-4 font-semibold text-white transition-all duration-500 rounded-full lg:block themeComponent lg:text-xl hover:scale-110"
                   >
-                    <Link href={'#postcard'}>ມາເປັນສ່ວນໜຶ່ງກັບພວກເຮົາ</Link>
+                    <Link href={formLinks.registerOrSubmit} target="_blank">
+                      ມາເປັນສ່ວນໜຶ່ງກັບພວກເຮົາ
+                    </Link>
                   </button>
                 </div>
 
@@ -53,7 +56,9 @@ const Author = () => {
                   type="button"
                   className="col-span-1 p-4 mt-4 font-semibold text-white transition-all duration-500 rounded-full lg:hidden themeComponent lg:text-xl hover:scale-110"
                 >
-                  <Link href={'/'}>ມາເປັນສ່ວນໜຶ່ງກັບພວກເຮົາ</Link>
+                  <Link href={formLinks.registerOrSubmit} target="_blank">
+                    ມາເປັນສ່ວນໜຶ່ງກັບພວກເຮົາ
+                  </Link>
                 </button>
               </div>
             </div>
