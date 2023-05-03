@@ -51,7 +51,7 @@ const About = () => {
                   type="button"
                   className="col-span-1 p-4 mt-4 font-semibold text-white transition-all duration-500 rounded-full lg:hidden themeComponent lg:text-xl hover:scale-110"
                 >
-                  <Link href={'/'}>ມາເປັນສ່ວນໜຶ່ງກັບພວກເຮົາ</Link>
+                  <Link href={formLinks.registerOrSubmit}>ມາເປັນສ່ວນໜຶ່ງກັບພວກເຮົາ</Link>
                 </button>
               </div>
             </div>
