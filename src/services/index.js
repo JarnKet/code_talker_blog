@@ -5,7 +5,7 @@ const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 export const getPosts = async () => {
   const query = gql`
     query MyQuery {
-      postsConnection(orderBy: createdAt_DESC) {
+      postsConnection(orderBy: createdAt_DESC, last: 100) {
         edges {
           cursor
           node {
@@ -123,6 +123,7 @@ export const getCategoryPost = async (slug) => {
       postsConnection(
         where: { categories_some: { slug: $slug } }
         orderBy: createdAt_DESC
+        last: 100
       ) {
         edges {
           cursor
@@ -161,7 +162,7 @@ export const getCategoryPost = async (slug) => {
 export const getFeaturedPosts = async () => {
   const query = gql`
     query GetFeaturedPost() {
-      posts(where: {featuredPost: true}, orderBy: createdAt_DESC) {
+      posts(where: {featuredPost: true}, orderBy: createdAt_DESC, first: 9) {
         author {
           name
           photo {
@@ -234,7 +235,7 @@ export const getRecentPosts = async () => {
 export const getAuthors = async () => {
   const query = gql`
     query GetAuthors {
-      authors {
+      authors(first: 100) {
         bio
         name
         photo {
@@ -253,7 +254,11 @@ export const getAuthors = async () => {
 export const getAuthorPosts = async (slug) => {
   const query = gql`
     query GetAuthorPost($slug: String!) {
-      posts(where: { author: { slug: $slug } }, orderBy: createdAt_DESC) {
+      posts(
+        where: { author: { slug: $slug } }
+        orderBy: createdAt_DESC
+        first: 100
+      ) {
         title
         slug
         featuredImage {

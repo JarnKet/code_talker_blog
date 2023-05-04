@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { ClipboardDocumentIcon } from '@heroicons/react/24/solid';
 import { getCategories } from '../services';
 
-const Categories = ({ styles }) => {
+const Categories = () => {
   const [categories, setCategories] = useState([]);
   const router = useRouter();
 
@@ -13,8 +13,8 @@ const Categories = ({ styles }) => {
   }, []);
 
   return (
-    <div className={`${styles} p-8 mb-12 h-full`}>
-      <div className="flex justify-start">
+    <div className={` p-8 mb-12 `}>
+      <div className="flex ">
         <ClipboardDocumentIcon className="w-6 h-6 mr-2" />
         <h1 className="mb-6 text-xl font-semibold ">ໝວດໝູ່</h1>
       </div>
