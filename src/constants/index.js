@@ -24,4 +24,16 @@ const sectionDescription = {
   category: 'ເສີມສ້າງທັກສະ ແລະ ຄວາມຮູ້ ຜ່ານບົດຄວາມໃນແຕ່ລະໝວດ ',
 };
 
-export { staticNavLinks, metaContent, sectionDescription, formLinks };
+const contactLinks = {
+  github: 'https://github.com/JarnKet',
+  facebook:
+    'https://www.facebook.com/profile.php?id=100092487816483&mibextid=LQQJ4d',
+};
+
+export {
+  staticNavLinks,
+  metaContent,
+  sectionDescription,
+  formLinks,
+  contactLinks,
+};

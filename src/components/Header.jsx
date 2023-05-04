@@ -1,5 +1,6 @@
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
+import { neoLatinFont } from '../../public/fonts';
 import {
   SunIcon,
   MoonIcon,
@@ -64,7 +65,9 @@ const Header = () => {
           <Link href="/">
             <span className="flex items-center justify-center text-2xl font-bold transition-all duration-200 ease-linear cursor-pointer font-sourceCode sm:text-4xl">
               <CodeBracketIcon className="w-12 h-12 mr-4" />
-              <h1 className="hidden lg:block">CODE TALKER</h1>
+              <h1 className={`hidden lg:block ${neoLatinFont.className}`}>
+                CODE TALKER
+              </h1>
             </span>
           </Link>
         </div>

@@ -46,8 +46,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container w-full h-full px-8 py-6 mx-auto lg:h-screen lg:py-12 lg:px-10">
-        <div className="flex flex-col items-center justify-center w-full h-full shadow-lg card dark:cardDark">
+      <section className="container w-full h-full px-8 py-6 mx-auto lg:h-screen lg:p-10">
+        <div className="flex flex-col items-center justify-center w-full h-full shadow-lg card dark:cardDark rounded-xl">
           <div className="flex items-center justify-start w-full py-4 pl-4 border-b lg:pl-8 dark:border-b-neutral-700">
             <ChartBarIcon className="w-8 h-8 mr-2" />
             <h1 className="text-xl font-bold">ບົດຄວາມທີ່ແນະນຳ</h1>

@@ -11,9 +11,9 @@ const About = () => {
       <Head>
         <title>Code Talker | ກ່ຽວກັບເຮົາ</title>
       </Head>
-      <section className="mt-12">
-        <div className="container flex flex-col items-center px-8 py-4 mx-auto mb-12 lg:items-start lg:px-10">
-          <div className="flex items-start justify-center mb-4 lg:items-baseline ">
+      <section className="">
+        <div className="container flex flex-col items-center justify-center h-screen px-8 mx-auto lg:items-start lg:px-10">
+          <div className="flex items-start justify-center mb-4 lg:items-baseline">
             <div className="items-center justify-center hidden mr-2 lg:flex">
               <QuestionMarkCircleIcon className="w-8 h-8" />
             </div>
@@ -51,7 +51,9 @@ const About = () => {
                   type="button"
                   className="col-span-1 p-4 mt-4 font-semibold text-white transition-all duration-500 rounded-full lg:hidden themeComponent lg:text-xl hover:scale-110"
                 >
-                  <Link href={formLinks.registerOrSubmit}>ມາເປັນສ່ວນໜຶ່ງກັບພວກເຮົາ</Link>
+                  <Link href={formLinks.registerOrSubmit}>
+                    ມາເປັນສ່ວນໜຶ່ງກັບພວກເຮົາ
+                  </Link>
                 </button>
               </div>
             </div>

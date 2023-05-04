@@ -69,7 +69,7 @@ const Author = () => {
             {dataLoaded &&
               authors.map((author, index) => (
                 <Link key={index} href={`author/${author.slug}`}>
-                  <div className="flex card dark:cardDark item-center w-full lg:w-[350px] p-4 rounded-full hover:shadow-xl">
+                  <div className="flex card dark:cardDark item-center w-full lg:w-[370px] p-4 rounded-full hover:shadow-xl">
                     <Image
                       src={author.photo.url}
                       width={100}
