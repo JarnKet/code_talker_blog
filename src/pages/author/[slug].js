@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import { getAuthorPosts, getAuthors } from '../../services';
-import { PostCard, Author, Loader } from '../../components';
-import Head from 'next/head';
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { getAuthorPosts, getAuthors } from "../../services";
+import { PostCard, Author, Loader } from "../../components";
+import Head from "next/head";
 
 const AuthorDetail = ({ params, authors }) => {
   const router = useRouter();
@@ -25,20 +25,20 @@ const AuthorDetail = ({ params, authors }) => {
     <>
       <Head>
         <title>
-          Code Talker | {''}
+          Code Talker | {""}
           {authors
             .filter((author) => author.slug === router.asPath.slice(8))
             .map((author) => author.name)}
         </title>
       </Head>
-      <div className="container px-8 mx-auto mt-10 mb-8 lg:px-10 lg:mb-0 lg:mt-0">
+      <div className="container px-8 mx-auto mt-[6rem] mb-8 lg:px-10 lg:mb-0 lg:mt-0">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          <div className="order-last col-span-1 lg:col-span-8 lg:border-r dark:border-r-neutral-700 lg:order-first">
+          <div className="order-last col-span-1 p-4 lg:col-span-8 lg:order-first card dark:cardDark rounded-2xl">
             {authors
               .filter((author) => author.slug === router.asPath.slice(8))
               .map((author) => (
                 <h1
-                  className="w-full py-8 text-3xl font-bold border-b dark:border-b-neutral-700 sm:text-5xl"
+                  className="w-full py-8 text-3xl font-bold sm:text-5xl"
                   key={author.name}
                 >
                   {author.name}

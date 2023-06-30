@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -14,10 +14,10 @@
 
 @layer components {
   .themeComponent {
-    @apply bg-black text-white dark:bg-white dark:text-black;
+    @apply bg-black text-white dark:bg-white dark:text-black shadow-xl;
   }
   .themeComponentRevert {
-    @apply bg-white text-black dark:bg-black dark:text-white;
+    @apply bg-white text-black dark:bg-black dark:text-white shadow-xl;
   }
   .post-detail h3 {
     @apply font-bold text-xl sm:text-2xl mb-2;
@@ -47,6 +47,12 @@
   .post-detail code {
     @apply bg-neutral-950 text-white dark:cardDark p-4 w-full;
   }
+  .card {
+    @apply shadow-xl;
+  }
+  .cardDark {
+    @apply shadow-xl;
+  }
 }
 
 @layer utilities {
@@ -60,9 +66,19 @@
     backdrop-filter: blur(20px);
     border: 1px solid transparentize(whitesmoke, 0.9);
   }
+  .backgroundGrid {
+    background-image: url("../../public/images/grid.svg");
+    filter: invert(1);
+    opacity: 0.5;
+  }
+  .backgroundGridDark {
+    background-image: url("../../public/images/grid.svg");
+    filter: invert(0);
+    opacity: 0.3;
+  }
 }
 
-* {
+html {
   scroll-behavior: smooth;
 }
 
@@ -70,7 +86,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Noto Sans Lao', sans-serif;
+  font-family: "Noto Sans Lao", sans-serif;
 }
 
 a {
@@ -103,4 +119,29 @@ a {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
+}
+
+.gradient {
+  height: fit-content;
+  z-index: -3;
+  width: 100%;
+
+  background-image: radial-gradient(
+      at 27% 37%,
+      hsla(215, 98%, 61%, 1) 0px,
+      transparent 0%
+    ),
+    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  filter: blur(100px) saturate(150%);
+  top: 80px;
+  opacity: 0.15;
 }

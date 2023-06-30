@@ -1,17 +1,17 @@
-import { useTheme } from 'next-themes';
-import Link from 'next/link';
-import { neoLatinFont } from '../../public/fonts';
+import { useTheme } from "next-themes";
+import Link from "next/link";
+
 import {
   SunIcon,
   MoonIcon,
   CodeBracketIcon,
   Bars3BottomRightIcon,
   XMarkIcon,
-} from '@heroicons/react/24/solid';
-import { staticNavLinks } from '../constants';
-import { useRouter } from 'next/router';
-import { getCategories } from '../services';
-import { useState, useEffect } from 'react';
+} from "@heroicons/react/24/solid";
+import { staticNavLinks } from "../constants";
+import { useRouter } from "next/router";
+import { getCategories } from "../services";
+import { useState, useEffect } from "react";
 
 const Header = () => {
   const router = useRouter();
@@ -27,15 +27,15 @@ const Header = () => {
   }, []);
 
   const renderThemeChanger = () => {
-    const currentTheme = theme === 'system' ? systemTheme : theme;
+    const currentTheme = theme === "system" ? systemTheme : theme;
 
-    if (currentTheme === 'dark') {
+    if (currentTheme === "dark") {
       return (
         <button
           className="flex items-center justify-end p-2 text-white transition-all duration-500 bg-black rounded-full cursor-pointer dark:bg-white dark:text-black hover:scale-110"
           type="button"
           onClick={() => {
-            setTheme('light');
+            setTheme("light");
           }}
           aria-label="theme-toggle"
         >
@@ -48,7 +48,7 @@ const Header = () => {
           className="flex items-center justify-end p-2 text-white transition-all duration-500 bg-black rounded-full cursor-pointer dark:bg-white dark:text-black hover:scale-110"
           type="button"
           onClick={() => {
-            setTheme('dark');
+            setTheme("dark");
           }}
           aria-label="theme-toggle"
         >
@@ -59,16 +59,11 @@ const Header = () => {
   };
 
   return (
-    <nav className="fixed top-0 z-10 w-full border-b dark:border-b-neutral-700 card dark:cardDark">
+    <nav className="fixed top-0 z-10 w-full card dark:cardDark">
       <div className="container flex items-center justify-between w-full px-8 py-2 mx-auto lg:py-4 lg:px-10">
         <div>
           <Link href="/">
-            <span className="flex items-center justify-center text-2xl font-bold transition-all duration-200 ease-linear cursor-pointer font-sourceCode sm:text-4xl">
-              <CodeBracketIcon className="w-12 h-12 mr-4" />
-              <h1 className={`hidden lg:block ${neoLatinFont.className}`}>
-                CODE TALKER
-              </h1>
-            </span>
+            <h1 className={`text-4xl font-extrabold `}>{`<Blog />.`}</h1>
           </Link>
         </div>
 
@@ -85,7 +80,7 @@ const Header = () => {
 
             <div
               className={`${
-                !categoriesToggle ? 'hidden' : 'flex'
+                !categoriesToggle ? "hidden" : "flex"
               } p-6 flex-col absolute top-14 left-10 mx-4 my-2 min-w-[200px] rounded-xl sidebar themeComponent`}
             >
               <button
@@ -99,8 +94,8 @@ const Header = () => {
                 {categories.map((category, index) => (
                   <li
                     key={index}
-                    className={`hover:border-b font-medium cursor-pointer text-[16px]  ${
-                      index === categories.length - 1 ? 'mb-0' : 'mb-4'
+                    className={`hover: font-medium cursor-pointer text-[16px]  ${
+                      index === categories.length - 1 ? "mb-0" : "mb-4"
                     }`}
                   >
                     <a href={`/category/${category.slug}`}>{category.name}</a>
@@ -113,9 +108,9 @@ const Header = () => {
             {staticNavLinks.map((link, index) => (
               <li
                 className={`${
-                  index === staticNavLinks.length - 1 ? '' : 'mr-4'
+                  index === staticNavLinks.length - 1 ? "" : "mr-4"
                 } hover:font-semibold ${
-                  router.asPath === `${link.href}` ? 'font-bold' : ''
+                  router.asPath === `${link.href}` ? "font-bold" : ""
                 }`}
                 key={index}
               >
@@ -140,7 +135,7 @@ const Header = () => {
           )}
           <div
             className={`${
-              !menuToggle ? 'hidden' : 'flex'
+              !menuToggle ? "hidden" : "flex"
             } p-6 flex-col absolute top-16 right-4  mx-4 my-2 min-w-[200px] rounded-xl sidebar themeComponent `}
           >
             <Link
@@ -154,9 +149,9 @@ const Header = () => {
               {staticNavLinks.map((link, index) => (
                 <li
                   className={`${
-                    index === staticNavLinks.length - 1 ? '' : 'mb-8'
+                    index === staticNavLinks.length - 1 ? "" : "mb-8"
                   } hover:font-semibold ${
-                    router.asPath === `${link.href}` ? 'font-bold' : ''
+                    router.asPath === `${link.href}` ? "font-bold" : ""
                   } text-xl`}
                   key={index}
                   onClick={() => setMenuToggle(!menuToggle)}

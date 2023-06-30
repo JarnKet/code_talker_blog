@@ -1,8 +1,14 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { getPosts, getPostDetails } from '../../services';
-import Link from 'next/link';
-import { ArrowLeftIcon } from '@heroicons/react/24/solid';
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { getPosts, getPostDetails } from "../../services";
+import Link from "next/link";
+import { useState } from "react";
+import {
+  ArrowLeftIcon,
+  ArrowUturnUpIcon,
+  QueueListIcon,
+  XCircleIcon,
+} from "@heroicons/react/24/solid";
 import {
   PostDetail,
   Categories,
@@ -11,14 +17,18 @@ import {
   Comments,
   CommentsForm,
   Loader,
-} from '../../components';
+  PostReference,
+} from "../../components";
 
 const PostDetails = ({ post }) => {
+  const [toggle, setToggle] = useState(false);
+
   const router = useRouter();
 
   if (router.isFallback) {
     return <Loader />;
   }
+
   return (
     <>
       <Head>
@@ -30,21 +40,30 @@ const PostDetails = ({ post }) => {
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:image" content={post.featuredImage.url} />
       </Head>
-      <div className="container px-8 mx-auto mt-10 mb-8 lg:px-10 lg:mb-0 lg:mt-0">
+      <section
+        className="container px-8 mx-auto mt-[5rem] mb-8 lg:px-10 lg:mb-0 lg:mt-0"
+        id="post"
+      >
         <Link
-          href={`/`}
-          className="flex w-24 p-2 mb-4 font-bold text-white transition-all duration-500 ease-in-out rounded-full lg:hidden themeComponent hover:scale-110 "
+          href={router.asPath}
+          className="flex w-24 p-2 mb-4 font-bold text-white transition-all duration-500 ease-in-out rounded-2xl lg:hidden themeComponent hover:scale-110 "
+          onClick={() => router.back()}
         >
           <ArrowLeftIcon className="w-6 h-6 mr-2" />
           <p>ກັບຄືນ</p>
         </Link>
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          <div className="col-span-1 lg:col-span-8 lg:border-r dark:border-r-neutral-700">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 justify-items-center">
+          <div className="hidden w-full col-span-3 lg:block">
+            <div className="relative lg:sticky top-8">
+              <PostReference post={post} />
+            </div>
+          </div>
+          <article className="col-span-1 lg:col-span-6 lg: ">
             <PostDetail post={post} />
             <CommentsForm slug={post.slug} />
             <Comments slug={post.slug} />
-          </div>
-          <div className="col-span-1 lg:col-span-4 lg:py-20">
+          </article>
+          <div className="col-span-1 lg:col-span-3 lg:py-20">
             <div className="relative lg:sticky top-8">
               <Author author={post.author} />
               <PostWidget
@@ -52,11 +71,36 @@ const PostDetails = ({ post }) => {
                 categories={post.categories.map((category) => category.slug)}
                 styles={`card dark:cardDark`}
               />
-              <Categories styles={'card dark:cardDark'} />
+              <Categories styles={"card dark:cardDark"} />
             </div>
           </div>
         </div>
+      </section>
+      <div className="fixed z-10 flex flex-col gap-y-4 bottom-16 right-6">
+        <a
+          className="flex items-center justify-end p-2 text-white transition-all duration-500 bg-black rounded-full cursor-pointer lg:hidden dark:bg-white dark:text-black hover:scale-110"
+          href="#post"
+        >
+          <ArrowUturnUpIcon className="w-6 h-6 " />
+        </a>
+        <button
+          className="flex items-center justify-end p-2 text-white transition-all duration-500 bg-black rounded-full cursor-pointer lg:hidden dark:bg-white dark:text-black hover:scale-110"
+          typeof="button"
+          aria-label="reference"
+          onClick={() => setToggle((prev) => !prev)}
+        >
+          {toggle ? (
+            <XCircleIcon className="w-6 h-6 " />
+          ) : (
+            <QueueListIcon className="w-6 h-6 " />
+          )}
+        </button>
       </div>
+      {toggle && (
+        <div className="fixed z-20 px-8 bottom-[12rem]">
+          <PostReference post={post} />
+        </div>
+      )}
     </>
   );
 };

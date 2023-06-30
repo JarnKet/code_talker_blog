@@ -1,11 +1,11 @@
-import { PostCard, Categories } from '../components';
-import { getPosts } from '../services';
-import { FeaturedPost, Hero } from '../sections';
-import { ChartBarIcon } from '@heroicons/react/24/solid';
-import { useState, useEffect } from 'react';
-import { metaContent } from '../constants';
-import Head from 'next/head';
-import { previewImg } from '/public';
+import { PostCard, Categories } from "../components";
+import { getPosts } from "../services";
+import { FeaturedPost, Hero } from "../sections";
+import { ChartBarIcon } from "@heroicons/react/24/solid";
+import { useState, useEffect } from "react";
+import { metaContent } from "../constants";
+import Head from "next/head";
+import { previewImg } from "/public";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -15,7 +15,6 @@ export default function Home() {
     getPosts().then((result) => {
       setPosts(result);
       setDataLoaded(true);
-      console.log(posts);
     });
   }, []);
 
@@ -23,7 +22,7 @@ export default function Home() {
     <>
       <Head>
         <title>Code Talker | ບົດຄວາມເພື່ອໂປຣແກຣມເມີ້</title>
-        <meta name="keywords" content={metaContent.keyword.join(', ')} />
+        <meta name="keywords" content={metaContent.keyword.join(", ")} />
         <meta name="description" content={metaContent.description} />
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -41,32 +40,30 @@ export default function Home() {
           content={`${metaContent.description}`}
         />
       </Head>
-      <section className="border-b dark:border-b-neutral-700">
-        <div className="container flex items-center justify-center w-full h-screen px-8 mx-auto lg:px-10">
-          <Hero />
-        </div>
+
+      <section className="container w-full h-screen px-8 py-10 lg:py-[0] mx-auto lg:px-10">
+        <Hero />
       </section>
 
-      <section className="container w-full h-full px-8 py-6 mx-auto lg:h-screen lg:p-10">
-        <div className="flex flex-col items-center justify-center w-full h-full shadow-lg card dark:cardDark rounded-xl">
-          <div className="flex items-center justify-start w-full py-4 pl-4 border-b lg:pl-8 dark:border-b-neutral-700">
-            <ChartBarIcon className="w-8 h-8 mr-2" />
-            <h1 className="text-xl font-bold">ບົດຄວາມທີ່ແນະນຳ</h1>
-          </div>
-          <FeaturedPost />
-        </div>
+      <section className="container flex flex-col items-center justify-center w-full h-full px-8 py-6 mx-auto lg:items-start gap-y-6 lg:h-screen lg:p-10">
+        <h1 className="text-4xl font-bold ">ບົດຄວາມທີ່ແນະນຳ.</h1>
+        <FeaturedPost />
       </section>
 
-      <section id="postcard" className="border-t dark:border-t-neutral-700">
-        <div className="container grid grid-cols-1 px-8 mx-auto lg:grid-cols-12 lg:px-10">
-          <div className="col-span-1 py-8 lg:col-span-8 lg:border-r dark:border-r-neutral-700">
+      <section className="container flex flex-col items-center justify-center px-8 mx-auto mb-10 lg:min-h-screen lg:px-10 gap-y-6 lg:items-start">
+        <h1 className="text-4xl font-bold ">ບົດຄວາມທັງໝົດ.</h1>
+        <div
+          id="postcard"
+          className="grid grid-cols-1 gap-x-8 lg:grid-cols-12 "
+        >
+          <div className="col-span-1 p-8 shadow-xl lg:col-span-8 card dark:cardDark rounded-2xl">
             {dataLoaded &&
               posts.map((post) => (
                 <PostCard post={post.node} key={post.title} />
               ))}
           </div>
-          <div className="hidden px-10 lg:block lg:col-span-4 lg:px-12">
-            <div className="relative lg:sticky top-8">
+          <div className="hidden lg:block lg:col-span-4">
+            <div className="relative lg:sticky top-8 ">
               <Categories />
             </div>
           </div>

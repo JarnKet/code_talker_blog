@@ -1,11 +1,11 @@
-import moment from 'moment';
-import Link from 'next/link';
-import Image from 'next/image';
+import moment from "moment";
+import Link from "next/link";
+import Image from "next/image";
 
 const PostCard = ({ post }) => {
   return (
     <div className="flex items-center justify-between mb-12">
-      <div className="w-[70%] ">
+      <div className="w-full lg:w-[70%] ">
         <div className="flex items-center mb-2 ">
           <Image
             alt={post.author.name}
@@ -28,10 +28,10 @@ const PostCard = ({ post }) => {
           {post.excerpt}
         </p>
         <small className="text-neutral-700 dark:text-neutral-500 ">
-          {moment(post.createdAt).format('DD MMM, YYYY')}
+          {moment(post.createdAt).format("DD MMM, YYYY")}
         </small>
       </div>
-      <div className="w-[30%] ml-2 relative flex items-center justify-center">
+      <div className="w-[30%] ml-2 relative hidden lg:flex items-center justify-center">
         <Image
           alt={post.title}
           src={post.featuredImage.url}

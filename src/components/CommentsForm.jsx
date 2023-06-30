@@ -1,112 +1,149 @@
-import { useState, useEffect, useRef } from 'react';
-import { submitComment } from '../services';
-import { PencilSquareIcon } from '@heroicons/react/24/solid';
+import { useState, useEffect } from "react";
+import { submitComment } from "../services";
+import { PencilSquareIcon } from "@heroicons/react/24/solid";
 
 const CommentsForm = ({ slug }) => {
   const [error, setError] = useState(false);
   const [localStorage, setLocalStorage] = useState(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-
-  const commentEl = useRef();
-  const nameEl = useRef();
-  const emailEl = useRef();
-  const storeDataEl = useRef();
+  const [formData, setFormData] = useState({
+    name: null,
+    email: null,
+    comment: null,
+    storeData: false,
+  });
 
   useEffect(() => {
-    nameEl.current.value = window.localStorage.getItem('name');
-    emailEl.current.value = window.localStorage.getItem('email');
+    setLocalStorage(window.localStorage);
+    const initialFormData = {
+      name: window.localStorage.getItem("name"),
+      email: window.localStorage.getItem("email"),
+      storeData:
+        window.localStorage.getItem("name") ||
+        window.localStorage.getItem("email"),
+    };
+    setFormData(initialFormData);
   }, []);
 
-  const handleCommentSubmission = () => {
+  const onInputChange = (e) => {
+    const { target } = e;
+    if (target.type === "checkbox") {
+      setFormData((prevState) => ({
+        ...prevState,
+        [target.name]: target.checked,
+      }));
+    } else {
+      setFormData((prevState) => ({
+        ...prevState,
+        [target.name]: target.value,
+      }));
+    }
+  };
+
+  const handlePostSubmission = () => {
     setError(false);
-
-    const { value: comment } = commentEl.current;
-    const { value: name } = nameEl.current;
-    const { value: email } = emailEl.current;
-    const { checked: storeData } = storeDataEl.current;
-
-    if (!comment || !name || !email) {
+    const { name, email, comment, storeData } = formData;
+    if (!name || !email || !comment) {
       setError(true);
       return;
     }
-
-    const commentObj = { name, email, comment, slug };
+    const commentObj = {
+      name,
+      email,
+      comment,
+      slug,
+    };
 
     if (storeData) {
-      window.localStorage.setItem('name', name);
-      window.localStorage.setItem('email', email);
+      localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
     } else {
-      window.localStorage.removeItem('name', name);
-      window.localStorage.removeItem('email', email);
+      localStorage.removeItem("name");
+      localStorage.removeItem("email");
     }
 
     submitComment(commentObj).then((res) => {
-      setShowSuccessMessage(true);
-
-      setTimeout(() => {
-        setShowSuccessMessage(false);
-      }, 3000);
+      if (res.createComment) {
+        if (!storeData) {
+          formData.name = "";
+          formData.email = "";
+        }
+        formData.comment = "";
+        setFormData((prevState) => ({
+          ...prevState,
+          ...formData,
+        }));
+        setShowSuccessMessage(true);
+        setTimeout(() => {
+          setShowSuccessMessage(false);
+        }, 3000);
+      }
     });
   };
 
   return (
-    <div className="pb-12 mb-8 lg:pt-8 lg:pr-8">
-      <div className="flex justify-center pb-4 mb-8 border-b">
+    <div className="px-4 py-12 mb-8 lg:pt-8 card dark:cardDark rounded-2xl">
+      <div className="flex justify-center mb-6">
         <PencilSquareIcon className="w-6 h-6 mr-2" />
         <h1 className="text-xl font-semibold ">ສະແດງຄວາມຄິດເຫັນ</h1>
       </div>
-
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea
-          ref={commentEl}
-          className="w-full p-4 solid-none focus:ring-2 focus:ring-black "
-          placeholder="ຄວາມຄິດເຫັນ"
+          value={formData.comment}
+          onChange={onInputChange}
+          className="w-full p-4 solid-none focus:ring-2 focus:ring-black rounded-2xl"
           name="comment"
+          placeholder="ຄວາມຄິດເຫັນ"
         />
       </div>
       <div className="grid grid-cols-1 gap-4 mb-4 lg:grid-cols-2">
         <input
           type="text"
+          value={formData.name}
+          onChange={onInputChange}
+          className="w-full p-4 solid-none focus:ring-2 focus:ring-black rounded-2xl"
           placeholder="ຊື່ ແລະ ນາມສະກຸນ"
           name="name"
-          ref={nameEl}
-          className="w-full p-4 solid-none focus:ring-2 focus:ring-black "
         />
         <input
           type="email"
-          placeholder="ອີເມວ"
-          name="email"
-          ref={emailEl}
-          className="w-full p-4 solid-none focus:ring-2 focus:ring-black "
+          value={formData.email}
+          onChange={onInputChange}
+          className="w-full p-4 solid-none focus:ring-2 focus:ring-black rounded-2xl"
+          placeholder="Email"
+          name="ອີເມວ"
         />
       </div>
       <div className="grid grid-cols-1 gap-4 mb-4">
         <div>
           <input
-            ref={storeDataEl}
+            checked={formData.storeData}
+            onChange={onInputChange}
             type="checkbox"
             id="storeData"
-            value={true}
+            name="storeData"
+            value="true"
           />
-          <label className="ml-2 font-bold cursor-pointer " htmlFor="storeData">
+          <label className="ml-2 font-bold cursor-pointer" htmlFor="storeData">
+            {" "}
             ຈົດຈຳຂໍ້ມູນຂອງຂ້ອຍ
           </label>
         </div>
       </div>
       {error && (
-        <p className="text-xs text-red-500">ກະລຸນາປ້ອນຂໍ້ມູນໃຫ້ຄົບຖ້ວນ</p>
+        <p className="text-xs text-red-500">ກະລຸນາປ້ອນຂໍ້ມູນໃຫ້ຄົບທຸກຊ່ອງ</p>
       )}
       <div className="mt-8">
         <button
           type="button"
-          onClick={handleCommentSubmission}
-          className="p-4 text-white bg-black  dark:bg-white dark:text-black"
+          onClick={handlePostSubmission}
+          className="p-4 text-white transition-all duration-300 ease-in-out bg-black dark:bg-white dark:text-black rounded-2xl hover:scale-110"
         >
           ສົ່ງຄວາມຄິດເຫັນ
         </button>
         {showSuccessMessage && (
-          <span className="float-right mt-3 text-xl font-semibold text-cyan-300">
-            ສະແດງຄວາມຄິດເຫັນເປັນທີ່ຮຽບຮ້ອຍ
+          <span className="float-right mt-3 text-xl font-semibold text-green-500">
+            ຄວາມຄິດເຫັນຖືກສົ່ງໄປແລ້ວ
           </span>
         )}
       </div>

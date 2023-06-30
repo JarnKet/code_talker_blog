@@ -1,11 +1,11 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
-import { categoryImg } from '/public';
-import { BookOpenIcon } from '@heroicons/react/24/solid';
-import { sectionDescription } from '../../constants';
-import { useEffect, useState } from 'react';
-import { getCategories } from '../../services';
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import { categoryImg } from "/public";
+import { BookOpenIcon } from "@heroicons/react/24/solid";
+import { sectionDescription } from "../../constants";
+import { useEffect, useState } from "react";
+import { getCategories } from "../../services";
 
 const Category = () => {
   const [categories, setCategories] = useState([]);
@@ -17,8 +17,8 @@ const Category = () => {
       <Head>
         <title>Code Talker | ໝວດໝູ່</title>
       </Head>
-      <section className="mt-12">
-        <div className="container flex flex-col items-center px-8 py-4 mx-auto mb-12 lg:items-start lg:px-10">
+      <section className="mt-12 ">
+        <div className="container flex flex-col items-center justify-center min-h-screen px-8 py-4 mx-auto mb-12 lg:px-10">
           <div className="flex items-start justify-center mb-4 lg:items-baseline ">
             <div className="items-center justify-center hidden mr-2 lg:flex">
               <BookOpenIcon className="w-8 h-8" />

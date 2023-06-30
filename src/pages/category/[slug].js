@@ -1,8 +1,8 @@
-import { useRouter } from 'next/router';
-import { getCategories, getCategoryPost } from '../../services';
-import { PostCard, Categories, Loader } from '../../components';
-import { TagIcon } from '@heroicons/react/24/solid';
-import Head from 'next/head';
+import { useRouter } from "next/router";
+import { getCategories, getCategoryPost } from "../../services";
+import { PostCard, Categories, Loader } from "../../components";
+import { TagIcon } from "@heroicons/react/24/solid";
+import Head from "next/head";
 
 const CategoryPost = ({ posts, categories }) => {
   const router = useRouter();
@@ -15,14 +15,14 @@ const CategoryPost = ({ posts, categories }) => {
     <>
       <Head>
         <title>
-          Code Talker | ໝວດໝູ່{' '}
+          Code Talker | ໝວດໝູ່{" "}
           {categories
             .filter((category) => category.slug === router.asPath.slice(10))
             .map((category) => category.name)}
         </title>
       </Head>
 
-      <section className="mt-12">
+      <section className="mt-12 ">
         <div className="container flex flex-col items-center px-8 py-4 mx-auto mb-12 lg:items-start lg:px-10">
           <div className="flex items-start justify-center mb-4 lg:items-baseline ">
             <div className="items-center justify-center hidden mr-2 lg:flex">
@@ -58,16 +58,16 @@ const CategoryPost = ({ posts, categories }) => {
           </div>
         </div>
 
-        <div className="border-t dark:border-t-neutral-700">
+        <div className=" ">
           <div className="container grid grid-cols-1 gap-12 px-8 mx-auto lg:px-10 lg:grid-cols-12">
-            <div className="col-span-1 py-8 lg:col-span-8 lg:border-r dark:border-r-neutral-700">
+            <div className="col-span-1 py-8 lg:col-span-8 lg: ">
               {posts.map((post, index) => (
                 <PostCard key={index} post={post.node} />
               ))}
             </div>
             <div className="col-span-1 lg:col-span-4">
               <div className="relative lg:sticky top-8">
-                <Categories styles={''} />
+                <Categories styles={""} />
               </div>
             </div>
           </div>

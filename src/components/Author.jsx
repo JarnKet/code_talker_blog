@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { LinkIcon } from '@heroicons/react/24/solid';
+import Image from "next/image";
+import Link from "next/link";
+import { LinkIcon } from "@heroicons/react/24/solid";
 
 const Author = ({ author }) => {
   return (
-    <div className="relative flex flex-col items-center justify-center w-full p-8 mb-12 text-center themeComponent">
+    <div className="relative flex flex-col items-center justify-center w-full p-8 mb-12 text-center themeComponent rounded-2xl">
       <div className="absolute -top-14">
         <Image
           alt={author.name}
@@ -16,7 +16,7 @@ const Author = ({ author }) => {
       </div>
       <Link
         href={`/author/${author.slug}`}
-        className="my-4 text-lg font-bold hover:border-b-2"
+        className="my-4 text-lg font-bold hover:-2"
       >
         {author.name}
       </Link>

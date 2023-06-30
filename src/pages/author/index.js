@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
-import { getAuthors } from '../../services';
-import { UsersIcon } from '@heroicons/react/24/solid';
-import { sectionDescription } from '../../constants';
-import { formLinks } from '../../constants';
-import Image from 'next/image';
-import Link from 'next/link';
-import Head from 'next/head';
+import { useEffect, useState } from "react";
+import { getAuthors } from "../../services";
+import { UsersIcon } from "@heroicons/react/24/solid";
+import { sectionDescription } from "../../constants";
+import { formLinks } from "../../constants";
+import Image from "next/image";
+import Link from "next/link";
+import Head from "next/head";
 
 const Author = () => {
   const [authors, setAuthors] = useState([]);
@@ -64,7 +64,7 @@ const Author = () => {
             </div>
           </div>
         </div>
-        <div className="py-6 border-t dark:border-t-neutral-700">
+        <div className="py-6  ">
           <div className="container grid grid-cols-1 gap-8 px-8 mx-auto lg:px-10 lg:grid-cols-3">
             {dataLoaded &&
               authors.map((author, index) => (
