@@ -2,7 +2,8 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { getPosts, getPostDetails } from "../../services";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import {
   ArrowLeftIcon,
   ArrowUturnUpIcon,
@@ -18,16 +19,30 @@ import {
   CommentsForm,
   Loader,
   PostReference,
+  ShareButton,
 } from "../../components";
 
 const PostDetails = ({ post }) => {
   const [toggle, setToggle] = useState(false);
+  const [url, setUrl] = useState(undefined);
 
   const router = useRouter();
 
   if (router.isFallback) {
     return <Loader />;
   }
+
+  useEffect(() => {
+    const getCurrentPageUrl = () => {
+      if (typeof window !== "undefined") {
+        return window.location.toString();
+      }
+      return "";
+    };
+
+    const shareUrl = getCurrentPageUrl();
+    setUrl(shareUrl);
+  }, []);
 
   return (
     <>
@@ -46,15 +61,16 @@ const PostDetails = ({ post }) => {
       >
         <Link
           href={router.asPath}
-          className="flex w-24 p-2 mb-4 font-bold text-white transition-all duration-500 ease-in-out rounded-2xl lg:hidden themeComponent hover:scale-110 "
+          className="flex w-24 p-2 mb-4 font-bold text-white transition-all duration-300 ease-in-out rounded-2xl lg:hidden themeComponent hover:scale-110 "
           onClick={() => router.back()}
         >
           <ArrowLeftIcon className="w-6 h-6 mr-2" />
           <p>ກັບຄືນ</p>
         </Link>
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 justify-items-center">
-          <div className="hidden w-full col-span-3 lg:block">
+          <div className="hidden w-full col-span-3 mt-8 lg:block">
             <div className="relative lg:sticky top-8">
+              <ShareButton url={url} />
               <PostReference post={post} />
             </div>
           </div>
@@ -63,7 +79,7 @@ const PostDetails = ({ post }) => {
             <CommentsForm slug={post.slug} />
             <Comments slug={post.slug} />
           </article>
-          <div className="col-span-1 lg:col-span-3 lg:py-20">
+          <div className="col-span-1 lg:col-span-3 lg:py-[5.5rem]">
             <div className="relative lg:sticky top-8">
               <Author author={post.author} />
               <PostWidget
@@ -78,13 +94,13 @@ const PostDetails = ({ post }) => {
       </section>
       <div className="fixed z-10 flex flex-col gap-y-4 bottom-16 right-6">
         <a
-          className="flex items-center justify-end p-2 text-white transition-all duration-500 bg-black rounded-full cursor-pointer lg:hidden dark:bg-white dark:text-black hover:scale-110"
+          className="flex items-center justify-end p-2 text-white transition-all duration-300 bg-black rounded-full cursor-pointer lg:hidden dark:bg-white dark:text-black hover:scale-110"
           href="#post"
         >
           <ArrowUturnUpIcon className="w-6 h-6 " />
         </a>
         <button
-          className="flex items-center justify-end p-2 text-white transition-all duration-500 bg-black rounded-full cursor-pointer lg:hidden dark:bg-white dark:text-black hover:scale-110"
+          className="flex items-center justify-end p-2 text-white transition-all duration-300 bg-black rounded-full cursor-pointer lg:hidden dark:bg-white dark:text-black hover:scale-110"
           typeof="button"
           aria-label="reference"
           onClick={() => setToggle((prev) => !prev)}
@@ -97,8 +113,9 @@ const PostDetails = ({ post }) => {
         </button>
       </div>
       {toggle && (
-        <div className="fixed z-20 px-8 bottom-[12rem]">
+        <div className="fixed z-20 px-8 bottom-[12rem] flex flex-col gap-y-4">
           <PostReference post={post} />
+          <ShareButton url={url} />
         </div>
       )}
     </>

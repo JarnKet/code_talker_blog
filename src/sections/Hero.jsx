@@ -43,13 +43,13 @@ const Hero = () => {
 
       <div className="flex items-center justify-center w-full gap-x-4 lg:justify-start lg:mt-6">
         <a
-          className="p-4 font-semibold transition-all duration-500 rounded-full themeComponent lg:text-xl hover:scale-110"
+          className="p-4 font-semibold transition-all duration-300 rounded-full themeComponent lg:text-xl hover:scale-110"
           href={"#postcard"}
         >
           ເລີ່ມຕົ້ນການອ່ານ
         </a>
         <a
-          className="p-4 font-semibold transition-all duration-500 rounded-full themeComponentRevert lg:text-xl hover:scale-110"
+          className="p-4 font-semibold transition-all duration-300 rounded-full themeComponentRevert lg:text-xl hover:scale-110"
           href={formLinks.interview}
           target="_blank"
         >

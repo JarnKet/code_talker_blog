@@ -34,7 +34,7 @@ const PostDetail = ({ post }) => {
               className="align-middle rounded-full"
               src={post.author.photo.url}
             />
-            <p className="inline ml-2 text-base align-middle lg:text-lg">
+            <p className="inline ml-2 text-base font-semibold align-middle lg:text-lg">
               {post.author.name}
             </p>
           </div>
@@ -42,7 +42,7 @@ const PostDetail = ({ post }) => {
             <span>{moment(post.createdAt).format("DD MMM, YYYY")}</span>
           </div>
         </div>
-        <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
+        <h1 className="mb-8 text-3xl font-bold">{post.title}</h1>
         <div
           className="post-detail"
           dangerouslySetInnerHTML={{ __html: post.content.html }}

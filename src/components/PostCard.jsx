@@ -35,9 +35,9 @@ const PostCard = ({ post }) => {
         <Image
           alt={post.title}
           src={post.featuredImage.url}
-          width={150}
-          height={150}
-          className="object-cover "
+          width={200}
+          height={200}
+          className="object-cover rounded-2xl"
         />
       </div>
     </div>

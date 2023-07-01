@@ -44,7 +44,7 @@ const Author = () => {
                   </p>
                   <button
                     type="button"
-                    className="hidden p-4 mt-4 font-semibold text-white transition-all duration-500 rounded-full lg:block themeComponent lg:text-xl hover:scale-110"
+                    className="hidden p-4 mt-4 font-semibold text-white transition-all duration-300 rounded-full lg:block themeComponent lg:text-xl hover:scale-110"
                   >
                     <Link href={formLinks.registerOrSubmit} target="_blank">
                       ມາເປັນສ່ວນໜຶ່ງກັບພວກເຮົາ
@@ -54,7 +54,7 @@ const Author = () => {
 
                 <button
                   type="button"
-                  className="col-span-1 p-4 mt-4 font-semibold text-white transition-all duration-500 rounded-full lg:hidden themeComponent lg:text-xl hover:scale-110"
+                  className="col-span-1 p-4 mt-4 font-semibold text-white transition-all duration-300 rounded-full lg:hidden themeComponent lg:text-xl hover:scale-110"
                 >
                   <Link href={formLinks.registerOrSubmit} target="_blank">
                     ມາເປັນສ່ວນໜຶ່ງກັບພວກເຮົາ
@@ -64,12 +64,12 @@ const Author = () => {
             </div>
           </div>
         </div>
-        <div className="py-6  ">
+        <div className="py-6 ">
           <div className="container grid grid-cols-1 gap-8 px-8 mx-auto lg:px-10 lg:grid-cols-3">
             {dataLoaded &&
               authors.map((author, index) => (
                 <Link key={index} href={`author/${author.slug}`}>
-                  <div className="flex card dark:cardDark item-center w-full lg:w-[370px] p-4 rounded-full hover:shadow-xl">
+                  <div className="flex card dark:cardDark item-center w-full lg:w-[370px] p-4 rounded-2xl hover:shadow-xl">
                     <Image
                       src={author.photo.url}
                       width={100}

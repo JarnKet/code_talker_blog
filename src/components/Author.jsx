@@ -4,7 +4,7 @@ import { LinkIcon } from "@heroicons/react/24/solid";
 
 const Author = ({ author }) => {
   return (
-    <div className="relative flex flex-col items-center justify-center w-full p-8 mb-12 text-center themeComponent rounded-2xl">
+    <div className="relative flex flex-col items-center justify-center w-full p-8 mb-6 text-center themeComponent rounded-2xl">
       <div className="absolute -top-14">
         <Image
           alt={author.name}
@@ -22,7 +22,7 @@ const Author = ({ author }) => {
       </Link>
       <p className="mb-4">{author.bio}</p>
       <button
-        className="flex items-center justify-end p-2 transition-all duration-500 rounded-full cursor-pointer hover:scale-110 themeComponentRevert"
+        className="flex items-center justify-end p-2 transition-all duration-300 rounded-full cursor-pointer hover:scale-110 themeComponentRevert"
         type="button"
         aria-label="link-contact"
       >

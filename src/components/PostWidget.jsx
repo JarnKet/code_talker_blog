@@ -18,7 +18,7 @@ const PostWidget = ({ categories, slug, styles }) => {
   }, [slug]);
 
   return (
-    <div className={`${styles} p-8 mb-12 rounded-2xl`}>
+    <div className={`${styles} p-8 mb-6 rounded-2xl`}>
       <div className="flex justify-start">
         {slug ? (
           <BookOpenIcon className="w-6 h-6 mr-2" />

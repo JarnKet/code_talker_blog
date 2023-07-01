@@ -1,10 +1,10 @@
-import Head from 'next/head';
-import { sectionDescription } from '../../constants';
-import { QuestionMarkCircleIcon } from '@heroicons/react/24/solid';
-import { joinImg } from '/public';
-import { formLinks } from '../../constants';
-import Image from 'next/image';
-import Link from 'next/link';
+import Head from "next/head";
+import { sectionDescription } from "../../constants";
+import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
+import { joinImg } from "/public";
+import { formLinks } from "../../constants";
+import Image from "next/image";
+import Link from "next/link";
 const About = () => {
   return (
     <>
@@ -31,7 +31,7 @@ const About = () => {
                   </p>
                   <button
                     type="button"
-                    className="hidden p-4 mt-4 font-semibold text-white transition-all duration-500 rounded-full lg:block themeComponent lg:text-xl hover:scale-110"
+                    className="hidden p-4 mt-4 font-semibold text-white transition-all duration-300 rounded-full lg:block themeComponent lg:text-xl hover:scale-110"
                   >
                     <Link href={formLinks.registerOrSubmit} target="_blank">
                       ມາເປັນສ່ວນໜຶ່ງກັບພວກເຮົາ
@@ -49,7 +49,7 @@ const About = () => {
                 />
                 <button
                   type="button"
-                  className="col-span-1 p-4 mt-4 font-semibold text-white transition-all duration-500 rounded-full lg:hidden themeComponent lg:text-xl hover:scale-110"
+                  className="col-span-1 p-4 mt-4 font-semibold text-white transition-all duration-300 rounded-full lg:hidden themeComponent lg:text-xl hover:scale-110"
                 >
                   <Link href={formLinks.registerOrSubmit}>
                     ມາເປັນສ່ວນໜຶ່ງກັບພວກເຮົາ

@@ -4,7 +4,6 @@ import Link from "next/link";
 import {
   SunIcon,
   MoonIcon,
-  CodeBracketIcon,
   Bars3BottomRightIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid";
@@ -32,7 +31,7 @@ const Header = () => {
     if (currentTheme === "dark") {
       return (
         <button
-          className="flex items-center justify-end p-2 text-white transition-all duration-500 bg-black rounded-full cursor-pointer dark:bg-white dark:text-black hover:scale-110"
+          className="flex items-center justify-end p-2 text-white transition-all duration-300 bg-black rounded-full cursor-pointer dark:bg-white dark:text-black hover:scale-110"
           type="button"
           onClick={() => {
             setTheme("light");
@@ -45,7 +44,7 @@ const Header = () => {
     } else {
       return (
         <button
-          className="flex items-center justify-end p-2 text-white transition-all duration-500 bg-black rounded-full cursor-pointer dark:bg-white dark:text-black hover:scale-110"
+          className="flex items-center justify-end p-2 text-white transition-all duration-300 bg-black rounded-full cursor-pointer dark:bg-white dark:text-black hover:scale-110"
           type="button"
           onClick={() => {
             setTheme("dark");
@@ -63,7 +62,9 @@ const Header = () => {
       <div className="container flex items-center justify-between w-full px-8 py-2 mx-auto lg:py-4 lg:px-10">
         <div>
           <Link href="/">
-            <h1 className={`text-4xl font-extrabold `}>{`<Blog />.`}</h1>
+            <h1
+              className={`text-4xl font-extrabold hover:tracking-widest transition-all duration-300 ease-in-out`}
+            >{`<Blog />.`}</h1>
           </Link>
         </div>
 

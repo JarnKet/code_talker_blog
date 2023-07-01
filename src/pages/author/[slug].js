@@ -31,9 +31,9 @@ const AuthorDetail = ({ params, authors }) => {
             .map((author) => author.name)}
         </title>
       </Head>
-      <div className="container px-8 mx-auto mt-[6rem] mb-8 lg:px-10 lg:mb-0 lg:mt-0">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          <div className="order-last col-span-1 p-4 lg:col-span-8 lg:order-first card dark:cardDark rounded-2xl">
+      <section className="container px-8 mx-auto mt-[6rem] mb-8 lg:px-10  ">
+        <div className="grid grid-cols-1 lg:gap-12 lg:grid-cols-12">
+          <div className="order-last col-span-1 p-4 lg:col-span-8 lg:order-first ">
             {authors
               .filter((author) => author.slug === router.asPath.slice(8))
               .map((author) => (
@@ -41,10 +41,10 @@ const AuthorDetail = ({ params, authors }) => {
                   className="w-full py-8 text-3xl font-bold sm:text-5xl"
                   key={author.name}
                 >
-                  {author.name}
+                  {author.name + "."}
                 </h1>
               ))}
-            <div className="pt-4">
+            <div className="p-4 card dark:cardDark rounded-2xl">
               {dataLoaded &&
                 posts.map((post) => <PostCard post={post} key={post.title} />)}
             </div>
@@ -59,7 +59,7 @@ const AuthorDetail = ({ params, authors }) => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };
