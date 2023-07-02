@@ -22,7 +22,7 @@ const CategoryPost = ({ posts, categories }) => {
         </title>
       </Head>
 
-      <section className="mt-12 ">
+      <section className="mt-20">
         <div className="container flex flex-col items-center px-8 py-4 mx-auto mb-12 lg:items-start lg:px-10">
           <div className="flex items-start justify-center mb-4 lg:items-baseline ">
             <div className="items-center justify-center hidden mr-2 lg:flex">
@@ -58,9 +58,9 @@ const CategoryPost = ({ posts, categories }) => {
           </div>
         </div>
 
-        <div className=" ">
+        <div className="">
           <div className="container grid grid-cols-1 gap-12 px-8 mx-auto lg:px-10 lg:grid-cols-12">
-            <div className="col-span-1 py-8 lg:col-span-8 lg: ">
+            <div className="col-span-1 p-4 lg:col-span-8 card dark:cardDark rounded-2xl ">
               {posts.map((post, index) => (
                 <PostCard key={index} post={post.node} />
               ))}

@@ -1,47 +1,23 @@
 import Typewriter from "typewriter-effect";
-import Link from "next/link";
-import { programmingImg } from "/public";
-import Image from "next/image";
+
 import { sectionDescription, formLinks } from "../constants";
 const Hero = () => {
   return (
-    <div className="flex flex-col items-center w-full h-full sm:justify-center">
-      <div className="flex flex-col items-center w-full gap-4 text-left lg:flex-row lg:justify-between">
-        <div className="flex p-2  flex-col w-[100%] lg:w-[50%] ">
-          <h1 className="text-3xl font-bold leading-[2.8rem] lg:text-4xl lg:mb-8 ">
-            {sectionDescription.heroTitle}
-          </h1>
-
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold lg:mb-[30px] mt-3 mb-3">
-            <Typewriter
-              options={{
-                strings: ["ວິຊາການ", "ທັດສະນະຄະຕິ", "ນິດໄສ"],
-                autoStart: true,
-                loop: true,
-              }}
-            />
-          </h1>
-
-          <h2 className="mt-2 mb-12 lg:mb-0 text-neutral-700 dark:text-neutral-500 sm:text-2xl ">
-            {sectionDescription.hero}
-          </h2>
-        </div>
-
-        <div
-          className="mb-5 lg:mb-0 h-full text-white w-[100%] lg:w-[50%] "
-          id="FeaturedPost"
-        >
-          <Image
-            src={programmingImg}
-            alt="programming"
-            width={800}
-            height={800}
-            loading="lazy"
-          />
-        </div>
+    <main className="flex flex-col items-center justify-center w-full h-full gap-y-14 lg:gap-y-10">
+      <div className="flex flex-col items-center justify-center text-center gap-y-7 lg:gap-y-5">
+        <h1 className="text-[2.5rem] lg:text-[5rem]   font-extrabold ">
+          ບົດຄວາມເພື່ອ <span className="text-gradient">ໂປຣແກຣມເມີ</span> ແລະ
+          ຄົນທີ່ຕ້ອງການ <span className="text-gradient">ພັດທະນາຕົນເອງ</span>
+        </h1>
+        <p className="p-2 card dark:cardDark rounded-2xl">
+          ສິ່ງທີ່ເສີມສ້າງໃຫ້ກາຍເປັນ ໂປຣແກຣມເມີທີ່ດີ ບໍ່ແມ່ນຮູບແບບ, ເຄື່ອງມື,
+          ພາສາ ຫຼື ອັລກໍຣິທຶມ. ແຕ່ວ່າແມ່ນ{" "}
+          <span className="font-semibold">ຮາກຖານນິດໄສ</span>,{" "}
+          <span className="font-semibold">ທັດສະນະຄະຕິ</span> ແລະ
+          <span className="font-semibold">ຄວາມເຂົ້າໃຈໃນສາຍອາຊີບ.</span>
+        </p>
       </div>
-
-      <div className="flex items-center justify-center w-full gap-x-4 lg:justify-start lg:mt-6">
+      <div className="flex items-center justify-center w-full gap-x-4">
         <a
           className="p-4 font-semibold transition-all duration-300 rounded-full themeComponent lg:text-xl hover:scale-110"
           href={"#postcard"}
@@ -56,7 +32,7 @@ const Hero = () => {
           📃 ແບບສອບຖາມ
         </a>
       </div>
-    </div>
+    </main>
   );
 };
 

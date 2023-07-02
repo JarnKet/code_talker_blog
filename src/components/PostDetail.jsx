@@ -1,5 +1,6 @@
 import moment from "moment";
 import React, { useEffect } from "react";
+import Image from "next/image";
 
 const PostDetail = ({ post }) => {
   useEffect(() => {
@@ -17,20 +18,22 @@ const PostDetail = ({ post }) => {
 
   return (
     <div className="pb-12 mb-8 lg:mt-8 card dark:cardDark rounded-2xl">
-      <div className="mb-6 overflow-hidden shadow-md rounded-t-2xl">
-        <img
-          className="object-top w-full h-full "
+      <div className="relative w-full h-40 mb-6 overflow-hidden shadow-md lg:h-60 rounded-t-2xl">
+        <Image
+          className="object-cover w-full h-full "
           src={post.featuredImage.url}
           alt={post.title}
+          fill
+          sizes={100}
         />
       </div>
       <div className="px-4 ">
         <div className="flex items-center justify-between w-full pb-2 mb-8 ">
           <div className="flex items-center justify-center ">
-            <img
+            <Image
               alt={post.author.name}
-              height="30px"
-              width="30px"
+              height={30}
+              width={30}
               className="align-middle rounded-full"
               src={post.author.photo.url}
             />

@@ -14,7 +14,7 @@ const FeaturedPosts = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center w-full h-[80%] p-4 card dark:cardDark rounded-2xl">
+    <div className="flex items-center justify-center w-full h-[75%] p-2 card dark:cardDark rounded-2xl">
       <div className="grid w-full grid-cols-1 gap-y-3 lg:grid-cols-3 justify-items-center">
         {dataLoaded &&
           featuredPosts.map((post, index) => (

@@ -113,7 +113,7 @@ const PostDetails = ({ post }) => {
         </button>
       </div>
       {toggle && (
-        <div className="fixed z-20 px-8 bottom-[12rem] flex flex-col gap-y-4">
+        <div className="fixed z-20 w-full px-8 bottom-[12rem] flex flex-col gap-y-4">
           <PostReference post={post} />
           <ShareButton url={url} />
         </div>

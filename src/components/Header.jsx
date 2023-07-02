@@ -7,6 +7,8 @@ import {
   Bars3BottomRightIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid";
+
+
 import { staticNavLinks } from "../constants";
 import { useRouter } from "next/router";
 import { getCategories } from "../services";
