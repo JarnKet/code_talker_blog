@@ -1,6 +1,4 @@
-import Typewriter from "typewriter-effect";
-
-import { sectionDescription, formLinks } from "../constants";
+import { formLinks } from "../constants";
 const Hero = () => {
   return (
     <main className="flex flex-col items-center justify-center w-full h-full gap-y-14 lg:gap-y-10">
