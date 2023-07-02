@@ -17,7 +17,7 @@ const Post = ({ style }) => {
   return (
     <>
       <Head>
-        <title>Code Talker | ນັກຂຽນ</title>
+        <title>Code Talker | ບົດຄວາມທັງໝົດ</title>
       </Head>
       <section
         className={`${style} container flex-col items-center justify-center px-8 py-10 mx-auto mb-10 lg:flex lg:min-h-screen lg:px-10 gap-y-6 `}
