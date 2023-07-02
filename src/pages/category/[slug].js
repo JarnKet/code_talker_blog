@@ -22,7 +22,7 @@ const CategoryPost = ({ posts, categories }) => {
         </title>
       </Head>
 
-      <section className="mt-20">
+      <section className="my-20">
         <div className="container flex flex-col items-center px-8 py-4 mx-auto mb-12 lg:items-start lg:px-10">
           <div className="flex items-start justify-center mb-4 lg:items-baseline ">
             <div className="items-center justify-center hidden mr-2 lg:flex">
