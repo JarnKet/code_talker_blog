@@ -16,7 +16,7 @@ const Comments = ({ slug }) => {
   return (
     <>
       {comments.length > 0 && (
-        <div className="p-8 pb-12 mb-8 lg:pt-8 lg:pr-8">
+        <div className="p-8 pb-12 mb-8 lg:pt-8 lg:pr-8 themeComponent rounded-2xl">
           <h1 className="pb-4 mb-8 text-xl font-semibold ">
             {comments.length} ຄວາມຄິດເຫັນ
           </h1>
