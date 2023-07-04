@@ -1,47 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { submitComment } from "../services";
 import { PencilSquareIcon } from "@heroicons/react/24/solid";
-
 const CommentsForm = ({ slug }) => {
   const [error, setError] = useState(false);
-  const [localStorage, setLocalStorage] = useState(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [formData, setFormData] = useState({
-    name: null,
-    email: null,
-    comment: null,
-    storeData: false,
+    name: window.localStorage.getItem("name") || "",
+    email: window.localStorage.getItem("email") || "",
+    comment: "",
+    storeData:
+      window.localStorage.getItem("name") ||
+      window.localStorage.getItem("email"),
   });
-
-  useEffect(() => {
-    setLocalStorage(window.localStorage);
-    const initialFormData = {
-      name: window.localStorage.getItem("name"),
-      email: window.localStorage.getItem("email"),
-      storeData:
-        window.localStorage.getItem("name") ||
-        window.localStorage.getItem("email"),
-    };
-    setFormData(initialFormData);
-  }, []);
-
   const onInputChange = (e) => {
     const { target } = e;
-    if (target.type === "checkbox") {
-      setFormData((prevState) => ({
-        ...prevState,
-        [target.name]: target.checked,
-      }));
-    } else {
-      setFormData((prevState) => ({
-        ...prevState,
-        [target.name]: target.value,
-      }));
-    }
+    setFormData((prevState) => ({
+      ...prevState,
+      [target.name]: target.type === "checkbox" ? target.checked : target.value,
+    }));
   };
-
   const handlePostSubmission = () => {
-    setError(false);
     const { name, email, comment, storeData } = formData;
     if (!name || !email || !comment) {
       setError(true);
@@ -53,25 +31,20 @@ const CommentsForm = ({ slug }) => {
       comment,
       slug,
     };
-
     if (storeData) {
-      localStorage.setItem("name", name);
-      localStorage.setItem("email", email);
+      window.localStorage.setItem("name", name);
+      window.localStorage.setItem("email", email);
     } else {
-      localStorage.removeItem("name");
-      localStorage.removeItem("email");
+      window.localStorage.removeItem("name");
+      window.localStorage.removeItem("email");
     }
-
     submitComment(commentObj).then((res) => {
       if (res.createComment) {
-        if (!storeData) {
-          formData.name = "";
-          formData.email = "";
-        }
-        formData.comment = "";
         setFormData((prevState) => ({
           ...prevState,
-          ...formData,
+          name: storeData ? prevState.name : "",
+          email: storeData ? prevState.email : "",
+          comment: "",
         }));
         setShowSuccessMessage(true);
         setTimeout(() => {
@@ -80,7 +53,7 @@ const CommentsForm = ({ slug }) => {
       }
     });
   };
-
+  // Rest of the component
   return (
     <div className="px-4 py-12 mb-8 lg:pt-8 card dark:cardDark rounded-2xl">
       <div className="flex justify-center mb-6">
