@@ -1,17 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { submitComment } from "../services";
 import { PencilSquareIcon } from "@heroicons/react/24/solid";
+
 const CommentsForm = ({ slug }) => {
   const [error, setError] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [formData, setFormData] = useState({
-    name: window.localStorage.getItem("name") || "",
-    email: window.localStorage.getItem("email") || "",
+    name: "",
+    email: "",
     comment: "",
-    storeData:
-      window.localStorage.getItem("name") ||
-      window.localStorage.getItem("email"),
+    storeData: false,
   });
+
+  useEffect(() => {
+    setFormData({
+      name: window.localStorage.getItem("name") || "",
+      email: window.localStorage.getItem("email") || "",
+      comment: "",
+      storeData:
+        window.localStorage.getItem("name") ||
+        window.localStorage.getItem("email"),
+    });
+  }, []);
+
   const onInputChange = (e) => {
     const { target } = e;
     setFormData((prevState) => ({
@@ -19,6 +30,7 @@ const CommentsForm = ({ slug }) => {
       [target.name]: target.type === "checkbox" ? target.checked : target.value,
     }));
   };
+
   const handlePostSubmission = () => {
     const { name, email, comment, storeData } = formData;
     if (!name || !email || !comment) {
