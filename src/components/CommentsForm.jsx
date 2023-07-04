@@ -96,7 +96,7 @@ const CommentsForm = ({ slug }) => {
           onChange={onInputChange}
           className="w-full p-4 solid-none focus:ring-2 focus:ring-black rounded-2xl"
           placeholder="Email"
-          name="ອີເມວ"
+          name="email"
         />
       </div>
       <div className="grid grid-cols-1 gap-4 mb-4">
