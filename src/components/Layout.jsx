@@ -1,4 +1,4 @@
-import { Header, SurveyForm, Footer } from "./";
+import { Header, Footer } from "./";
 
 const Layout = ({ children }) => {
   return (
@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
       <Header />
       <div className=" pt-10 lg:pt-[3rem]">{children}</div>
       <Footer />
-      <div className=" backgroundGrid dark:backgroundGridDark fixed inset-0 z-[-10]" />
+      <div className="hidden lg:flex backgroundGrid dark:backgroundGridDark fixed inset-0 z-[-10]" />
       <div className="fixed inset-0 gradient" />
     </>
   );
