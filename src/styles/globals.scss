@@ -45,7 +45,7 @@
     @apply w-full h-full mb-8;
   }
   .post-detail pre {
-    @apply bg-neutral-950 text-white dark:cardDark p-4 max-w-sm my-4 overflow-x-scroll sm:max-w-2xl lg:max-w-lg rounded-2xl;
+    @apply bg-neutral-950 text-white dark:cardDark p-4 max-w-xs sm:max-w-2xl my-4 overflow-x-scroll lg:max-w-lg rounded-2xl;
   }
   .card {
     @apply shadow-xl;
@@ -68,9 +68,12 @@
   }
   .backgroundGrid {
     background-image: url("../../public/images/grid.svg");
+    filter: invert(1);
   }
   .backgroundGridDark {
     background-image: url("../../public/images/grid.svg");
+    filter: invert(0);
+    opacity: 0.3;
   }
 }
 * {
