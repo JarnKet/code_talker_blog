@@ -7,17 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 
-const Author = () => {
-  const [authors, setAuthors] = useState([]);
-  const [dataLoaded, setDataLoaded] = useState(false);
-
-  useEffect(() => {
-    getAuthors().then((result) => {
-      setAuthors(result);
-      setDataLoaded(true);
-    });
-  }, []);
-
+const Author = ({ authors }) => {
   return (
     <>
       <Head>
@@ -66,26 +56,25 @@ const Author = () => {
         </div>
         <div className="py-6 ">
           <div className="container grid grid-cols-1 gap-8 px-8 mx-auto lg:px-10 lg:grid-cols-3">
-            {dataLoaded &&
-              authors.map((author, index) => (
-                <Link key={index} href={`author/${author.slug}`}>
-                  <div className="flex card dark:cardDark item-center w-full lg:w-[370px] p-4 rounded-2xl hover:shadow-xl">
-                    <Image
-                      src={author.photo.url}
-                      width={100}
-                      height={100}
-                      alt={author.name}
-                      className="mr-4 rounded-full"
-                    />
-                    <div>
-                      <h1 className="lg:text-lg">{author.name}</h1>
-                      <p className="text-sm text-neutral-700 dark:text-neutral-500 lg:text-base">
-                        {author.bio}
-                      </p>
-                    </div>
+            {authors?.map((author, index) => (
+              <Link key={index} href={`author/${author.slug}`}>
+                <div className="flex card dark:cardDark item-center w-full lg:w-[370px] p-4 rounded-2xl hover:shadow-xl">
+                  <Image
+                    src={author.photo.url}
+                    width={100}
+                    height={100}
+                    alt={author.name}
+                    className="mr-4 rounded-full"
+                  />
+                  <div>
+                    <h1 className="lg:text-lg">{author.name}</h1>
+                    <p className="text-sm text-neutral-700 dark:text-neutral-500 lg:text-base">
+                      {author.bio}
+                    </p>
                   </div>
-                </Link>
-              ))}
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -95,11 +84,12 @@ const Author = () => {
 
 export default Author;
 
-// // Fetch data at build time
-// export async function getStaticProps({}) {
-//   const authors = await getAuthors();
+// Fetch data at build time
+export async function getStaticProps({}) {
+  const authors = await getAuthors();
 
-//   return {
-//     props: { authors },
-//   };
-// }
+  return {
+    props: { authors },
+    revalidate: 10,
+  };
+}

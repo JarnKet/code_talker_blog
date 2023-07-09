@@ -4,14 +4,9 @@ import Link from "next/link";
 import { categoryImg } from "/public";
 import { BookOpenIcon } from "@heroicons/react/24/solid";
 import { sectionDescription } from "../../constants";
-import { useEffect, useState } from "react";
 import { getCategories } from "../../services";
 
-const Category = () => {
-  const [categories, setCategories] = useState([]);
-  useEffect(() => {
-    getCategories().then((newCategories) => setCategories(newCategories));
-  }, []);
+const Category = ({ categories }) => {
   return (
     <>
       <Head>
@@ -36,7 +31,7 @@ const Category = () => {
                     {sectionDescription.category}
                   </p>
                   <div className="flex flex-wrap items-center justify-center w-full gap-8 my-6 lg:justify-start">
-                    {categories.map((category) => (
+                    {categories?.map((category) => (
                       <Link
                         key={category.slug}
                         href={`/category/${category.slug}`}
@@ -69,3 +64,12 @@ const Category = () => {
 };
 
 export default Category;
+
+export async function getStaticProps() {
+  const categories = (await getCategories()) || [];
+
+  return {
+    props: { categories },
+    revalidate: 10,
+  };
+}

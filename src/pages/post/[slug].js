@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { getPosts, getPostDetails } from "../../services";
+import { getPosts, getPostDetails, getCategories } from "../../services";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -22,7 +22,7 @@ import {
   ShareButton,
 } from "../../components";
 
-const PostDetails = ({ post }) => {
+const PostDetails = ({ post, categories }) => {
   const [toggle, setToggle] = useState(false);
   const [url, setUrl] = useState(undefined);
 
@@ -87,7 +87,10 @@ const PostDetails = ({ post }) => {
                 categories={post.categories.map((category) => category.slug)}
                 styles={`card dark:cardDark`}
               />
-              <Categories styles={"card dark:cardDark"} />
+              <Categories
+                styles={"card dark:cardDark"}
+                categories={categories}
+              />
             </div>
           </div>
         </div>
@@ -126,17 +129,17 @@ export default PostDetails;
 
 export async function getStaticProps({ params }) {
   const data = await getPostDetails(params.slug);
+  const categories = await getCategories();
 
   return {
-    props: { post: data },
+    props: { post: data, categories },
   };
 }
 
 export async function getStaticPaths() {
   const posts = await getPosts();
-
   return {
-    paths: posts.map(({ node: { slug } }) => ({ params: { slug } })),
+    paths: posts.map((post) => ({ params: { slug: post.slug } })),
     fallback: true,
   };
 }

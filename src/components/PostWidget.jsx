@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import moment from "moment";
-import Image from "next/image";
 import Link from "next/link";
 import { getRecentPosts, getSimilarPosts } from "../services";
 import { BookOpenIcon, SparklesIcon } from "@heroicons/react/24/solid";

@@ -1,17 +1,8 @@
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { ClipboardDocumentIcon } from "@heroicons/react/24/solid";
-import { getCategories } from "../services";
-
-const Categories = () => {
-  const [categories, setCategories] = useState([]);
+import { useRouter } from "next/router";
+const Categories = ({ categories }) => {
   const router = useRouter();
-
-  useEffect(() => {
-    getCategories().then((newCategories) => setCategories(newCategories));
-  }, []);
-
   return (
     <div className={` p-8 mb-12 rounded-2xl  themeComponent`}>
       <div className="flex ">
@@ -20,7 +11,7 @@ const Categories = () => {
       </div>
 
       <div className="flex flex-wrap w-full gap-y-8 ">
-        {categories.map((category) => (
+        {categories?.map((category) => (
           <Link key={category.slug} href={`/category/${category.slug}`}>
             <span
               className={`cursor-pointer p-2 rounded-full   mr-2 ${

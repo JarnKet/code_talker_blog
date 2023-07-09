@@ -67,7 +67,7 @@ const CategoryPost = ({ posts, categories }) => {
             </div>
             <div className="col-span-1 lg:col-span-4">
               <div className="relative lg:sticky top-8">
-                <Categories styles={""} />
+                <Categories categories={categories} />
               </div>
             </div>
           </div>
