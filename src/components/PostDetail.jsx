@@ -17,7 +17,7 @@ const PostDetail = ({ post }) => {
   }, [post.content.html]);
 
   return (
-    <div className="pb-12 mb-8 lg:mt-8 card dark:cardDark rounded-2xl">
+    <div className="w-full pb-12 mb-8 lg:mt-8 card dark:cardDark rounded-2xl">
       <div className="relative w-full h-40 mb-6 overflow-hidden shadow-md lg:h-60 rounded-t-2xl">
         <Image
           className="object-cover w-full h-full "
