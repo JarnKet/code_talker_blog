@@ -230,7 +230,7 @@ export const getRecentPosts = async () => {
 export const getAuthors = async () => {
   const query = gql`
     query GetAuthors {
-      authors(first: 100) {
+      authors() {
         bio
         name
         photo {
@@ -246,32 +246,37 @@ export const getAuthors = async () => {
   return result.authors;
 };
 
-export const getAuthorPosts = async (slug) => {
+export const getAuthor = async (slug) => {
   const query = gql`
-    query GetAuthorPost($slug: String!) {
-      posts(
-        where: { author: { slug: $slug } }
-        orderBy: createdAt_DESC
-        first: 100
-      ) {
-        title
-        slug
-        featuredImage {
+    query GetAuthor($slug: String!) {
+      author(where: { slug: $slug }) {
+        bio
+        name
+        photo {
           url
         }
-        excerpt
-        createdAt
-        author {
-          name
-          photo {
+        slug
+        contactLink
+        posts(orderBy: createdAt_DESC) {
+          title
+          slug
+          featuredImage {
             url
           }
-          slug
+          excerpt
+          createdAt
+          author {
+            name
+            photo {
+              url
+            }
+            slug
+          }
         }
       }
     }
   `;
   const result = await request(graphqlAPI, query, { slug });
 
-  return result.posts;
+  return result.author;
 };

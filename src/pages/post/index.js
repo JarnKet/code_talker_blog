@@ -1,19 +1,8 @@
-import { getPosts } from "../../services";
+import { getPosts, getCategories } from "../../services";
 import { Categories, PostCard } from "../../components";
-import { useState, useEffect } from "react";
 import Head from "next/head";
 
-const Post = ({ posts }) => {
-  // const [posts, setPosts] = useState([]);
-  // const [dataLoaded, setDataLoaded] = useState(false);
-
-  // useEffect(() => {
-  //   getPosts().then((result) => {
-  //     setPosts(result);
-  //     setDataLoaded(true);
-  //   });
-  // }, []);
-
+const Post = ({ posts, categories }) => {
   return (
     <>
       <Head>
@@ -30,12 +19,12 @@ const Post = ({ posts }) => {
         >
           <div className="col-span-1 p-8 shadow-xl lg:col-span-8 card dark:cardDark rounded-2xl">
             {posts?.map((post) => (
-              <PostCard post={post.node} key={post.title} />
+              <PostCard post={post} key={post.title} />
             ))}
           </div>
           <div className="hidden lg:block lg:col-span-4">
             <div className="relative lg:sticky top-8 ">
-              <Categories />
+              <Categories categories={categories} />
             </div>
           </div>
         </div>
@@ -48,9 +37,10 @@ export default Post;
 
 export async function getStaticProps() {
   const posts = (await getPosts()) || [];
+  const categories = (await getCategories()) || [];
 
   return {
-    props: { posts },
+    props: { posts, categories },
     revalidate: 10,
   };
 }

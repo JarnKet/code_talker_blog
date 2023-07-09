@@ -56,7 +56,7 @@ const PostDetails = ({ post, categories }) => {
         <meta property="og:image" content={post.featuredImage.url} />
       </Head>
       <section
-        className="container px-8 mx-auto mt-[5rem] mb-8 lg:px-10 lg:mb-0 lg:mt-0"
+        className="container px-8 mx-auto mt-[3rem] mb-8 lg:px-10 lg:mb-0 lg:mt-3"
         id="post"
       >
         <Link
