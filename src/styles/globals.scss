@@ -7,7 +7,7 @@
 
 @layer base {
   body {
-    @apply bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-zinc-200 via-gray-100 to-gray-300
+    @apply bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-zinc-400 via-gray-300 to-gray-500
     dark:bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] dark:from-gray-700 dark:via-neutral-800 dark:to-slate-900;
   }
 }
@@ -45,7 +45,7 @@
     @apply w-full h-full mb-8;
   }
   .post-detail pre {
-    @apply bg-neutral-950 text-white dark:cardDark p-4 max-w-xs my-4 overflow-x-scroll lg:max-w-lg rounded-2xl;
+    @apply bg-neutral-950 text-white dark:cardDark p-4 max-w-sm my-4 overflow-x-scroll sm:max-w-2xl lg:max-w-lg rounded-2xl;
   }
   .card {
     @apply shadow-xl;
@@ -68,13 +68,9 @@
   }
   .backgroundGrid {
     background-image: url("../../public/images/grid.svg");
-    filter: invert(1);
-    opacity: 0.5;
   }
   .backgroundGridDark {
     background-image: url("../../public/images/grid.svg");
-    filter: invert(0);
-    opacity: 0.3;
   }
 }
 * {
@@ -158,6 +154,5 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  opacity: 0.8;
   background-repeat: no-repeat;
 }
