@@ -4,8 +4,12 @@ const Hero = () => {
     <main className="flex flex-col items-center justify-center w-full h-full gap-y-14 lg:gap-y-10">
       <div className="flex flex-col items-center justify-center text-center gap-y-7 lg:gap-y-5">
         <h1 className="text-[2.5rem] lg:text-[5rem]   font-extrabold ">
-          ບົດຄວາມເພື່ອ <span className="text-gradient">ໂປຣແກຣມເມີ</span> ແລະ
-          ຄົນທີ່ຕ້ອງການ <span className="text-gradient">ພັດທະນາຕົນເອງ</span>
+          ບົດຄວາມເພື່ອ{" "}
+          <span className="textGradient dark:textGradientDark">ໂປຣແກຣມເມີ</span>{" "}
+          ແລະ ຄົນທີ່ຕ້ອງການ{" "}
+          <span className="textGradient dark:textGradientDark">
+            ພັດທະນາຕົນເອງ
+          </span>
         </h1>
         <p className="p-2 card dark:cardDark rounded-2xl">
           ສິ່ງທີ່ເສີມສ້າງໃຫ້ກາຍເປັນ ໂປຣແກຣມເມີທີ່ດີ ບໍ່ແມ່ນຮູບແບບ, ເຄື່ອງມື,
