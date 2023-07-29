@@ -35,6 +35,39 @@ export const getPosts = async () => {
   return result.posts;
 };
 
+export const getAllPosts = async () => {
+  const query = gql`
+    query MyQuery {
+      posts(orderBy: createdAt_DESC, last: 100) {
+        author {
+          bio
+          name
+          id
+          photo {
+            url
+          }
+          slug
+        }
+        createdAt
+        slug
+        title
+        excerpt
+        featuredImage {
+          url
+        }
+        categories {
+          name
+          slug
+        }
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query);
+
+  return result.posts;
+};
+
 export const getCategories = async () => {
   const query = gql`
     query GetCategories {
