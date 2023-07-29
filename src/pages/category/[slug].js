@@ -60,7 +60,7 @@ const CategoryPost = ({ posts, categories }) => {
 
         <div className="">
           <div className="container grid grid-cols-1 gap-12 px-8 mx-auto lg:px-10 lg:grid-cols-12">
-            <div className="col-span-1 p-4 lg:col-span-8 card dark:cardDark rounded-2xl ">
+            <div className="col-span-1 lg:col-span-8 ">
               {posts.map((post, index) => (
                 <PostCard key={index} post={post.node} />
               ))}

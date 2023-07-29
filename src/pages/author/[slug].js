@@ -1,9 +1,33 @@
 import { useRouter } from "next/router";
-import { getAuthor, getAuthorPosts, getAuthors } from "../../services";
-import { PostCard, Author, Loader } from "../../components";
+import { useState, useEffect } from "react";
+import { getAuthor, getAuthors } from "../../services";
+import { PostCard, Author, Loader, Pagination } from "../../components";
 import Head from "next/head";
 
 const AuthorDetail = ({ author }) => {
+  const [data, setData] = useState([]);
+
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
+
+  const itemsPerPage = 10;
+
+  useEffect(() => {
+    setData(author.posts);
+
+    setTotalPages(Math.ceil(data.length / itemsPerPage));
+  }, []);
+
+  const startIndex = currentPage * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+
+  const subset = data.slice(startIndex, endIndex);
+
+  const handlePageChange = (selectedPage) => {
+    setCurrentPage(selectedPage.selected);
+    window.scrollTo(0, 0);
+  };
+
   const router = useRouter();
 
   if (router.isFallback) {
@@ -25,8 +49,8 @@ const AuthorDetail = ({ author }) => {
               {author.name + "."}
             </h1>
 
-            <div className="p-4 card dark:cardDark rounded-2xl">
-              {author.posts?.map((post) => (
+            <div>
+              {subset?.map((post) => (
                 <PostCard post={post} key={post.title} />
               ))}
             </div>
@@ -37,8 +61,12 @@ const AuthorDetail = ({ author }) => {
             </div>
           </div>
         </div>
+        {subset.length <= 10 ? (
+          <></>
+        ) : (
+          <Pagination {...{ currentPage, totalPages, handlePageChange }} />
+        )}
       </section>
-      <h1>test</h1>
     </>
   );
 };

@@ -32,7 +32,7 @@ export default function Home({ posts, featuredPosts, categories }) {
       </Head>
 
       <section className="container flex items-center justify-center w-full min-h-[95vh] lg:min-h-[85vh] px-8 mx-auto  lg:px-10">
-        <Hero />
+        <Hero post={featuredPosts[0]} />
       </section>
 
       <section
@@ -58,7 +58,7 @@ export default function Home({ posts, featuredPosts, categories }) {
           id="postcard"
           className="grid grid-cols-1 gap-x-8 lg:grid-cols-12 "
         >
-          <div className="col-span-1 p-8 shadow-xl lg:col-span-8 card dark:cardDark rounded-2xl">
+          <div className="col-span-1 lg:col-span-8 ">
             {posts?.map((post) => (
               <PostCard post={post} key={post.title} />
             ))}
@@ -69,6 +69,12 @@ export default function Home({ posts, featuredPosts, categories }) {
             </div>
           </div>
         </div>
+        <Link
+          className="p-4 font-semibold transition-all duration-300 rounded-full themeComponent lg:text-xl hover:scale-110"
+          href={"post/"}
+        >
+          ບົດຄວາມທັງໝົດ
+        </Link>
       </section>
     </>
   );

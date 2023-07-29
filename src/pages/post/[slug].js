@@ -96,12 +96,18 @@ const PostDetails = ({ post, categories }) => {
         </div>
       </section>
       <div className="fixed z-10 flex flex-col gap-y-4 bottom-16 right-6">
-        <a
+        <button
+          type="button"
           className="flex items-center justify-end p-2 text-white transition-all duration-300 bg-black rounded-full cursor-pointer lg:hidden dark:bg-white dark:text-black hover:scale-110"
-          href="#post"
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }}
         >
           <ArrowUturnUpIcon className="w-6 h-6 " />
-        </a>
+        </button>
         <button
           className="flex items-center justify-end p-2 text-white transition-all duration-300 bg-black rounded-full cursor-pointer lg:hidden dark:bg-white dark:text-black hover:scale-110"
           typeof="button"

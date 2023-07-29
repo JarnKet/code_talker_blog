@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { getAuthors } from "../../services";
 import { UsersIcon } from "@heroicons/react/24/solid";
 import { sectionDescription } from "../../constants";
