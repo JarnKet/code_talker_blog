@@ -1,8 +1,8 @@
 const Loader = () => (
-  <div className="text-center">
+  <div className="flex items-center justify-center w-full h-screen text-center">
     <button
       type="button"
-      className="inline-flex items-center px-4 py-2 text-base font-medium leading-6 transition duration-150 ease-in-out border ransparent rounded-md cursor-not-allowed bg-rose-600 hover:bg-rose-500 focus:ose-700 active:bg-rose-700"
+      className="inline-flex items-center px-4 py-2 text-base font-medium leading-6 transition duration-150 ease-in-out border rounded-md cursor-not-allowed themeComponent"
       disabled=""
     >
       <svg
@@ -25,7 +25,7 @@ const Loader = () => (
           d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
         />
       </svg>
-      Loading
+      ກຳລັງໂຫຼດຂໍ້ມູນ
     </button>
   </div>
 );

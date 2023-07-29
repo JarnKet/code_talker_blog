@@ -8,7 +8,6 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/solid";
 
-
 import { staticNavLinks } from "../constants";
 import { useRouter } from "next/router";
 import { getCategories } from "../services";
@@ -66,7 +65,7 @@ const Header = () => {
           <Link href="/">
             <h1
               className={`text-4xl font-extrabold hover:tracking-widest transition-all duration-300 ease-in-out`}
-            >{`<Blog />.`}</h1>
+            >{`<Blog />`}</h1>
           </Link>
         </div>
 

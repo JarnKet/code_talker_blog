@@ -1,4 +1,3 @@
-import { formLinks } from "../constants";
 const Hero = () => {
   return (
     <main className="flex flex-col items-center justify-center w-full h-full gap-y-14 lg:gap-y-10">
@@ -19,19 +18,12 @@ const Hero = () => {
           <span className="font-semibold">ຄວາມເຂົ້າໃຈໃນສາຍອາຊີບ.</span>
         </p>
       </div>
-      <div className="flex items-center justify-center w-full gap-x-4">
+      <div className="flex items-center justify-center w-full">
         <a
           className="p-4 font-semibold transition-all duration-300 rounded-full themeComponent lg:text-xl hover:scale-110"
           href={"#postcard"}
         >
           ເລີ່ມຕົ້ນການອ່ານ
-        </a>
-        <a
-          className="p-4 font-semibold transition-all duration-300 rounded-full themeComponentRevert lg:text-xl hover:scale-110"
-          href={formLinks.interview}
-          target="_blank"
-        >
-          📃 ແບບສອບຖາມ
         </a>
       </div>
     </main>

@@ -8,5 +8,7 @@
 - [x] ຍ້າຍບົດຄວາມທັງໝົດ ໄປໄວ້ເປັນໜ້າໃໝ່ post/index ສຳລັບມືຖື
 - [x] ແກ້ໄຂຟັງຊັ້ນ Email
 - [x] ປ່ຽນການດຶງຂໍ້ມູນເປັນ ISR ຕາມມາດຕະຖານ Next.JS
+- [x] ເຮັດ Pagination ສຳລັບໜ້າ post/index
+- [x] ອອກແບບ Blog Card
+- [ ] ອອກແບບໜ້າ Hero ໃໝ່ທັງໝົດ
 - [ ] Refactor Code ທັງໝົດ
-- [ ] ເຮັດ Pagination ສຳລັບໜ້າ post/index
