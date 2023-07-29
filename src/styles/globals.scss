@@ -7,8 +7,7 @@
 
 @layer base {
   body {
-    @apply bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-zinc-400 via-gray-300 to-gray-500
-    dark:bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] dark:from-gray-700 dark:via-neutral-800 dark:to-slate-900;
+    @apply bg-neutral-300 dark:bg-neutral-900;
   }
 }
 
@@ -53,12 +52,6 @@
   .cardDark {
     @apply shadow-xl;
   }
-  .textGradient {
-    @apply bg-gradient-to-b from-gray-900 to-gray-600  bg-clip-text text-transparent;
-  }
-  .textGradientDark {
-    @apply bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent;
-  }
 }
 
 @layer utilities {
@@ -71,15 +64,6 @@
     background: transparentize(#222, 0.5);
     backdrop-filter: blur(20px);
     border: 1px solid transparentize(whitesmoke, 0.9);
-  }
-  .backgroundGrid {
-    background-image: url("../../public/images/grid.svg");
-    filter: invert(1);
-  }
-  .backgroundGridDark {
-    background-image: url("../../public/images/grid.svg");
-    filter: invert(0);
-    opacity: 0.3;
   }
 }
 * {
@@ -128,40 +112,26 @@ a {
   }
 }
 
-.gradient {
-  z-index: -3;
-
-  background-image: radial-gradient(
-      at 27% 37%,
-      hsla(215, 98%, 61%, 1) 0px,
-      transparent 0%
-    ),
-    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
-    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
-    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
-    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
-    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
-    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
-
-  filter: blur(100px) saturate(150%);
-  opacity: 0.15;
-  background-repeat: no-repeat;
+// Pagination Component
+.pagination {
+  @apply w-full flex justify-center gap-4 items-center;
 }
 
-// .text-gradient {
-//   background-image: radial-gradient(
-//       at 27% 37%,
-//       hsla(215, 98%, 61%, 1) 0px,
-//       transparent 0%
-//     ),
-//     radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
-//     radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
-//     radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
-//     radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
-//     radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
-//     radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
+.prevoious-pagination,
+.next-pagination {
+  @apply h-8 p-2 flex justify-center items-center;
+}
 
-//   background-repeat: no-repeat;
-// }
+.prevoious-pagination,
+.next-pagination,
+.page-item {
+  @apply overflow-hidden rounded-lg card dark:cardDark;
+}
+
+.page-link {
+  @apply w-8 h-8 flex justify-center items-center;
+}
+
+.active-pagination {
+  @apply themeComponent;
+}
