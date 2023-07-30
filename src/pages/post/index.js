@@ -37,7 +37,7 @@ const Post = ({ posts, categories }) => {
         className={`container flex-col items-center justify-center px-8 py-12 mx-auto mb-10 lg:flex lg:min-h-screen lg:px-10 gap-y-6 `}
         id="postcard"
       >
-        <h1 className="mb-4 text-4xl font-bold text-center">ບົດຄວາມລ່າສຸດ.</h1>
+        <h1 className="mb-4 text-4xl font-bold text-center">ບົດຄວາມທັງໝົດ.</h1>
         <div
           id="postcard"
           className="grid grid-cols-1 gap-x-8 lg:grid-cols-12 "

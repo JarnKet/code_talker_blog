@@ -67,7 +67,7 @@ const CommentsForm = ({ slug }) => {
   };
   // Rest of the component
   return (
-    <div className="px-4 py-12 mb-8 lg:pt-8 card dark:cardDark rounded-2xl">
+    <div className="px-4 py-12 mb-8 lg:pt-8 themeComponentRevert rounded-2xl">
       <div className="flex justify-center mb-6">
         <PencilSquareIcon className="w-6 h-6 mr-2" />
         <h1 className="text-xl font-semibold ">ສະແດງຄວາມຄິດເຫັນ</h1>

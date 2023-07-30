@@ -1,4 +1,4 @@
-import { FeaturedPost, Hero } from "../sections";
+import Hero from "../sections/Hero";
 import { PostCard, Categories } from "../components";
 import { getPosts, getFeaturedPosts, getCategories } from "../services";
 import Link from "next/link";
@@ -31,33 +31,17 @@ export default function Home({ posts, featuredPosts, categories }) {
         />
       </Head>
 
-      <section className="container flex items-center justify-center w-full min-h-[95vh] lg:min-h-[85vh] px-8 mx-auto  lg:px-10">
-        <Hero post={featuredPosts[0]} />
+      <section className="container relative flex items-center justify-center w-full min-h-screen px-8 mx-auto lg:px-10">
+        <Hero posts={featuredPosts} />
+        <div className="hero__background lightGrid dark:darkGrid absolute inset-0 z-[-5] rounded-full" />
       </section>
 
       <section
-        id="postcard"
-        className="container flex flex-col items-center justify-center w-full h-full px-8 py-6 mx-auto lg:items-start gap-y-6 lg:h-screen lg:p-10"
-      >
-        <h1 className="text-4xl font-bold ">ບົດຄວາມທີ່ແນະນຳ.</h1>
-        <FeaturedPost posts={featuredPosts} />
-        <Link
-          className="p-4 font-semibold transition-all duration-300 rounded-full lg:hidden themeComponent lg:text-xl hover:scale-110"
-          href={"post/"}
-        >
-          ບົດຄວາມທັງໝົດ
-        </Link>
-      </section>
-
-      <section
-        className={`container flex-col items-center hidden justify-center px-8 py-10 mx-auto mb-10 lg:flex lg:min-h-screen lg:px-10 gap-y-6 `}
-        id="postcard"
+        className={`container flex-col items-center  justify-center px-8 py-10 mx-auto mb-10 flex lg:min-h-screen lg:px-10 gap-y-6 `}
+        id="posts"
       >
         <h1 className="mb-4 text-4xl font-bold text-center">ບົດຄວາມລ່າສຸດ.</h1>
-        <div
-          id="postcard"
-          className="grid grid-cols-1 gap-x-8 lg:grid-cols-12 "
-        >
+        <div className="grid grid-cols-1 gap-x-8 lg:grid-cols-12 ">
           <div className="col-span-1 lg:col-span-8 ">
             {posts?.map((post) => (
               <PostCard post={post} key={post.title} />

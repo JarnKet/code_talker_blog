@@ -17,7 +17,7 @@ const PostDetail = ({ post }) => {
   }, [post.content.html]);
 
   return (
-    <div className="w-full pb-12 mb-8 lg:mt-8 card dark:cardDark rounded-2xl">
+    <div className="w-full pb-12 mb-8 lg:mt-8 themeComponentRevert rounded-2xl">
       <div className="relative w-full h-40 mb-6 overflow-hidden shadow-md lg:h-60 rounded-t-2xl">
         <Image
           className="object-cover w-full h-full "
@@ -41,7 +41,7 @@ const PostDetail = ({ post }) => {
               {post.author.name}
             </p>
           </div>
-          <div className="flex items-center justify-center text-sm lg:text-base text-neutral-400">
+          <div className="flex items-center justify-center text-sm lg:text-base text-neutral-500">
             <span>{moment(post.createdAt).format("DD MMM, YYYY")}</span>
           </div>
         </div>

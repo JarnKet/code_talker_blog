@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const PostCard = ({ post }) => {
   return (
-    <div className="flex flex-col items-center justify-between p-4 mb-12 lg:p-8 lg:flex-row rounded-2xl card dark:cardDark">
+    <div className="flex flex-col items-center justify-between p-4 mb-12 lg:p-8 lg:flex-row rounded-2xl themeComponentRevert">
       <div className="relative flex items-center justify-center w-full mb-6 ml-2 lg:hidden">
         <Image
           alt={post.title}
@@ -58,6 +58,7 @@ const PostCard = ({ post }) => {
       >
         ອ່ານຕໍ່
       </Link>
+      <div className="overlay dark:overlayDark" />
     </div>
   );
 };

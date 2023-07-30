@@ -1,10 +1,34 @@
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { getCategories, getCategoryPost } from "../../services";
-import { PostCard, Categories, Loader } from "../../components";
+import { PostCard, Categories, Loader, Pagination } from "../../components";
 import { TagIcon } from "@heroicons/react/24/solid";
 import Head from "next/head";
 
 const CategoryPost = ({ posts, categories }) => {
+  const [data, setData] = useState([]);
+
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
+
+  const itemsPerPage = 10;
+
+  useEffect(() => {
+    setData(posts);
+
+    setTotalPages(Math.ceil(data.length / itemsPerPage));
+  }, []);
+
+  const startIndex = currentPage * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+
+  const subset = data.slice(startIndex, endIndex);
+
+  const handlePageChange = (selectedPage) => {
+    setCurrentPage(selectedPage.selected);
+    window.scrollTo(0, 0);
+  };
+
   const router = useRouter();
 
   if (router.isFallback) {
@@ -72,13 +96,17 @@ const CategoryPost = ({ posts, categories }) => {
             </div>
           </div>
         </div>
+        {subset.length <= 10 ? (
+          <></>
+        ) : (
+          <Pagination {...{ currentPage, totalPages, handlePageChange }} />
+        )}
       </section>
     </>
   );
 };
 export default CategoryPost;
 
-// Fetch data at build time
 export async function getStaticProps({ params }) {
   const posts = await getCategoryPost(params.slug);
   const categories = await getCategories();
@@ -88,8 +116,6 @@ export async function getStaticProps({ params }) {
   };
 }
 
-// Specify dynamic routes to pre-render pages based on data.
-// The HTML is generated at build time and will be reused on each request.
 export async function getStaticPaths() {
   const categories = await getCategories();
   return {

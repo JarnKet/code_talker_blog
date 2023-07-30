@@ -59,12 +59,12 @@ const Header = () => {
   };
 
   return (
-    <nav className="fixed top-0 z-10 w-full card dark:cardDark">
+    <nav className="fixed top-0 z-10 w-full themeComponentRevert">
       <div className="container flex items-center justify-between w-full px-8 py-2 mx-auto lg:py-4 lg:px-10">
         <div>
           <Link href="/">
             <h1
-              className={`text-4xl font-extrabold hover:tracking-widest transition-all duration-300 ease-in-out`}
+              className={`text-2xl lg:text-4xl font-extrabold hover:tracking-widest transition-all duration-300 ease-in-out`}
             >{`<Blog />`}</h1>
           </Link>
         </div>

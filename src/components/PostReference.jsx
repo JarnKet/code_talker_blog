@@ -11,7 +11,7 @@ const PostReference = ({ post }) => {
   }, [post.content.html]);
   return (
     <div
-      className={`flex flex-col p-4 mt-4 gap-y-2  rounded-2xl card dark:cardDark`}
+      className={`flex flex-col p-4 mt-4 gap-y-2  rounded-2xl themeComponent`}
     >
       <h4 className="text-lg font-semibold text-center">ສາລະບານ</h4>
       {h3Tags.length > 0 &&

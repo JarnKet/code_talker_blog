@@ -10,5 +10,4 @@
 - [x] ປ່ຽນການດຶງຂໍ້ມູນເປັນ ISR ຕາມມາດຕະຖານ Next.JS
 - [x] ເຮັດ Pagination ສຳລັບໜ້າ post/index
 - [x] ອອກແບບ Blog Card
-- [ ] ອອກແບບໜ້າ Hero ໃໝ່ທັງໝົດ
-- [ ] Refactor Code ທັງໝົດ
+- [x] ອອກແບບໜ້າ Hero ໃໝ່ທັງໝົດ

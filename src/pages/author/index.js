@@ -57,7 +57,7 @@ const Author = ({ authors }) => {
           <div className="container grid grid-cols-1 gap-8 px-8 mx-auto lg:px-10 lg:grid-cols-3">
             {authors?.map((author, index) => (
               <Link key={index} href={`author/${author.slug}`}>
-                <div className="flex card dark:cardDark item-center w-full lg:w-[370px] p-4 rounded-2xl hover:shadow-xl">
+                <div className="flex themeComponentRevert item-center w-full lg:w-[370px] p-4 rounded-2xl hover:shadow-xl">
                   <Image
                     src={author.photo.url}
                     width={100}

@@ -85,10 +85,10 @@ const PostDetails = ({ post, categories }) => {
               <PostWidget
                 slug={post.slug}
                 categories={post.categories.map((category) => category.slug)}
-                styles={`card dark:cardDark`}
+                styles={`themeComponentRevert`}
               />
               <Categories
-                styles={"card dark:cardDark"}
+                styles={"themeComponentRevert"}
                 categories={categories}
               />
             </div>
