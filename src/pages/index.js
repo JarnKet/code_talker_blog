@@ -31,9 +31,9 @@ export default function Home({ posts, featuredPosts, categories }) {
         />
       </Head>
 
-      <section className="container relative flex items-center justify-center w-full min-h-screen px-8 mx-auto lg:px-10">
+      <section className="relative flex items-center justify-center min-h-screen">
         <Hero posts={featuredPosts} />
-        <div className="hero__background lightGrid dark:darkGrid absolute inset-0 z-[-5] rounded-full" />
+        <div className="hero__background lightGrid dark:darkGrid absolute inset-0 z-[-5] " />
       </section>
 
       <section

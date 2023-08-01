@@ -20,7 +20,7 @@ const buttons = [
 
 const ShareButton = ({ url }) => {
   return (
-    <div className="flex items-center justify-around p-2 mb-6 themeComponent rounded-2xl">
+    <div className="flex items-center justify-around p-2 mb-6 themeComponentRevert rounded-2xl">
       {buttons.map((button) => (
         <button.shareBtn url={url}>
           <FontAwesomeIcon
