@@ -1,12 +1,13 @@
 import CardSlide from "../components/CardSlide";
+import TypeWriter from "../components/TypeWriter";
 
 const Hero = ({ posts }) => {
   return (
-    <main className="flex flex-col-reverse items-center justify-center w-full h-full overflow-hidden lg:flex-row lg:gap-x-6 gap-y-14">
+    <main className="container flex flex-col-reverse items-center justify-center w-full h-full px-8 py-10 mx-auto overflow-hidden lg:flex-row lg:gap-x-6 gap-y-14">
       <div className="flex flex-col items-center justify-center flex-1">
         <div className="flex flex-col items-center justify-center text-center lg:text-left gap-y-7 lg:gap-y-5">
-          <h1 className="text-xl lg:text-[3rem] leading-normal hidden lg:block   font-extrabold ">
-            ບົດຄວາມເພື່ອ ໂປຣແກຣມເມີ ແລະ ຄົນທີ່ຕ້ອງການ ພັດທະນາຕົນເອງ
+          <h1 className=" text-xl lg:text-[3rem] leading-normal hidden lg:block   font-extrabold ">
+            <TypeWriter />
           </h1>
           <p className="p-2 lg:text-base text-small themeComponentRevert rounded-2xl">
             ສິ່ງທີ່ເສີມສ້າງໃຫ້ກາຍເປັນ ໂປຣແກຣມເມີທີ່ດີ ບໍ່ແມ່ນຮູບແບບ, ເຄື່ອງມື,
@@ -27,7 +28,7 @@ const Hero = ({ posts }) => {
       </div>
       <div className="flex flex-col items-center justify-center flex-1">
         <h1 className="text-[1.5rem]  leading-normal lg:hidden text-center mb-6  font-extrabold ">
-          ບົດຄວາມເພື່ອ ໂປຣແກຣມເມີ ແລະ ຄົນທີ່ຕ້ອງການ ພັດທະນາຕົນເອງ
+          <TypeWriter />
         </h1>
         <CardSlide posts={posts} />
       </div>
