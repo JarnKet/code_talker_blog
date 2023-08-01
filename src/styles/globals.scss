@@ -125,6 +125,19 @@ a {
 }
 
 .background {
-  @apply bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-zinc-400 via-gray-300 to-gray-500
+  @apply bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-400 via-gray-300 to-gray-500
     dark:bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] dark:from-gray-700 dark:via-neutral-800 dark:to-slate-900;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply absolute top-[50%] z-[1] themeComponent rounded-full p-2;
+}
+
+.swiper-button-next {
+  @apply right-0;
+}
+
+.swiper-button-prev {
+  @apply left-0;
 }
