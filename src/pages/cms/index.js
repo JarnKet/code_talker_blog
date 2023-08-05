@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { Loader } from "../../components";
 import { useEffect } from "react";
 
-const dashboard = process.env.NEXT_PUBLIC_DASHBOARD_URL;
+const dashboard = process.env.NEXT_PUBLIC_CMS_DASHBOARD_URL;
 
 const Dashboard = () => {
   const router = useRouter();
