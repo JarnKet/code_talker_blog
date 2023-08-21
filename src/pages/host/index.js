@@ -3,8 +3,10 @@ import { Loader } from "../../components";
 import { useEffect } from "react";
 
 const dashboard = process.env.NEXT_PUBLIC_HOST_DASHBOARD_URL;
+const loaderBg =
+  "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/5Q6iTwx2CBd0pFrD9vzZWK/e537e396e236e5daa54a31ff7056a77d/papercuts-dark.png";
 
-const Dashboard = () => {
+const HostDashboard = () => {
   const router = useRouter();
 
   function redirectToDashboard() {
@@ -21,9 +23,13 @@ const Dashboard = () => {
 
   return (
     <>
-      <Loader />
+      <Loader
+        imgURL={loaderBg}
+        loaderStyle={`text-white translate-y-32`}
+        textStyle={`text-2xl`}
+      />
     </>
   );
 };
 
-export default Dashboard;
+export default HostDashboard;

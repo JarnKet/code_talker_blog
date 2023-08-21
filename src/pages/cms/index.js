@@ -4,7 +4,10 @@ import { useEffect } from "react";
 
 const dashboard = process.env.NEXT_PUBLIC_CMS_DASHBOARD_URL;
 
-const Dashboard = () => {
+const loaderBg =
+  "https://hygraph.com/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FeBI48jXnRyaKyRC5Sxxk&w=1200&q=75";
+
+const CMSDashboard = () => {
   const router = useRouter();
 
   function redirectToDashboard() {
@@ -21,9 +24,14 @@ const Dashboard = () => {
 
   return (
     <>
-      <Loader />
+      <Loader
+        imgURL={loaderBg}
+        loaderStyle={`-translate-y-48 text-white`}
+        textStyle={`text-2xl lg:text-8xl`}
+        ring={`lg:w-[100px]`}
+      />
     </>
   );
 };
 
-export default Dashboard;
+export default CMSDashboard;

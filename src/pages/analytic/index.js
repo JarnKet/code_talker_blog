@@ -4,7 +4,10 @@ import { useEffect } from "react";
 
 const dashboard = process.env.NEXT_PUBLIC_ANALYTIC_DASHBOARD_URL;
 
-const Dashboard = () => {
+const loaderBg =
+  "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/new_test.jpeg";
+
+const AnalyticDashboard = () => {
   const router = useRouter();
 
   function redirectToDashboard() {
@@ -21,9 +24,13 @@ const Dashboard = () => {
 
   return (
     <>
-      <Loader />
+      <Loader
+        imgURL={loaderBg}
+        loaderStyle={`text-orange-500 translate-y-64`}
+        textStyle={`text-2xl`}
+      />
     </>
   );
 };
 
-export default Dashboard;
+export default AnalyticDashboard;
